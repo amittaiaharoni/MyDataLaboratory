@@ -1,0 +1,110 @@
+ROLE_ADMIN:
+    menus:
+        - name: my_data_lab_admin_dashboard
+          icon: dashboard
+          title: Admin Dashboard
+        - name: my_data_lab_blog_homepage
+          icon: wechat
+          title: BLOG
+        - name: my_data_lab_glossary_homepage
+          icon:  book
+          title: GLOSSARY
+        - name: my_data_lab_white_paper_homepage
+          icon: file-pdf-o
+          title: WHITE PAPERS
+        - title: CLIENTS
+#          icon: angle-left
+          icon: user
+          submenus:
+              - title: CLIENT_DASHBOARD
+                name: my_data_lab_client_dashboard
+              - title: CLIENTS_LIST
+                name: my_data_lab_client_list
+        - name: my_data_lab_users_index
+          title: USERS
+          icon: users
+        - name: my_data_lab_admin_turnover
+          title: TURNOVER
+          icon: line-chart
+        - title: DATABASE
+          icon: database
+          submenus:
+              - title: DATABASE_DASHBOARD
+                name: my_data_lab_database_dashboard
+              - title: PRODUCTS_LIST
+                name: my_data_lab_database_product_list
+              - title: WEBSITES_LIST
+                name: my_data_lab_database_website_list
+        - title: MARKET_SURVEY
+          icon: pie-chart
+          submenus:
+              - title: DESIGN
+                name: my_data_lab_market_survey_design
+              - title: LIST
+                name: my_data_lab_market_survey_list_index
+        - title: PARAMETERS
+          icon: gears
+          submenus:
+              - title: TRANSLATIONS
+                name: my_data_lab_translation_homepage
+#        - name: my_data_lab_page_routing_homepage
+#          title: PAGE_ROUTING
+#          icon: sitemap
+ROLE_USER:
+    menus:
+        - name: my_data_lab_admin_dashboard
+          title: DASHBOARD
+          icon: dashboard
+        - title: PRICES
+          icon: tag
+          submenus:
+              - title: PRODUCTS
+                name: my_data_lab_prices_product
+              - title: COMPETITORS_E_RETAILERS
+                name: my_data_lab_prices_competitor_list
+              - title: CATEGORIES
+                name: my_data_lab_prices_category
+              - title: BRANDS
+                name: my_data_lab_prices_brand
+        - title: CATALOGUES
+          icon: barcode
+          submenus:
+              - title: GLOBAL_ANALYSIS
+                name: my_data_lab_catalog_dashboard
+              - title: TOP_PRODUCTS_ANALYSIS
+                name: my_data_lab_catalog_product_top
+              - title: MISSING_PRODUCTS_CATALOGUE
+                name: my_data_lab_catalog_product_missing
+              - title: EXCLUSIVE_PRODUCTS_CATALOGUE
+                name: my_data_lab_catalog_product_exclusive
+        - title: WORDING
+          icon: list-ul
+          submenus:
+              - title: SELECT_PRODUCT_SHEET
+                name: my_data_lab_wording_dashboard
+              - title: KEYWORDS_LIST
+                name: my_data_lab_wording_keywords_list
+              - title: SEMANTIC_ANALYSIS
+                name: my_data_lab_wording_product_analysis
+        - title: E-reputation
+          icon: share-alt
+        - title: MY_ACCOUNT
+          icon: user
+          submenus:
+              - title: MY_ACCOUNT
+                name: my_data_lab_user_account
+              - title: INVOICE
+                name: my_data_lab_user_invoice
+        - name: my_data_lab_admin_contact_us
+          title: CONTACT_MDL
+          icon: wechat
+        - title: ALERTS
+          icon: circle-o
+          color: red
+          submenus:
+              - title: ALERTS_LIST
+                name: my_data_lab_alert_list
+              - title: READ_ALERT
+                name: my_data_lab_alert_read
+              - title: CREATE_ALERT
+                name: my_data_lab_alert_create

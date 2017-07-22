@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="my_data_lab_leads.type.class">MyDataLab\Bundle\LeadsBundle\Form\LeadType</parameter>
+        <parameter key="my_data_lab_white_paper_leads.type.class">MyDataLab\Bundle\LeadsBundle\Form\WhitePaperLeadType</parameter>
+        <parameter key="my_data_lab_contact_us_leads.type.class">MyDataLab\Bundle\LeadsBundle\Form\ContactUsLeadType</parameter>
+    </parameters>
+
+    <services>
+        <service id="my_data_lab_leads.type" class="%my_data_lab_leads.type.class%">
+            <tag name="form.type" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+        <service id="my_data_lab_white_paper_leads.type" class="%my_data_lab_white_paper_leads.type.class%">
+            <tag name="form.type" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+        <service id="my_data_lab_contact_us_leads.type" class="%my_data_lab_contact_us_leads.type.class%">
+            <tag name="form.type" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+    </services>
+</container>

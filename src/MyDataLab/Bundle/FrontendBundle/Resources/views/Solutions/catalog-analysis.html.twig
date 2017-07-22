@@ -1,0 +1,67 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb section-border">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter title %}{% trans %}HOME{% endtrans %}{% endfilter %}</a></li>
+        <li><a href="{{ path('my_data_lab_frontend_solutions') }}">{% filter title %}{% trans %}SOLUTIONS{% endtrans %}{% endfilter %}</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_solutions_catalog_analysis') }}">{% filter title %}{% trans %}CATALOGUE_ANALYSIS{% endtrans %}{% endfilter %}</a></li>
+    </ol>
+{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}STRATEGIC_CATALOGUE_ANALYSIS_H1{% endtrans %}</h1> 
+            <p style="color:#000; margin:20px 0;" class="lead-green big">
+                {% trans %}COMPARE_PRODUCTS_PORTFOLIO_P{% endtrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    <section class="text-center offset-1 bottomspace">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+
+                    <div class="row-services-performing">
+
+                        <h2 class="cube-front">{% trans %}OPTIMIZE_PORTFOLIO_PROFITABILITY_H2{% endtrans %}</h2>
+
+                        <h5 class="text-bold arrow-front"> {% trans %}IDENTIFY_NICHE_CATALOGUE_H5{% endtrans %}</h5>
+
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}MAXIMIZE_YOUR_MARGINS_LI{% endtrans %}</li>
+                            <li>{% trans %}MARKETING_NICHE_PRODUCTS_LI{% endtrans %}</li>
+                            <li>{% trans %}NICHE_LEADING_POLICIES_LI{% endtrans %}</li>
+                        </ul>
+
+                        <br>
+                        <h5 class="text-bold arrow-front"> {% trans %}IDENTIFY_SALE_DO_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}BUILD_REGARDING_STRATEGY_LI{% endtrans %}</li>
+                            <li>{% trans %}OPTIMIZE_SUPPLY_STRATEGY_LI{% endtrans %}</li>
+                            <li>{% trans %}BRANDS_STAY_TRENDY_LI{% endtrans %}</li>					  
+                        </ul>
+                        <br>
+                        <h5 class="text-bold arrow-front"> {% trans %}PORTFOLIO_STRONGLY_COMPETED_H5{% endtrans %}</h5>
+
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}PROMOTIONAL_EFFORTS_SPECIFIC_LI{% endtrans %}</li>
+                            <li>{% trans %}REFINE_SUPPLY_STRATEGY_LI{% endtrans %}</li>
+                        </ul>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                    <br>  
+                    <h5 class="arrow-front">{% trans %}DISTRIBUTORS_CATALOGUE_FACING_H5_1{% endtrans %}{% trans %}DISTRIBUTORS_CATALOGUE_FACING_H5_2{% endtrans %}</h5>
+                    <br> 
+
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                </div>				
+            </div>
+        </div>
+    </section>
+{% endblock %}

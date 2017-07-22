@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://symfony.com/schema/routing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+  <route id="my_data_lab_translation" path="/">
+    <default key="_controller">FrameworkBundle:Redirect:redirect</default>
+    <default key="route">my_data_lab_translation_homepage</default>
+    <default key="locale">en</default>
+    <default key="permanent">true</default>
+  </route>
+  <route id="my_data_lab_translation_homepage" path="/{locale}/">
+    <default key="_controller">MyDataLabTranslationBundle:Translation:index</default>
+    <default key="locale">%locale%</default>
+  </route>
+  <route id="my_data_lab_translation_update" path="/{locale}/edit/{id}/">
+    <default key="_controller">MyDataLabTranslationBundle:Translation:update</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_translation_new" path="/{locale}/new">
+    <default key="_controller">MyDataLabTranslationBundle:Translation:new</default>
+  </route>
+  <route id="my_data_lab_translation_create" path="/{locale}/create" methods="POST">
+    <default key="_controller">MyDataLabTranslationBundle:Translation:create</default>
+  </route>
+</routes>

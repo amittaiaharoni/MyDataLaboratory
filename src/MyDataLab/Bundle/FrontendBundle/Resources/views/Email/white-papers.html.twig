@@ -1,0 +1,11 @@
+<html>
+    <h3>{% trans %}EMAIL_WHITE_PAPER_OPENING{% endtrans %}</h3>
+    {#Hi {{ leadName }},#}
+    {% trans %}EMAIL_WHITE_PAPER_CONTENT{% endtrans %}
+    {#Thank you for requesting our resource.<br>#}
+    {#You can download the file via the link below:<br>#}
+    <a href="{{ hashAddress }}">{{ paperName }}</a><br>
+    {% trans %}EMAIL_WHITE_PAPER_ENDING{% endtrans %}
+    {#Best Regards,<br>#}
+    {#My Data Laboratory Team#}
+</html>

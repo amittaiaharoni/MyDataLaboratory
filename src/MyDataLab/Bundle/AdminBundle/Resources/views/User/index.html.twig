@@ -1,0 +1,242 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block contentHeader %}
+    {{ parent() }}
+{#    <button type="button" class="restore-scenarios btn btn-default"> Restore to Default Positions </button>#}
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <section id="sortable1" class="connectedSortable col-lg-4">
+            <div class="small-box products">
+                <div class="inner">
+                    <h3>45</h3>
+                    <p>Total Users</p>
+                    <div class="procent4">
+                        <p><i class="ion ion-arrow-up-a"></i>
+                        </p>
+                        <p>+ 10%</p>
+                    </div>
+                </div>
+                <div class="icon"> <i class="fa fa-user"></i> </div> <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> </div>
+        </section>
+        <section id="sortable2" class="connectedSortable col-lg-4">
+            <div class="small-box subcategories">
+                <div class="inner">
+                    <h3>190 €</h3>
+                    <p>Avarage per client</p>
+                    <div class="procent4">
+                        <p><i class="ion ion-arrow-up-a"></i>
+                        </p>
+                        <p>+ 10%</p>
+                    </div>
+                </div>
+                <div class="icon"> <i class="fa fa-users"></i> </div> <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> </div>
+        </section>
+        <section id="sortable3" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"> <i class="fa fa-minus"></i>
+                    </button>
+                    <h3 class="box-title">Users per status (E-retailer, brand,…)</h3> </div>
+                <div class="box-body" id="chart1_div"> </div>
+            </div>
+        </section>
+        <section id="sortable4" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"> <i class="fa fa-minus"></i>
+                    </button>
+                    <h3 class="box-title">Users per activity (Deco,…)</h3> </div>
+                <div class="box-body" id="chart2_div"> </div>
+            </div>
+        </section>
+        <section id="sortable5" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"> <i class="fa fa-minus"></i>
+                    </button>
+                    <h3 class="box-title">Users per status (E-retailer, brand,…)</h3> </div>
+                <div class="box-body" id="piechart1_div"> </div>
+            </div>
+        </section>
+        <section id="sortable6" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"> <i class="fa fa-minus"></i>
+                    </button>
+                    <h3 class="box-title">Users per activity (Deco,…)</h3> </div>
+                <div class="box-body" id="piechart2_div"> </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        /**
+         * Author: Milcho Koroveshovski
+         * Description:
+         * This is code used only for the admin-users.php
+         **/
+        $(function () {
+            "use strict";
+            //Make the dashboard widgets sortable Using jquery UI
+            $("#sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6").sortable({
+                connectWith: ".connectedSortable",
+                appendTo: 'body',
+                opacity: 0.8,
+                placeholder: "sort-highlight",
+                tolerance: "pointer",
+                forcePlaceholderSize: true,
+                cursor: 'move',
+                dropOnEmpty: true,
+                helper: "clone",
+                zIndex: 999999
+            });
+            google.charts.load('current', {
+                'packages': ['gauge', 'corechart', 'bar', 'geomap']
+            });
+            google.charts.setOnLoadCallback(drawChart1);
+            google.charts.setOnLoadCallback(drawChart2);
+            google.charts.setOnLoadCallback(drawPie1);
+            google.charts.setOnLoadCallback(drawPie2);
+
+            function drawChart1() {
+                var data3 = google.visualization.arrayToDataTable([
+                    ['City', '2010 Population', ],
+                    ['New York City, NY', 8175000],
+                    ['Los Angeles, CA', 3792000],
+                    ['Chicago, IL', 2695000],
+                    ['Houston, TX', 2099000],
+                    ['Philadelphia, PA', 1526000]
+                ]);
+                var options3 = {
+                    chartArea: {
+                        width: '50%'
+                    },
+                    hAxis: {
+                        title: 'Total Population',
+                        minValue: 0
+                    },
+                    vAxis: {
+                        title: 'City'
+                    },
+                    legend: {
+                        position: "none"
+                    },
+                    colors: ['#272D71']
+                };
+                var chart3 = new google.visualization.BarChart(document.getElementById('chart1_div'));
+                chart3.draw(data3, options3);
+            }
+
+            function drawChart2() {
+                var data3 = google.visualization.arrayToDataTable([
+                    ['City', '2010 Population', ],
+                    ['New York City, NY', 8175000],
+                    ['Los Angeles, CA', 3792000],
+                    ['Chicago, IL', 2695000],
+                    ['Houston, TX', 2099000],
+                    ['Philadelphia, PA', 1526000]
+                ]);
+                var options3 = {
+                    chartArea: {
+                        width: '50%'
+                    },
+                    hAxis: {
+                        title: 'Total Population',
+                        minValue: 0
+                    },
+                    vAxis: {
+                        title: 'City'
+                    },
+                    legend: {
+                        position: "none"
+                    },
+                    colors: ['#272D71']
+                };
+                var chart3 = new google.visualization.BarChart(document.getElementById('chart2_div'));
+                chart3.draw(data3, options3);
+            }
+
+            function drawPie1() {
+                var data2 = google.visualization.arrayToDataTable([
+                    ['Status', 'Nr. of products'],
+                    ['First category', 8],
+                    ['Second category', 16],
+                    ['Third category', 12],
+                    ['Fourth category', 18],
+                    ['Fifth category', 26],
+                    ['Sixth category', 32],
+                ]);
+                var piechart_options = {
+                    chartArea: {
+                        width: '90%',
+                        height: '80%'
+                    },
+                    width: '100%',
+                    height: '100%',
+                    colors: ['#272D71', '#00B6C9', '#99CA3C', '#FFF611', '#E15D10', '#4A1036']
+                };
+                var piechart = new google.visualization.PieChart(document.getElementById('piechart1_div'));
+                piechart.draw(data2, piechart_options);
+            }
+
+            function drawPie2() {
+                var data2 = google.visualization.arrayToDataTable([
+                    ['Status', 'Nr. of products'],
+                    ['First category', 8],
+                    ['Second category', 16],
+                    ['Third category', 12],
+                    ['Fourth category', 18],
+                    ['Fifth category', 26],
+                    ['Sixth category', 52],
+                ]);
+                var piechart_options = {
+                    chartArea: {
+                        width: '90%',
+                        height: '80%'
+                    },
+                    width: '100%',
+                    height: '100%',
+                    colors: ['#272D71', '#00B6C9', '#99CA3C', '#FFF611', '#E15D10', '#4A1036']
+                };
+                var piechart = new google.visualization.PieChart(document.getElementById('piechart2_div'));
+                piechart.draw(data2, piechart_options);
+            }
+            var list = $(".ui-sortable");
+            $('body').on('click', '.restore-scenarios', function () {
+                list.sortable('cancel');
+            });
+            //Capture Initial List
+            var initial = [];
+            $(".ui-sortable").each(function (index, anchor) {
+                initial.push(anchor.innerHTML);
+            });
+            //Restore default list
+            $('body').on('click', '.restore-scenarios', function () {
+                $(".ui-sortable").each(function (index, anchor) {
+                    anchor.innerHTML = initial[index];
+                    drawChart1();
+                    drawChart2();
+                    drawPie1();
+                    drawPie2();
+                });
+            });
+            //Fix for google charts drag and drop 
+            $(".ui-sortable").sortable({
+                update: function () {
+                    drawChart1();
+                    drawChart2();
+                    drawPie1();
+                    drawPie2();
+                }
+            });
+            $(window).resize(function () {
+                drawChart1();
+                drawChart2();
+                drawPie1();
+                drawPie2();
+            });
+        });
+    </script>
+{% endblock %}

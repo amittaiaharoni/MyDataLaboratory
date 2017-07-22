@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="MyDataLab\Bundle\LeadsBundle\Repository\LeadRepository"
+          name="MyDataLab\Bundle\LeadsBundle\Entity\Lead" table="mdl_leads"
+          inheritance-type="SINGLE_TABLE">
+    <discriminator-column name="leadSource" type="string" />
+    <discriminator-map>
+      <discriminator-mapping value="whitePaper" class="WhitePaperLead"/>
+      <discriminator-mapping value="contactUs" class="ContactUsLead"/>
+    </discriminator-map>
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="firstName" type="string" column="first_name" length="255"/>
+    <field name="lastName" type="string" column="last_name" length="255"/>
+    <field name="email" type="string" column="email" length="255"/>
+    <field name="addedAt" type="datetime" column="added_at"/>
+    <many-to-one target-entity="MyDataLab\Bundle\CoreBundle\Entity\Language" field="locale">
+      <join-column name="locale_id" referenced-column-name="id" />
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,49 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    {% if app.user %}<img src="{{ asset('bundles/mydatalabadmin/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">{% endif %}
+    <span class="hidden-xs">
+        {%- if app.user -%}
+        {{ app.user.username }}
+        {%- else -%}
+        guest
+        {%- endif -%}
+    </span>
+
+</a>
+<ul class="dropdown-menu">
+    {%- if app.user -%}
+        <li class="user-header">
+            <img src="{{ asset('bundles/mydatalabadmin/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+            <p>
+                MonStore.com - Web Developer
+                <small>Member since Nov. 2012</small>
+            </p>
+        </li>
+        <li class="user-body">
+            <div class="row">
+                <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+    <li class="user-footer">
+        {%- if app.user -%}
+            <div class="pull-left">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+            </div>
+            <div class="pull-right">
+                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-default btn-flat">Sign out</a>
+            </div>
+        {% else %}
+            <div class="pull-left">
+                <a href="{{ path('fos_user_security_login') }}" class="btn btn-default btn-flat">Login</a>
+            </div>
+        {% endif %}
+    </li>
+</ul>

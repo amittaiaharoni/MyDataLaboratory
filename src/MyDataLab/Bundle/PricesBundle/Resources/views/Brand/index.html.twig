@@ -1,0 +1,104 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Brands{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-lg-4">
+                <div class="small-box brands">
+                    <div class="inner">
+                        <h3>55</h3>
+                        <p>{% filter capitalize %}{% trans %}BRANDS{% endtrans %}{% endfilter %}</p>
+                        <div class="procent4">
+                            <p><i class="ion ion-arrow-up-a"></i></p>
+                            <p>+ 12%</p>
+                        </div>
+                    </div>
+                    <div class="icon">
+
+                        <i class="fa fa-registered"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">{% filter capitalize %}{% trans %}MORE_INFO{% endtrans %}{% endfilter %} <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header"><h3 class="box-title">{% filter capitalize %}{% trans %}BRANDS_LIST{% endtrans %}{% endfilter %}</h3></div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="export-csv csvcustom2"></div>
+                    <table id="brands" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>{% filter capitalize %}{% trans %}BRANDS{% endtrans %}{% endfilter %}</th>
+                                <th>{% filter capitalize %}{% trans %}PRODUCTS{% endtrans %}{% endfilter %}</th>
+                                <th>{% filter title %}{% trans %}E_RETAILER{% endtrans %}{% endfilter %} 1</th>
+                                <th>{% filter title %}{% trans %}E_RETAILER{% endtrans %}{% endfilter %} 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr><tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr><tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $("#brands").DataTable();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="my_data_lab_blog_post_create" path="/create" methods="POST">
+        <default key="_controller">MyDataLabBlogBundle:Post:create</default>
+    </route>
+    <route id="my_data_lab_blog_post_update" path="/{id}" methods="POST|PUT">
+        <default key="_controller">MyDataLabBlogBundle:Post:update</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+    <route id="my_data_lab_blog_post_get" path="/{id}" methods="GET">
+        <default key="_controller">MyDataLabBlogBundle:Post:get</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+    <route id="my_data_lab_blog_post_delete" path="/{id}" methods="DELETE">
+        <default key="_controller">MyDataLabBlogBundle:Post:delete</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+    <route id="my_data_lab_blog_post_preview" path="/preview/{id}" methods="GET">
+        <default key="_controller">MyDataLabBlogBundle:Post:preview</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+</routes>

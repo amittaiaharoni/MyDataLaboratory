@@ -1,0 +1,46 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li><a href="{{ path('my_data_lab_frontend_blog') }}">Blog</a></li>
+        <li class="active"><a href="#">{{ whitePaper.title | title}}</a></li>
+    </ol>
+{% endblock %}
+{% block meta %}
+    {% spaceless %}
+        {{ parent() }}
+        {% if whitePaper.metaDescription %}
+            <meta name="description" content="{{ whitePaper.metaDescription }}">
+        {% endif %}
+        <meta name="date" content="{{ whitePaper.createdAt|date('Y-m-d') }}" scheme="YYYY-MM-DD">
+        <meta http-equiv="last-modified" content="{{ whitePaper.updatedAt|date('Y-m-d@H:i:s e') }}">
+    {% endspaceless %}
+{% endblock %}
+{% block content %}
+    <section class="text-center text-md-left offset-1 well well-inset-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 section-border">
+                    <h1 class="text-center">{{ whitePaper.title }}</h1>
+                    <article class="well">
+                        <div class="col-md-8">
+                            {{ whitePaper.description }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form_start(signUpForm) }}
+                            {{ form_row(signUpForm.firstName) }}
+                            {{ form_row(signUpForm.lastName) }}
+                            {{ form_row(signUpForm.email) }}
+                            {{ form_row(signUpForm.phone) }}
+                            {{ form_row(signUpForm.companyName) }}
+                            {{ form_row(signUpForm.jobTitle) }}
+                            {{ form_row(signUpForm.country) }}
+                            {{ form_row(signUpForm.submit, {'attr': {'class': 'btn btn-primary btn-xs round-xl'}}) }}
+                            {{ form_end(signUpForm) }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

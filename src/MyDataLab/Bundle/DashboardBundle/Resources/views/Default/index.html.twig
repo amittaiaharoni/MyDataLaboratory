@@ -1,0 +1,64 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+    {# @deprecated #}
+    <div class="row">
+        <section class="col-lg-12">
+            <h1>{% filter title %}{% trans %}MY_DATABASE{% endtrans %}{% endfilter %}</h1>
+        </section>
+        <section id="sortable5" class="connectedSortable col-lg-3">
+            {{ mdl_widget('products') }}
+            {{ mdl_widget('categories') }}
+            {{ mdl_widget('star_products') }}
+        </section>
+        <section id="sortable6" class="connectedSortable col-lg-3">
+            {{ mdl_widget('brands') }}
+            {{ mdl_widget('subcategories') }}
+            {{ mdl_widget('alerts') }}
+        </section>
+        <section id="sortable7" class="connectedSortable col-lg-6">
+            {{ mdl_widget('latest_news') }}
+        </section>
+        <section id="sortable8" class="connectedSortable col-lg-6">
+            {{ mdl_widget('filled_data') }}
+        </section>
+        <section id="sortable9" class="connectedSortable col-lg-6">
+            {{ mdl_widget('product_price_range') }}
+        </section>
+        <section class="col-lg-12">
+            <h1>{% trans %}COMPETITORS_E_RETAILERS{% endtrans %}</h1>
+        </section>
+        <section id="sortable10" class="connectedSortable col-lg-4">
+            {{ mdl_widget('e_retailers') }}
+            {{ mdl_widget('e_retailers_common_products') }}
+        </section>
+        <section id="sortable11" class="connectedSortable col-lg-4">
+            {{ mdl_widget('competitors_brands') }}
+            {{ mdl_widget('matching_results') }}
+            {{ mdl_widget('missing_products') }}
+        </section>
+        <section id="sortable12" class="connectedSortable col-lg-4">
+            {{ mdl_widget('e_retailers_products') }}
+            {{ mdl_widget('e_retailers_matching_results') }}
+        </section>
+        <section id="sortable13" class="connectedSortable col-lg-6">
+            {{ mdl_widget('competitors_monitored') }}
+        </section>
+        <section id="sortable14" class="connectedSortable col-lg-6">
+            {{ mdl_widget('competitors_price_distribution') }}
+        </section>
+        <section id="sortable15" class="col-lg-6 connectedSortable">
+            {{ mdl_widget('last_product_changes') }}
+        </section>
+        <section id="sortable16" class="col-lg-6 connectedSortable">
+            {{ mdl_widget('strategic_desicions') }}
+        </section>
+        <section id="sortable17" class="col-lg-12 connectedSortable">
+            {{ mdl_widget('prices_compared') }}
+        </section>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/mydatalabwidget/js/widgets.js') }}"></script>
+{% endblock %}

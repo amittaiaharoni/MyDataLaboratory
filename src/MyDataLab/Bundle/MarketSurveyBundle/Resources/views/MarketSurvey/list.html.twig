@@ -1,0 +1,114 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Admin Market Survey Dashboard{% endblock %}
+{% block content %}
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Clients List</h3> </div>
+        <div class="box-body">
+            <div class="export-csv csvcustom"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table id="clientstable" class="table table-bordered table-striped text-center">
+                    <thead>
+                    <tr>
+                        <th>{% filter capitalize %}{% trans %}ID{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}NAME{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}ACTIVITY{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}MAIN_CATEGORY{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}CATEGORY{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}SUBCATEGORY{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}START{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}END{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}ERETAILER{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}MARKET_PLACE{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter title %}{% trans %}BRANDS{% endtrans %}{% endfilter %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for marketSurvey in marketSurveys %}
+                        <tr>
+                            <td>{{ marketSurvey.id }}</td>
+                            <td><a href="{{ path('my_data_lab_market_survey_list_overview', {'id': marketSurvey.id}) }}">{{ marketSurvey.name }}</a></td>
+                            <td>
+                                {% for activities in marketSurvey.activity %}
+                                    {% if loop.last %}
+                                        {{ activities.name }}
+                                    {% else %}
+                                        {{ activities.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for category in marketSurvey.mainCategories %}
+                                    {% if loop.last %}
+                                        {{ category.name }}
+                                    {% else %}
+                                        {{ category.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for category in marketSurvey.categories %}
+                                    {% if loop.last %}
+                                        {{ category.name }}
+                                    {% else %}
+                                        {{ category.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for category in marketSurvey.subCategories %}
+                                    {% if loop.last %}
+                                        {{ category.name }}
+                                    {% else %}
+                                        {{ category.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>{{ marketSurvey.timeSlotStart|date('m-d-Y') }}</td>
+                            <td>{{ marketSurvey.timeSlotEnd|date('m-d-Y') }}</td>
+                            <td>
+                                {% for retailer in marketSurvey.retailers %}
+                                    {% if loop.last %}
+                                        {{ retailer.name }}
+                                    {% else %}
+                                        {{ retailer.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for marketPlace in marketSurvey.marketPlaces %}
+                                    {% if loop.last %}
+                                        {{ marketPlace.name }}
+                                    {% else %}
+                                        {{ marketPlace.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for brand in marketSurvey.brands %}
+                                    {% if loop.last %}
+                                        {{ brand.name }}
+                                    {% else %}
+                                        {{ brand.name~', ' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    {#<script>#}
+        {#(function() {#}
+           {#"use strict";#}
+            {#$(function() {#}
+                {#alert('list script');#}
+            {#});#}
+        {#}());#}
+    {#</script>#}
+{% endblock %}

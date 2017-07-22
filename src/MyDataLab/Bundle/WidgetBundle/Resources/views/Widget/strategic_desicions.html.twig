@@ -1,0 +1,22 @@
+<div class="box mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+            <i class="fa fa-minus"></i>
+        </button>
+        <h3 class="box-title">{% filter title %}{% trans %}STRATEGIC_DESICIONS{% endtrans %}{% endfilter %}</h3>
+    </div>
+    <div class="box-body">
+        <div class="prod">
+            <ul class="col-lg-6 pull-left">
+                <li class="info-box-number">{% filter title %}{% trans %}PRICING_OPPROTUNITIES{% endtrans %}{% endfilter %}</li>
+                <li>3420 {% trans %}PRODUCTS_CANDIDATES_PRICE_REDUCTION{% endtrans %}</li>
+                <li>56 {% trans %}PRODUCTS_CANDIDATES_PRICE_RAISE{% endtrans %}</li>
+            </ul>
+            <ul class="col-lg-6 pull-right">
+                <li class="info-box-number">Availibility Opportunities</li>
+                <li>2549 {% trans %}PRODUCTS_OUT_STOCK_COMPETITORS{% endtrans %}</li>
+                <li>3471 {% trans %}DELAYED_DELIVERY_COMPETITORS{% endtrans %}</li>
+            </ul>
+        </div>
+    </div>
+</div>

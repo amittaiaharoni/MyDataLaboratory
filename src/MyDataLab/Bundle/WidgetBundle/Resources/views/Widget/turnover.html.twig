@@ -1,0 +1,55 @@
+<div class="box mdl-widget-area mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <h3 class="box-title">{% filter capitalize %}{% trans %}TURNOVER{% endtrans %}{% endfilter %}</h3>
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+            <i class="fa fa-minus"></i>
+        </button>	
+    </div>
+    <div class="box-body"> 
+        <table style="display: none;">
+            <thead>
+                <tr>
+                    <th>y</th>
+                    <th>Item 1</th>
+                    <th>Item 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2011 Q1</td>
+                    <td>2666</td>
+                    <td>2666</td>
+                </tr>
+                <tr>
+                    <td>2011 Q2</td><td>2778</td><td>2294</td>
+                </tr>
+                <tr>
+                    <td>2011 Q3</td><td>4912</td><td>1969</td>
+                </tr>
+                <tr>
+                    <td>2011 Q4</td><td>3767</td><td>3597</td>
+                </tr>
+                <tr>
+                    <td>2012 Q1</td><td>6810</td><td>1914</td>
+                </tr>
+                <tr>
+                    <td>2012 Q2</td><td>5670</td><td>4293</td>
+                </tr>
+                <tr>
+                    <td>2012 Q3</td><td>4820</td><td>3795</td>
+                </tr>
+                <tr>
+                    <td>2012 Q4</td><td>15073</td><td>5967</td>
+                </tr>
+                <tr>
+                    <td>2013 Q1</td><td>10687</td><td>4460</td>
+                </tr>
+                <tr>
+                    <td>2013 Q2</td><td>8432</td><td>5713</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="chart" style="position: relative; height: 300px;"></div>
+    </div>
+    <div class="box-footer"></div>
+</div>

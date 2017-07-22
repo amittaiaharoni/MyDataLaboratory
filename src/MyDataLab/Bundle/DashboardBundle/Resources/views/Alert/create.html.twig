@@ -1,0 +1,194 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Create Alert{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="box">
+            <div class="box-header">
+                <h3>Select a product a brand or a category</h3>
+            </div>
+            <div class="box-body">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" name="q" class="input-lg form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-lg btn-flat"><i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="tables_selectbox">  
+                        <dl class="dropdown_4"> 
+                            <dt>
+                                <a>
+                                    <span class="hida_4">Brands</span><i class="fa fa-caret-right text-yellow"></i>
+                                    <p class="multiSel_4"></p>  
+                                </a>
+                            </dt>
+                            <dd>
+                                <div class="mutliSelect_4">
+                                    <ul>
+                                        <li><input type="checkbox" value="All_4" /> All</li>
+                                        <li><input type="checkbox" value="Marque 1" />Marque 1</li>
+                                        <li><input type="checkbox" value="Marque 2" />Marque 2</li>
+                                        <li><input type="checkbox" value="Marque 3" />Marque 3</li>
+                                        <li><input type="checkbox" value="Marque 4" />Marque 4</li>
+                                        <li><button class="btn btn-default">Filter</button></li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="tables_selectbox">
+                        <dl class="dropdown_3"> 
+                            <dt>
+                                <a>
+                                    <span class="hida_3">Categories</span><i class="fa fa-caret-right text-yellow"></i>
+                                    <p class="multiSel_3"></p>  
+                                </a>
+                            </dt>
+                            <dd>
+                                <div class="mutliSelect_3">
+                                    <ul>
+                                        <li><input type="checkbox" value="All_3" />All</li>
+                                        <li><input type="checkbox" value="Perfumes" />Perfumes</li>
+                                        <li><input type="checkbox" value="Cosmétiques" />Cosmétiques</li>
+                                        <li><input type="checkbox" value="Catégorie 3" />Catégorie 3</li>
+                                        <li><input type="checkbox" value="Catégorie 4" />Catégorie 4</li>
+                                        <li><button class="btn btn-default">Filter</button></li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <h3>Select a rule</h3>
+            </div>
+            <div class="box-body">
+                <div class="col-md-6">
+                    <div id="tables_selectbox">  
+                        <dl class="dropdown_8"> 
+                            <dt>
+                                <a>
+                                    <span class="hida_8">Alert Rule</span><i class="fa fa-caret-right text-yellow"></i>
+                                    <p class="multiSel_8"></p>  
+                                </a>
+                            </dt>
+                            <dd>
+                                <div class="mutliSelect_8">
+                                    <ul>
+                                        <li><input type="checkbox" value="lorem" /> Lorem Ipsum Dolor</li>
+                                        <li><input type="checkbox" value="lorem 1" />Lorem Ipsum Dolor</li>
+                                        <li><input type="checkbox" value="lorem 2" />Lorem Ipsum Dolor 2</li>
+                                        <li><input type="checkbox" value="lorem 3" />Lorem Ipsum Dolor 3</li>
+                                        <li><input type="checkbox" value="lorem 4" />Lorem Ipsum Dolor 4</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="tables_selectbox">  
+                        <dl class="dropdown_6"> 
+                            <dt>
+                                <a>
+                                    <span class="hida_6">Type of Price Gap</span><i class="fa fa-caret-right text-yellow"></i>
+                                    <p class="multiSel_6"></p>  
+                                </a>
+                            </dt>
+                            <dd>
+                                <div class="mutliSelect_6">
+                                    <ul>
+                                        <li><input type="checkbox" value="procent" /> %</li>
+                                        <li><input type="checkbox" value="Euro" />Euro</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="tables_selectbox">
+                        <dl class="dropdown_7"> 
+                            <dt>
+                                <a>
+                                    <span class="hida_7">Value of the Diffrence</span><i class="fa fa-caret-right text-yellow"></i>
+                                    <p class="multiSel_7"></p>  
+                                </a>
+                            </dt>
+                            <dd>
+                                <div class="mutliSelect_7">
+                                    <ul>
+                                        <li><input type="checkbox" value="1" />1</li>
+                                        <li><input type="checkbox" value="2" />2</li>
+                                        <li><input type="checkbox" value="3" />3</li>
+                                        <li><input type="checkbox" value="4" />4</li>
+                                        <li><input type="checkbox" value="5" />5</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <h3>Select Email of destination for the alert</h3>
+            </div>
+            <div class="box-body">
+                <div class="col-md-6">
+                    <div id="tables_selectbox">
+                        <dl class="dropdown_9"> 
+                            <dt>
+                                <a>
+                                    <span class="hida_9">Select Email(s)</span><i class="fa fa-caret-right text-yellow"></i>
+                                    <p class="multiSel_9"></p>  
+                                </a>
+                            </dt>
+                            <dd>
+                                <div class="mutliSelect_9">
+                                    <ul>
+                                        <li><input type="checkbox" value="email_all" />All Members</li>
+                                        <li><input type="checkbox" value="email1" />email@something.com</li>
+                                        <li><input type="checkbox" value="email2" />email@something.com</li>
+                                        <li><input type="checkbox" value="email3" />email@something.com</li>
+                                        <li><input type="checkbox" value="email4" />email@something.com</li>
+                                        <li><input type="checkbox" value="email5" />email@something.com</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            var chk1 = $("input[type='checkbox'][value='email_all']");
+            var chk2 = $("input[type='checkbox'][value='email1']");
+            var chk3 = $("input[type='checkbox'][value='email2']");
+            var chk4 = $("input[type='checkbox'][value='email3']");
+            var chk5 = $("input[type='checkbox'][value='email4']");
+            var chk6 = $("input[type='checkbox'][value='email5']");
+            chk1.on('change', function () {
+                chk2.prop('checked', this.checked);
+                chk3.prop('checked', this.checked);
+                chk4.prop('checked', this.checked);
+                chk5.prop('checked', this.checked);
+                chk6.prop('checked', this.checked);
+            });
+        });
+    </script>
+{% endblock %}

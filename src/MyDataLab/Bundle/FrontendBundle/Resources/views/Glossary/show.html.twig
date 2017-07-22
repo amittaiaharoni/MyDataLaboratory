@@ -1,0 +1,54 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li><a href="{{ path('my_data_lab_frontend_blog') }}">Glossary</a></li>
+        <li class="active"><a href="#">{{ definition.title | title}}</a></li>
+    </ol>
+{% endblock %}
+{% block meta %}
+    {% spaceless %}
+        {{ parent() }}
+        <meta name="date" content="{{ definition.createdAt|date('Y-m-d') }}" scheme="YYYY-MM-DD">
+        <meta http-equiv="last-modified" content="{{ definition.createdAt|date('Y-m-d@H:i:s e') }}">
+        <meta name="author" content="{{ definition.author.username }}">
+    {% endspaceless %}
+{% endblock %}
+{% block content %}
+    <section class="text-center text-md-left offset-1 well well-inset-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 section-border">
+                    <article class="well">
+                        <h1>{{ definition.title }}</h1>
+                        <div class="blog-info">
+                            <div class="pull-md-left">
+                                <time datetime="{{ definition.createdAt|date(constant('DATE_ATOM')) }}" class="meta fa-calendar">{{ definition.createdAt|date }}</time>
+                                <a class="badge fa-user text-uppercase font-secondary">{{ definition.author.username }}</a>
+                                <span class="tags"><a class="badge fa-tags"></a>
+                                    <a class="post-tag round-xl small">{{ definition.glossary.name }}</a>
+                                </span>
+                            </div>
+                        </div>
+                        {{ definition.content | raw }}
+                    </article>
+                </div>
+                <div class="col-xs-12 section-border">
+                    <div class="blog-info blog-info-inset text-center text-lg-left">
+                        <div class="pull-lg-right inline-block"><span class="small font-secondary text-uppercase text-light-clr">Share this</span>
+                            <ul class="list-inline list-inline-4 pull-md-right">
+                                <li><a href="#" class="fa-facebook text-info"></a></li>
+                                <li><a href="#" class="fa-pinterest-p text-danger"></a></li>
+                                <li><a href="#" class="fa-twitter text-primary"></a></li>
+                                <li><a href="#" class="fa-google-plus text-danger"></a></li>
+                                <li><a href="#" class="fa-instagram text-info"></a></li>
+                                <li><a href="#" class="fa-rss"></a></li>
+                                <li><a href="#" class="fa-envelope text-info"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

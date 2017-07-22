@@ -1,0 +1,487 @@
+{% extends "MyDataLabAdminBundle::base.html.twig" %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+    <div id="form-wizard" class="form-wizard">
+        <div class="step-scheme-wrapper">
+            <div class="step-scheme">
+                <ul>
+                    <li><span>1</span></li>
+                    <li><span>2</span></li>
+                    <li><span>3</span></li>
+                    <li><span>4</span></li>
+                    <li><span>5</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="survey-current-data">
+        </div> 
+
+        <div class="step" id="step1">
+            <h5>Select activity</h5>
+            <div class="substep" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'activity'}) }}">
+                {{ form_widget(form.activity, {'attr': {'data-wizard': 'activities', 'multiple': 'true'}}) }}
+            </div>
+        </div>
+
+        <div class="step" id="step2" data-customfn="categoriesFnc">
+            <h5>Select categories</h5>
+
+            <div class="substep" id="mainCategory" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'mainCategory'}) }}">
+                <h6>Main category</h6>
+                {{ form_widget(form.mainCategories, {'attr': {'data-wizard': 'mainCategories', 'multiple': 'true'}}) }}
+            </div>
+
+            <div class="substep" id="category" data-value-dependency="mainCategory" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'category'}) }}">
+                <h6>Category</h6>
+                {{ form_widget(form.categories, {'attr': {'data-wizard': 'categories', 'data-value-dependency': 'true', 'multiple': 'true'}}) }}
+            </div>
+
+            <div class="substep" id="subCategory" data-id data-value-dependency="category" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'subCategory'}) }}">
+                <h6>Sub-category</h6>
+                {{ form_widget(form.subCategories, {'attr': {'data-wizard': 'subCategories', 'multiple': 'true'}}) }}
+            </div>
+        </div>
+
+        <div class="step" id="step3" data-customfn="categoriesFnc">
+            <h5>Time slot of the market survey</h5>
+
+            <div class="substep" id="timeSlotStart">
+                <h6>Select start date</h6>
+                {{ form_widget(form.timeSlotStart, {'attr': {'data-wizard': 'timeSlotStart', 'class': 'datepicker'}}) }}
+            </div>
+
+            <div class="substep" id="timeSlotEnd">
+                <h6>Select end date</h6>
+                {{ form_widget(form.timeSlotEnd, {'attr': {'data-wizard': 'timeSlotEnd', 'class': 'datepicker'}}) }}
+            </div>
+        </div> 
+
+        <div class="step" id="step4" data-customfn="categoriesFnc">
+            <h5>Segmentation of market survey</h5>
+
+            <div class="substep" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'retailer'}) }}">
+                <h6>E-retailers</h6>
+                {{ form_widget(form.retailers, {'attr': {'data-wizard': 'retailers', 'multiple': 'true'}}) }}
+            </div>
+
+            <div class="substep visible" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'marketPlace'}) }}">
+                <h6>Market places</h6>
+                {{ form_widget(form.marketPlaces, {'attr': {'data-wizard': 'marketPlaces', 'multiple': 'true'}}) }}
+            </div>
+
+            <div class="substep visible" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'brand'}) }}">
+                <h6>Brands</h6>
+                {{ form_widget(form.brands, {'attr': {'data-wizard': 'brands', 'multiple': 'true'}}) }}
+            </div>
+        </div>   
+
+        <div class="step" id="step5" data-customfn="categoriesFnc">
+            <div class="substep" data-get-url="{{ path('my_data_lab_market_survey_get', {'attribute': 'name'}) }}">
+                <h5>Name your market survey</h5>
+                {{ form_widget(form.name, {'attr': {'data-wizard': 'name', 'class': 'survey-name', 'multiple': 'true'}}) }}
+            </div>
+        </div>
+
+        <div class="wizard-footer">
+            <button type="button" class="btn btn-info btn-back">Back</button>
+            <button type="button" class="btn btn-info btn-next">Next</button>
+            <button type="button" class="btn btn-default btn-submit">Submit</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        (function() {
+           "use strict";    
+
+           //dummy data
+           var mainActivities = [
+                {
+                    id: 1,
+                    name: "option1"
+                },
+                {
+                    id: 2,
+                    name: "option2"
+                },
+                {
+                    id: 3,
+                    name: "option3"
+                },
+            ];
+
+            //survey model
+            /*var survey = {
+               activities: [],
+               categories: [],
+               date: "",
+               eRetailers: [],
+               mainCategories: [],
+               marketPlaces: [],
+               name: "",
+               subCategories: [],
+               brands: []
+            }*/
+            var survey = {};
+
+            //select data 
+            var selectData = function() {
+                return ["All"];
+            };
+
+            var SurveyWizard = function SurveyWizard(elementId) {
+                var $selectElements,
+                    _this = this,
+                    $nextBtn,
+                    $backBtn,
+                    $subSteps,
+                    $subStepsCustom,
+                    $steps,
+                    $stepSchemeSteps,
+                    $submitBtn,
+                    $currentData,   
+                    $brands,
+                    localStorage = localStorage || window.localStorage;
+
+                this.currentStep = 0;
+                this.currentSubStep = 0;
+                this.subStepsLength = 0;
+
+                //init
+                this.init = function init() {   
+                    this.$steps = $("#" + elementId).find(".step");
+                    this.$stepSchemeSteps = $("#" + elementId).find("li");
+                    this.$currentData = $("#" + elementId).find(".survey-current-data");
+                    this.$brands = $("#brands"),
+                    this.setWizardStep(0);
+                };
+
+                //update survey chosen values
+                this.updateCurrentData = function() {
+                    var htmlData = "";
+
+                    for (var prop in survey) {
+                        htmlData += "<div class='prop'><h6>" + prop + "</h6>" + survey[prop].toString().replace(",", ", ") + "</div>";                       
+                    }
+
+                    this.$currentData.html(htmlData);
+                };
+
+                //clean rest of steps' data when changing select value
+                this.cleanRestOfSteps = function cleanRestOfSteps(index) {
+                    if ( index <= this.subStepsLength ) {
+                        for (var i = index; i <= this.subStepsLength; i++) {
+                            _this.$subSteps.eq(i).find("[type='text']").val("");
+
+                            if (_this.$subSteps.eq(i).find("select").data("select2")) {
+                                _this.$subSteps.eq(i).find("select").html("").select2("destroy");
+                            }
+                            _this.$subSteps.eq(i).removeClass("visible");
+                        }
+                    }
+                };
+
+
+                this.categoriesFnc = function categoriesFnc(subSteps){
+                    $(subSteps).find("select").on("change", function(){
+                        if($(this).select2("val") !== null){
+                            var nextChild = $(this).closest('.substep').next(".substep");
+                            nextChild.find('select').empty();
+                            if(!nextChild.length){
+                                _this.$nextBtn.show();
+                            }
+                            else{
+                                var dependedValues = null;
+                                if(nextChild.data('value-dependency')){
+                                    var dependencySelectTag = $('#'+nextChild.data('value-dependency')).find("select");
+                                    dependedValues = [];
+                                    if($(this).select2("val")[0] === 'All'){
+                                        dependencySelectTag.children('option').each(function () {
+                                            dependedValues.push($(this).val());
+                                        })
+                                    }
+                                    else{
+                                        dependedValues = dependencySelectTag.select2("val");
+                                    }
+                                }
+                                _this.getSelectItems(nextChild, dependedValues).then(function(categories) {
+                                    $(nextChild).addClass("visible");
+
+                                    var activitiesMain = ["All"];
+                                    categories.forEach(function(e) {
+                                        activitiesMain.push(e.name);
+                                    });
+
+                                    $(nextChild).find('select').select2({
+                                        data: activitiesMain,
+                                        multiple: true,
+                                        allowClear: true,
+                                        placeholder: "Please select",
+                                        width: "100%"
+                                    });
+                                });
+                            }
+                        }
+                        else{
+                            $(this).closest('.substep').nextAll('.substep').removeClass('visible');
+                            _this.$nextBtn.hide();
+                        }
+
+                        var values = [];
+                        if($(this).select2("val") !== null && $(this).select2("val")[0] === 'All'){
+                            $(this).find('option').each(function () {
+                                values.push($(this).val());
+                            });
+                        }
+                        else{
+                            values = $(this).select2('val');
+                        }
+                        survey[$(this).data("wizard")] = values;
+                    });
+
+                    $(subSteps).find(".datepicker").on("change", function(){
+                        if($(this).val() !== ""){
+                            var nextChild = $(this).closest('.substep').next(".substep");
+                            if(!nextChild.length){
+                                _this.$nextBtn.show();
+                            }
+                            else{
+                                nextChild.addClass('visible');
+                                nextChild.find("input").prop('min', $(this).val());
+                            }
+                            if((nextChild.find('input').val() !== "" && Date.parse(nextChild.find('input').val()) < Date.parse($(this).val()))){
+                                nextChild.find('input').val("");
+                                _this.$nextBtn.hide();
+                            }
+
+                        }
+                        else{
+                            $(this).closest('.substep').nextAll('.substep').removeClass('visible');
+                            _this.$nextBtn.hide();
+                        }
+
+                        survey[$(this).data("wizard")] = $(this).val();
+                    });
+
+                    $(subSteps).find("input[type=text]").on("input", function () {
+                        if($(this).val() !== ""){
+                            var nextChild = $(this).closest('.substep').next(".substep");
+                            if(!nextChild.length){
+                                _this.$nextBtn.show();
+                            }
+                            else{
+                                nextChild.addClass('visible');
+                            }
+
+                        }
+                        else{
+                            $(this).closest('.substep').nextAll('.substep').removeClass('visible');
+                            _this.$nextBtn.hide();
+                        }
+                    });
+
+                };
+                
+                //set current wizard step
+                this.setWizardStep = function setWizardStep(index) {
+                    var date = new Date(),
+                    currentMonth = date.getMonth(),
+                    currentDate = date.getDate(),
+                    currentYear = date.getFullYear();
+                    this.currentStep = index;
+                    this.$subSteps = this.$steps.eq(index).find(".substep");
+                    this.subStepsLength = this.$subSteps.length - 1;
+                    this.$nextBtn = $("#" + elementId).find(".btn-next");
+                    this.$backBtn = $("#" + elementId).find(".btn-back");
+                    this.$surveyName = $("#" + elementId).find(".survey-name");
+                    this.currentSubStep = 0;
+                    this.customStepFn = false || this.$steps.eq(index).data("customfn");
+
+                    if($(this.$subSteps).filter(".visible").length === $(this.$subSteps).length){
+                        this.currentSubStep = this.subStepsLength + 1;
+                    }
+                    
+                    this.$backBtn.hide();
+
+                    if (index > 0) {
+                        this.$backBtn.show();
+                    };
+
+                    this.setActiveSubStep(this.currentSubStep);
+                    this.$steps.hide().eq(index).show();
+
+                    this.$stepSchemeSteps.removeClass("active").eq(index).addClass("active");
+
+                    this.$subSteps.each(function(index) {
+                        if (index > 0 &&(_this.currentSubStep < _this.subStepsLength + 1)) {
+                            $(this).removeClass("visible").find("select").html("").closest(".substep").find("input").val("");
+                        }
+                    });
+
+                    if (this.customStepFn) {
+                        this[this.customStepFn](_this.$subSteps);
+                    } else {
+                    
+                        this.$subSteps.find("select").on("change", function() {
+
+                                if ($(this).data("select2")) {
+                                    _this.currentSubStep = $(this).closest(".substep").index();
+
+                                    if ($(this).select2("val") === null) {
+                                        _this.$nextBtn.hide();
+                                        _this.currentSubStep--;
+                                    }
+
+                                    var values = [];
+                                    if($(this).select2("val") !== null && $(this).select2("val")[0] === 'All'){
+                                        $(this).find('option').each(function () {
+                                            values.push($(this).val());
+                                        });
+                                    }
+                                    else{
+                                        values = $(this).select2('val');
+                                    }
+                                    survey[$(this).data("wizard")] = values;
+
+                                    _this.cleanRestOfSteps(_this.currentSubStep);
+                                    _this.setActiveSubStep(_this.currentSubStep);
+                                }
+
+                        });
+
+                    }
+
+                    this.$surveyName.on("blur", function() {
+                        if ($(this).val() != "") {
+                            _this.currentSubStep = $(this).closest(".substep").index();
+                            _this.$nextBtn.show();
+                            
+                            survey.name = $(this).val();
+                            
+                        } else {
+                            _this.$nextBtn.hide();
+                        }
+                    });
+
+                    this.$nextBtn.off("click").on("click", function() {
+
+                        _this.updateCurrentData();
+                        _this.currentStep++;
+
+                        if (_this.currentStep == _this.$steps.length) {
+                        
+                            _this.sendSurvey(survey).then(function(link) {
+                                _this.$nextBtn.hide();
+                                _this.$backBtn.hide();
+                                window.location.href = link;
+                            });
+
+                        } else {
+                            _this.setWizardStep(_this.currentStep);
+
+                        }
+                    });
+
+                    this.$backBtn.off("click").on("click", function() {
+                        _this.$nextBtn.show();
+                        _this.currentStep--;
+                        _this.setWizardStep(_this.currentStep);
+                    });
+                };
+
+                //set active sub step in the current wizard step
+                this.setActiveSubStep = function setActiveSubStep(index) {
+                    this.getSelectItems(_this.$subSteps.eq(index))
+                    .then(function(activities) {
+                        var activitiesMain = ["All"];
+                            activities.forEach(function(e) {
+                                activitiesMain.push(e.name);
+                        });
+
+                        _this.$nextBtn.hide();
+
+                        if (_this.$subSteps.eq(index).find("select").length) {
+
+                            if (!_this.$subSteps.eq(index).find("select").data("select2")) {
+
+                                _this.$subSteps.eq(index).addClass("visible").find("select").empty();
+                                _this.$subSteps.eq(index).addClass("visible").find("select").select2({
+                                    data: activitiesMain,
+                                    multiple: true,
+                                    allowClear: true,
+                                    placeholder: "Please select",
+                                    width: "100%"
+                                });
+
+                            }
+
+                        } else {
+                            _this.$subSteps.eq(index).addClass("visible");
+                        }
+
+                        if (_this.currentSubStep > _this.subStepsLength) {
+                            _this.$nextBtn.show();
+                        }
+
+                    });
+                };
+ 
+                //get items for filling the step's select data
+                this.getSelectItems = function getSelectItems(subStep, extraData) {
+                    //get substep element name
+                    var $deferred = $.Deferred();
+
+                    $.ajax({
+                        type: 'GET',
+                        url: $(subStep).data('get-url'),
+                        dataType: 'json',
+                        data: {'extraData': extraData},
+                        success: function (response) {
+                            var activitiesArray = $.map(response, function (el) {
+                                return el
+                            });
+                            $deferred.resolve(activitiesArray);
+                        },
+                        error: function () {
+                            $deferred.resolve([]);
+                        }
+                    });
+
+                    return $deferred.promise();
+                };
+
+                //send survey data
+                this.sendSurvey = function sendSurvey(surveyData) {
+                    var $deferred = $.Deferred();
+
+                    $.ajax({
+                        type: 'POST',
+                        url: $("#"+elementId).closest('form').prop('action'),
+                        dataType: 'text',
+                        data: {'surveyData': surveyData},
+                        success: function (response) {
+                            $deferred.resolve(response);
+                        }
+                    });
+
+                    return $deferred.promise();
+                }
+            };
+
+            $(function() {
+                var wizard = new SurveyWizard("form-wizard");
+                wizard.init();
+            });
+        }());
+    </script>
+{% endblock %}

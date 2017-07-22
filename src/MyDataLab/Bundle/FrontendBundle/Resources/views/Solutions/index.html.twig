@@ -1,0 +1,59 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb section-border">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter title %}{% trans %}HOME{% endtrans %}{% endfilter %}</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_solutions') }}">{% filter title %}{% trans %}SOLUTIONS{% endtrans %}{% endfilter %}</a></li>
+    </ol>
+{% endblock %}
+{% block content %}
+    <section class="text-center offset-1 bottomspace">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row-services-performing">
+                        <p></p>
+                        <h5>{% trans %}PRICING_OPTIMIZE_STRATEGY_H5{% endtrans %}</h5>
+                        <ul class="list">
+                            <li><i class="fa-check big light-blue"></i>{% trans %}AUTOMATIC_EXTRACTION_DAILY_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}POWERFUL_MATCHING_ALGORITHMS_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}EXTRACTION_PLATFORM_MARKETPLACE_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}CLEAR_VALUABLE_CHARTS_LI{% endtrans %}</li>
+                        </ul>
+                        <p></p>
+                        <a href="#" title="{% trans %}PRICING_INTELLIGENCE{% endtrans %}" class="btn btn-primary btn-xs round-xl"><span class="fa-angle-right"></span> {% filter upper %}{% trans %}PRICING_INTELLIGENCE{% endtrans %}{% endfilter %}</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+
+                    <div class="row-services-market">
+                        <p>
+                        </p><h5>{% trans %}ANALYSIS_MAXIMIZE_SUPPLY_H5{% endtrans %}</h5>
+                        <ul class="list">
+                            <li><i class="fa-check big light-blue"></i>{% trans %}AUTOMATIC_CATALOGUE_DAILY_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}OVERSEE_CATALOGUE_SUPPLY_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}CLEAR_VALUABLE_CHARTS_LI{% endtrans %}</li>
+                        </ul>
+                        <p></p>
+                        <a href="#" title="{% trans %}CATALOGUE_ANALYSIS{% endtrans %}" class="btn btn-primary btn-xs round-xl"><span class="fa-angle-right"></span> {% filter title %}{% trans %}CATALOGUE_ANALYSIS{% endtrans %}{% endfilter %}</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                    <div class="row-services-market">
+                        <p></p>
+                        <h5>{% trans %}TEAM_ANSWER_QUESTIONS_H5{% endtrans %}<a style="color:#00b6c9" href="./contact-us.php">{% trans %}TEAM_ANSWER_QUESTIONS_H5_LINK{% endtrans %}contact us</a> {% trans %}TEAM_ANSWER_QUESTIONS_H5_2{% endtrans %}to get your clear and valuable deliverable!</h5>
+                        <ul class="list">
+                            <li><i class="fa-check big light-blue"></i>{% trans %}TEAM_PASSIONAE_CONSULTANTS_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}EXPERTS_MARKET_SECTORS_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}OBTAIN_CRUNCH_PERCIOUS_LI{% endtrans %}</li>
+                            <li><i class="fa-check big light-blue"></i>{% trans %}CLEAR_VALUABLE_DELIVERABLES_LI{% endtrans %}</li>
+                        </ul>
+                        <p></p>
+                        <a href="#" title="{% trans %}MARKET_INTELLIGENCE{% endtrans %}" class="btn btn-primary btn-xs round-xl"><span class="fa-angle-right"></span> {% filter upper %}{% trans %}MARKET_INTELLIGENCE{% endtrans %}{% endfilter %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

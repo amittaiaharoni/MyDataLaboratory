@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="my_data_lab_widget.widget_loader.class">MyDataLab\Bundle\WidgetBundle\Service\WidgetLoader</parameter>
+        <parameter key="my_data_lab_widget.widget_handler_chain.class">MyDataLab\Bundle\WidgetBundle\WidgetHandlerChain</parameter>
+        <parameter key="my_data_lab_widget.login_listener.class">MyDataLab\Bundle\WidgetBundle\EventListener\LoginListener</parameter>
+    </parameters>
+    <services>
+        <service id="my_data_lab_widget.twig_extension" class="MyDataLab\Bundle\WidgetBundle\Twig\WidgetExtension" public="false">
+            <argument type="service" id="service_container" />
+            <tag name="twig.extension" />
+            <!--            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>-->
+        </service>
+        <service id="my_data_lab_widget.widget_loader" class="%my_data_lab_widget.widget_loader.class%">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument>%kernel.root_dir%</argument>
+        </service>
+        <service id="my_data_lab_widget.widget_handler_chain" class="%my_data_lab_widget.widget_handler_chain.class%" />
+        <service id="my_data_lab_widget.login_listener" class="%my_data_lab_widget.login_listener.class%">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+    </services>
+</container>

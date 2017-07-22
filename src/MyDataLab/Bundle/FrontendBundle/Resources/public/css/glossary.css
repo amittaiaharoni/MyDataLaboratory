@@ -1,0 +1,52 @@
+.pagination-sm > li > a,
+.pagination-sm > li > a,
+.pagination-sm > li > a,
+.pagination-sm > li > a:focus,
+.pagination-sm > li > a:focus,
+.pagination-sm > li > a:focus,
+.pagination-sm > li > a:hover,
+.pagination-sm > li > a:hover,
+.pagination-sm > li > a:hover {
+    padding: 9px 12px;
+    font-size: 17px;
+}
+
+.glossary {
+}
+
+.glossary li {
+    list-style: square;
+    color: #1fa2d6;
+}
+
+.glossary li div {
+    color: black;
+}
+
+.glossary li div a {
+    font: normal 25px / 35px 'Lato';
+    color: #717171;
+    cursor: pointer;
+}
+
+.glossary li div a:hover {
+    text-decoration: underline;
+    color: #009cc1;
+}
+
+.glossaries {
+}
+
+.glossaries li div {
+    color: black;
+}
+
+.glossaries li div a {
+    font: normal 25px / 35px 'Lato';
+    color: #009cc1;
+    cursor: pointer;
+}
+
+.glossaries li div a:hover {
+    text-decoration: underline;
+}

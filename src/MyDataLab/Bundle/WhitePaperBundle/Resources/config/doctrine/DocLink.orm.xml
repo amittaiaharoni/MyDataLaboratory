@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="MyDataLab\Bundle\WhitePaperBundle\Repository\DocLinkRepository" name="MyDataLab\Bundle\WhitePaperBundle\Entity\DocLink" table="mdl_doc_links">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="link" type="string" column="link" length="255" unique="true"/>
+    <field name="used" type="boolean" column="used"/>
+    <many-to-one field="file" target-entity="MyDataLab\Bundle\WhitePaperBundle\Entity\WhitePaper">
+      <join-column name="file_id" referenced-column-name="id" />
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

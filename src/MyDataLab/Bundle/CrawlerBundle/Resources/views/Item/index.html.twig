@@ -1,0 +1,39 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Crawler items{% endblock %}
+{% block content %}
+    <h1>Items list</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td><a href="{{ path('my_data_lab_crawler_items_show', { 'id': item.id }) }}">{{ item.name }}</a></td>
+                <td>{{ item.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('my_data_lab_crawler_items_show', { 'id': item.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('my_data_lab_crawler_items_edit', { 'id': item.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-default" href="{{ path('my_data_lab_crawler_items_new') }}">Create a new item</a>
+        </li>
+    </ul>
+{% endblock %}

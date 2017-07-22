@@ -1,0 +1,26 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block contentHeader %}
+    {{ parent() }}
+    <button type="button" class="restore-scenarios btn btn-default" data-url="{{ path('my_data_lab_widget_reset') }}">Restore to Default Positions</button>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <input type="hidden" id="save-order-url" value="{{ saveOrderUrl }}">
+        {% for parent, widgetsParent in widgetsPerParent %}
+            <section id="{{ parent }}" class="{{ widgetsParent.class }}">
+                {% for widget in widgetsParent.widgets %}
+                    {{ mdl_widget(widget) }}
+                {% endfor %}
+            </section>
+            {% if widgetsParent.after is defined%}
+                {% include 'MyDataLabWidgetBundle:partial:' ~ widgetsParent.after %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/mydatalabretailers/js/retailers.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabwidget/js/widgets.js') }}"></script>
+{% endblock %}

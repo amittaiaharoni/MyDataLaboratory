@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="wide wow-animation">
+    <head>
+        <title>{% trans %}MYDATALAB{% endtrans %}</title>
+        {% block meta %}
+            <meta charset="utf-8">
+            <meta name="format-detection" content="telephone=no">
+            <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        {% endblock %}
+        {% block styles %}
+            <link rel="icon" href="{{ asset('bundles/mydatalabfrontend/images/favicon.ico') }}" type="image/x-icon">
+            <link rel="stylesheet" href="{{ asset('bundles/mydatalabfrontend/css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/mydatalabfrontend/css/template.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/mydatalabfrontend/css/movil.css') }}">
+        {% endblock %}
+        {% block ie9warning %}
+            <!--[if lt IE 10]>
+                <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/.."><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+                <script src="{{ asset('bundles/mydatalabfrontend/js/html5shiv.min.js') }}"></script><[endif]-->
+        {% endblock %}
+    </head>
+    <body>
+        <div class="page">
+            <header class="page-header">
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar bg-white" data-layout="rd-navbar-fixed" data-hover-on="false" data-stick-up="false" data-sm-layout="rd-navbar-fullwidth" data-md-layout="rd-navbar-static">
+                        <div class="rd-navbar-top-panel">
+                            <div class="rd-navbar-inner">
+                                <div class="contact-data">
+                                {% filter capitalize %}{% trans %}CONTACT_US{% endtrans %}{% endfilter %}: <a href="mailto:contact@mydatalaboratory.com">contact@mydatalaboratory.com</a> <a href="callto:#">+33 1 98 76 54 32 (FR)</a> <a href="callto:#">+972 54 321 123 (EN)</a></div>
+                            <div class="list-inline pull-right">
+                                {% include 'MyDataLabFrontendBundle::langauge-selector.html.twig' %}
+                                <a class="btn-turq" title="{% trans %}LOG_IN{% endtrans %}" href="{{ path('fos_user_security_login') }}">{% filter upper %}{% trans %}LOG_IN{% endtrans %}{% endfilter %}</a>
+                                <a class="btn-green" title="{% trans %}FREE_TRIAL{% endtrans %}" href="./mydatalaboratory-subscription.php">{% filter upper %}{% trans %}FREE_TRIAL{% endtrans %}{% endfilter %}!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rd-navbar-inner">
+                        <div class="rd-navbar-panel">
+                            <button data-rd-navbar-toggle=".rd-navbar" class="rd-navbar-toggle"><span></span></button>
+                            <div class="rd-navbar-brand"><a href="{{ path('my_data_lab_frontend_homepage') }}" class="brand-name"><img alt="MyDataLab" src="{{ asset('bundles/mydatalabfrontend/images/logo.png') }}"/></a></div>
+                        </div>
+                        <div class="rd-navbar-nav-wrap">
+                            <ul class="rd-navbar-nav">
+                                <li class='active'><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter capitalize %}{% trans %}HOME{% endtrans %}{% endfilter %}</a></li>
+                                <li><a href="{{ path('my_data_lab_frontend_solutions') }}">Solutions</a>
+                                    <ul class="rd-navbar-dropdown">
+                                        <li><a href="{{ path('my_data_lab_frontend_solutions_pricing_intelligence') }}">{% filter capitalize %}{% trans %}PRICING_INTELLIGENCE{% endtrans %}{% endfilter %}</a></li>
+                                        <li><a href="{{ path('my_data_lab_frontend_solutions_catalog_analysis') }}">{% filter capitalize %}{% trans %}CATALOGUE_ANALYSIS{% endtrans %}{% endfilter %}</a></li>
+                                        <li><a href="{{ path('my_data_lab_frontend_solutions_market_survey') }}">{% filter capitalize %}{% trans %}MARKET_SURVEY{% endtrans %}{% endfilter %}</a></li>
+                                        <li><a href="#">{% trans %}E_REPUTATION{% endtrans %}</a></li>
+                                        <li><a href="#">{% filter capitalize %}{% trans %}WEBSITE_ANALYSIS{% endtrans %}{% endfilter %}</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ path('my_data_lab_frontend_pricing') }}">{% filter capitalize %}{% trans %}PRICING{% endtrans %}{% endfilter %}</a></li>
+                                <li><a href="{{ path('my_data_lab_frontend_blog') }}">{% filter capitalize %}{% trans %}BLOG{% endtrans %}{% endfilter %}</a></li>
+                                <li><a href="{{ path('my_data_lab_frontend_contact_us') }}">{% filter capitalize %}{% trans %}CONTACT{% endtrans %}{% endfilter %}</a></li>
+                                <li><a href="{{ path('my_data_lab_frontend_faq') }}">{% filter capitalize %}{% trans %}FAQ{% endtrans %}{% endfilter %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            {% block slider %}
+                <div id="slider-wrapper" class="slider-wrapper">
+                    <div class="slide">
+                        <img src="{{ asset('bundles/mydatalabfrontend/images/slideshow/my-labslide.jpg') }}"/>
+                    </div>
+                    <div class="slide">
+                        <img src="{{ asset('bundles/mydatalabfrontend/images/slideshow/slide-laboratory.jpg') }}"/>
+                        <div class="swiper-slide-caption">
+                            <div class="jumbotron text-right">
+                                <small class="bg-green">{% filter capitalize %}{% trans %}FOLLOW_THE{% endtrans %}{% endfilter %}</small>
+                                <h1 class="bg-green">{% filter upper %}{% trans %}E_COMMERCE_PARTNER{% endtrans %}{% endfilter %}</h1>
+                                <p class="big">{% filter upper %}{% trans %}PRICING_SURVEY{% endtrans %}{% endfilter %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        {% block headerAdditionalSections %}{% endblock %}
+    </header>
+    <main class="page-content">
+        {% block content %}
+            <section class="text-center well well-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <h1>{% trans %}PRICING_COMPETITIVE_INTELLIGENCE_H1{% endtrans %}</h1>
+                            <h2 style="color:#00b6c9; margin:20px 0;" class="lead-green big">{% trans %}PRICING_COMPETITIVE_INTELLIGENCE_H2{% endtrans %}</h2>
+                            <div class="row-services-performing">
+                                <p>
+                                <h5 class="arrow-front">{% trans %}EASY_USE_TOOL_H5{% endtrans %}</h5>
+                                <ul class="list">
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}ANALYZING_PRICING_STRATEGY_LI{% endtrans %}</li>
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}ANALYZING_WEBSITES_TECHNOLOGY_LI{% endtrans %}</li>
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}ANALYZING_COMPETITORS_REPUTATION_LI{% endtrans %}</li>
+                                </ul>
+                                </p>
+                                <a href="{{ path('my_data_lab_frontend_solutions_pricing_intelligence') }}" title="Pricing Intelligence" class="btn btn-primary btn-xs round-xl"><span class="fa-angle-right"></span> {% filter upper %}{% trans %}PRICING_INTELLIGENCE{% endtrans %}{% endfilter %}</a>
+                                <br>
+                                <ul class="list" style="margin-top:30px;">
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}ANALYZING_COMPETITORS_CATALOGUE_LI{% endtrans %}</li>
+                                </ul>
+                                <a href="{{ path('my_data_lab_frontend_solutions_catalog_analysis') }}" title="{% trans %}CATALOGUE_ANALYSIS{% endtrans %}" class="btn btn-primary btn-xs round-xl"><span class="fa-angle-right"></span> {% filter upper %}{% trans %}CATALOGUE_ANALYSIS{% endtrans %}{% endfilter %}</a>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="shadow-divisor"></div>
+                            <div class="clear"></div>
+                            <div class="row-services-market">
+                                <p>
+                                <h5 class="arrow-front">{% trans %}MARKET_INTELLIGENCE_TEAM_H5{% endtrans %}</h5>
+                                <ul class="list">
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}SECTOR_REVIEW-LI{% endtrans %}</li>
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}BRAND_SURVEY_STUDIES_LI{% endtrans %}</li>
+                                    <li><i class="fa-check big light-blue"></i>{% trans %}AD_HOC_RESEARCH_LI{% endtrans %}</li>
+                                </ul>
+                                </p>
+                                <a href="{{ path('my_data_lab_frontend_solutions_market_survey') }}" title="{% trans %}MARKET_SURVEY{% endtrans %}" class="btn btn-primary btn-xs round-xl"><span class="fa-angle-right"></span> {% filter upper %}{% trans %}MARKET_SURVEY{% endtrans %}{% endfilter %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="well well-sm bg-lighter relative text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <h2 class="text-bold">{% trans %}AUTOMATIC_PRICING_SOLUTION_H2{% endtrans %}</h2>
+                        </div>
+                    </div>
+                    <div class="row offset-1 text-md-left flow-offset-1">
+                        <div class="col-sm-6 col-md-4 text-center"><span class="icon icon-lg fa-clock-o color-turq"></span>
+                            <h5>{% trans %}DONT_WASTE_TIME_H5{% endtrans %}</h5>
+                            <ul class="list">
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}AUTOMATIC_PRICES_EXTRACTION_LI{% endtrans %}</li>
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}POWERFUL_ROBOTS_LI{% endtrans %}</li>
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}INNOVATIVE_PRODUCT_ALGORITHMS_LI{% endtrans %}</li>
+                            </ul>
+                            <a href="#" class="color-turq link-more" title="{% trans %}MORE_DETAILS{% endtrans %}"><i class="fa-angle-right"></i> {% filter title %}{% trans %}MORE_DETAILS{% endtrans %}{% endfilter %}</a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 text-center"><span class="icon icon-lg fa-signal color-turq"></span>
+                            <h5>{% trans %}DONT_DROWN_DATA_H5{% endtrans %}</h5>
+                            <ul class="list">
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}VALUABLE_INSIGHTS_LI{% endtrans %}</li>
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}CLEAR_CHARTS_TABLES{% endtrans %}</li>
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}ACCURATE_MARKET_OVERVIEW_LI{% endtrans %}/li>
+                            </ul>
+                            <a href="#" class="color-turq link-more" title="{% trans %}MORE_DETAILS{% endtrans %}"><i class="fa-angle-right"></i> {% filter title %}{% trans %}MORE_DETAILS{% endtrans %}{% endfilter %}</a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 text-center"><span class="icon icon-lg fa-shopping-basket color-turq"></span>
+                            <h5>{% trans %}DONT_LOSE_COMPETITORS_LI{% endtrans %}</h5>
+                            <ul class="list">
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}DAILY_PRICING_EXTRACTION_LI{% endtrans %}</li>
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}AUTOMATIC_ALERTS_CHANGES{% endtrans %}</li>
+                                <li><i class="fa-caret-right small color-turq"></i>{% trans %}QUICK_STRATEGIC_DECISION_LI{% endtrans %}</li>
+                            </ul>
+                            <a href="#" class="color-turq link-more" title="{% trans %}MORE_DETAILS{% endtrans %}"><i class="fa-angle-right"></i> {% filter title %}{% trans %}MORE_DETAILS{% endtrans %}{% endfilter %}</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+    </main>
+    <div class="separator-footer">
+        <div class="block-left-text">
+            <div class="image-woman"></div>
+            <h3 class="try-our-intelligence-title">{% trans %}TRY_OUR_INTELLIGENCE_H3{% endtrans %}</h3>
+        </div>
+        <div class="block-right-text">
+            <h2>{% trans %}BETA_VERSION_TRIAL_H2{% endtrans %}<br><span style="font-size: 18px;">{% trans %}BETA_VERSION_TRIAL_H2_SPAN{% endtrans %}</span></h2>
+            <a class="btn-turq free-trial-link" href="{{ path('my_data_lab_frontend_subscription') }}" title="Free Trial!">{% trans %}FREE_TRIAL_LINK{% endtrans %}</a>
+        </div>
+    </div>
+    <footer class="page-footer footer-widget text-center">
+        <section class="footer-content text-center text-sm-left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <h3 class="contact-our-team-link">{% trans %}CONTACT_OUR_TEAM_H3{% endtrans %}</h3>
+                        <p>{% trans %}CONTACT_TO_TRY_P{% endtrans %} <strong>{% trans %}CONTACT_TO_TRY_P_STRONG{% endtrans %}</strong>{% trans %}CONTACT_TO_TRY_P_2{% endtrans %}</p>
+                        <ul class="list-single">
+                            <li><strong>{% filter capitalize %}{% trans %}HEADQUARTERS{% endtrans %}{% endfilter %}:</strong><br>Avenue des Champs Elysées 75008 Paris</li>
+                            <li><strong>{% filter capitalize %}{% trans %}PHONE{% endtrans %}{% endfilter %}:</strong> FR + 33 (0) 760 77 39 39</li>
+                            <li><strong>{% filter capitalize %}{% trans %}PHONE{% endtrans %}{% endfilter %}:</strong> EN + 972 (0) 54 321 123</li>
+                            <li><strong>{% filter capitalize %}{% trans %}EMAIL{% endtrans %}{% endfilter %}:</strong> contact@mydatalaboratory.com</li>
+                        </ul>
+                        <a class="btn btn-success btn-large round-xl" href="{{ path('my_data_lab_frontend_contact_us') }}">{% filter capitalize %}{% trans %}CONTACT_US{% endtrans %}{% endfilter %}</a>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <h3 class="more-info-title">{% trans %}MORE_INFO_US_H3{% endtrans %}</h3>
+                        <ul class="marked-list text-primary">
+                            <li><a href="{{ path('my_data_lab_frontend_solutions') }}">{% filter capitalize %}{% trans %}SOLUTIONS{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_solutions_pricing_intelligence') }}">{% filter capitalize %}{% trans %}PRICING_INTELLIGENCE{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_solutions_catalog_analysis') }}">{% filter capitalize %}{% trans %}CATALOGUE_ANALYSIS{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_solutions_market_survey') }}">{% filter capitalize %}{% trans %}MARKET_SURVEY{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_blog') }}">{% filter capitalize %}{% trans %}BLOG{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_glossary') }}">{% filter capitalize %}{% trans %}GLOSSARY{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_white_paper_homepage') }}">{% filter capitalize %}{% trans %}WHITE_PAPERS{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_faq') }}">{% filter upper %}{% trans %}FAQ{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('fos_user_security_login') }}">{% filter capitalize %}{% trans %}SIGN_IN{% endtrans %}{% endfilter %}</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_homepage', {'_locale': 'fr'}) }}">Site en Fran&ccedil;ais</a></li>
+                            <li><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter capitalize %}{% trans %}WHO_WE_ARE{% endtrans %}{% endfilter %}</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <div class="row data-number">
+                            <div class="col-sm-6 col-lg-6">
+                                <h5>15,065,421</h5>
+                                <span>{% filter upper %}{% trans %}DATASHEETS{% endtrans %}{% endfilter %}</span>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <h5>18,465</h5>
+                                <span>{% filter upper %}{% trans %}E_COMMERCES{% endtrans %}{% endfilter %}</span>
+                            </div>
+                        </div>
+                        <h3>{% trans %}STAY_CONNECTED_US_H3{% endtrans %}</h3>
+                        <p>{% trans %}STAY_TO_DATE_P{% endtrans %}</p>
+                        <div class="input-connect">
+                            <input type="text" placeholder="{% trans %}ENTER_YOUR_EMAIL{% endtrans %}" name="connect"/><a href="#" class="btn-green"><i class="glyphicon-send"></i></a>
+                        </div>
+                        <ul class="socials-new">
+                            <li><a href="https://twitter.com/MyDataLab" class="fa-twitter"></a></li>
+                            <li><a href="#" class="fa-facebook"></a></li>
+                            <li><a href="#" class="fa-google-plus"></a></li><br>
+                            <li><a href="#" class="fa-linkedin"></a></li>
+                            <li><a href="#" class="fa-youtube-play"></a></li>
+                            <li><a href="#" class="fa-rss"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="copyright text-center">
+            <div class="container">
+                <p class="pull-md-left">&#169; 17/05/2016 - <script>var d = new Date();
+                    document.write([d.getDate(), d.getMonth() + 1, d.getFullYear()].join('/'));</script> {% trans %}TERMS_OF_USE{% endtrans %} <a href="terms.html">{% trans %}TERMS_OF_USE_LINK{% endtrans %}</a>
+                    <br>
+                    <a href="{{ path('my_data_lab_frontend_sitemap') }}">SITEMAP</a>
+                </p>
+                <ul class="list-inline pull-md-right">
+                    <li>Share us</li>
+                    <li><a href="#" class="fa-twitter"></a></li>
+                    <li><a href="#" class="fa-facebook"></a></li>
+                    <li><a href="#" class="fa-google-plus"></a></li>
+                    <li><a href="#" class="fa-linkedin"></a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+</div>
+{% block scripts %}
+    <script src="{{ asset('bundles/mydatalabfrontend/js/core.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabfrontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabfrontend/js/jquery.ui.totop.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabfrontend/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabfrontend/js/jquery.rd-navbar.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabfrontend/js/script.js') }}"></script>
+    <script type="text/javascript">
+                    (function(){ var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = '//api.at.getsocial.io/widget/v1/gs_async.js?id=b60155'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
+    </script>
+    <a href="http://www.xiti.com/xiti.asp?s=580982" title="WebAnalytics" target="_top">
+        <script type="text/javascript">
+            <!--
+            Xt_param = 's=580982&p={{ app.request.requestUri|mdl_page_name }}';
+            try
+            {Xt_r = top.document.referrer; }
+            catch (e)
+            {Xt_r = document.referrer; }
+            Xt_h = new Date();
+            Xt_i = '<img width="39" height="25" border="0" alt="" ';
+            Xt_i += 'src="http://logv2.xiti.com/hit.xiti?' + Xt_param;
+            Xt_i = '&hl=' + Xt_h.getHours()'x'Xt_h.getMinutes()'x' + Xt_h.getSeconds();
+            if (parseFloat(navigator.appVersion) >= 4)
+            {Xt_s = screen; Xt_i += '&r=' + Xt_s.width + 'x' + Xt_s.height + 'x' + Xt_s.pixelDepth + 'x' + Xt_s.colorDepth; }
+            document.write(Xt_i + '&ref='Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')'" title="Internet Audience">');
+            //-->
+        </script>
+        <noscript>
+        Mesure d'audience ROI statistique webanalytics par <img width="39" height="25" src="http://logv2.xiti.com/hit.xiti?s=580982&p=" alt="WebAnalytics" />
+        </noscript></a>
+{% endblock %}
+</body>
+</html>

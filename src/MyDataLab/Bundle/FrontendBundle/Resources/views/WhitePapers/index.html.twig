@@ -1,0 +1,53 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_blog') }}">Blog</a></li>
+    </ol>
+{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}LABORATORY_KNOWLEDGE_CENTER_H1{% endtrans %}</h1>
+            <p style="color:#000; margin:20px 0;" class="lead-green big">
+                {% trans %}KNOWLEDGE_RESEARCH_INTELLIGENCE_P{% endtrans %}
+            </p>
+            {% for message in messages %}
+                <h4 class="alert alert-success">{{ message }}</h4>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    <section class="text-center text-md-left offset-1">
+        <div class="container">
+            {% for whitePaper in whitePapers %}
+                <div class="row form-group">
+                    <div>
+                        <div class="col-md-3">
+                            <img src="{{ asset('images/white-papers/' ~ whitePaper.image) }}">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <h4>
+                                    {{ whitePaper.title }}
+                                </h4>
+                            </div>
+                            <div class="row">
+                                {{ whitePaper.description | slice(0, 200) ~ '...'}}
+                            </div>
+                            <div class="row">
+                                <a href="{{ path('my_data_lab_frontend_white_paper_show', {'slug': whitePaper.slug}) }}" class="btn btn-primary btn-xs round-xl">Download for FREE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="well text-center text-md-left">
+        <div class="container">
+            <div aria-label="First group" role="group" class="col-inset-2 text-center btn-group"><a href="#" class="btn btn-default round-small active">1</a><a href="#" class="btn btn-default round-small">2</a><a href="#" class="btn btn-default round-small">3</a><span class="text-light-clr font-secondary">...</span><a href="#" class="btn btn-default round-small">8</a></div>
+        </div>
+    </section>
+{% endblock %}

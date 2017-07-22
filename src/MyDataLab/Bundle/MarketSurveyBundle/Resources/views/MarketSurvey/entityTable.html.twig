@@ -1,0 +1,388 @@
+
+    {#attributes: {#}
+        {#name: string#}
+        {#dataTable: bol,#}
+        {#filterBy: {{columnName, filterType}, }#}
+    {#}#}
+
+{% macro generateTable(entities, attr) %}
+    <div>
+        {% if attr is not empty %}
+            {% if attr.filterBy is defined and attr.filterBy is not empty %}
+                <div>
+                    <div class="row">
+                        {% for filter in attr.filterBy %}
+                        <div class="col-md-2">
+                            <div class="dropdown filter">
+                                <button class="btn btn-default dropdown-toggle filter-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="true">
+                                    {{ filter.columnName }}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="padding: 15px;">
+                                    {% if filter.type == 'slider-filter' %}
+                                        <li>
+                                            <input class="filter-input slider-filter" data-filterFn="sliderFilter" data-column-name="{{ filter.columnName|lower }}">
+                                        </li>
+                                        <li class="slider-values">
+                                            <div class="row">
+                                                <div class="col-md-3 slider-min-value">
+                                                </div>
+                                                <div class="col-md-6 text-center slider-current-value">
+                                                    current
+                                                </div>
+                                                <div class="col-md-3 slider-max-value">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-primary center-block filter-apply-btn">
+                                                Apply
+                                            </button>
+                                        </li>
+                                    {% elseif filter.type == 'selector-filter' %}
+                                        <li class="selector-filter filter-input" data-filterFn='selectorFilter' data-column-name="{{ filter.columnName|lower }}">
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-primary center-block filter-apply-btn">
+                                                Apply
+                                            </button>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <div class="col-md-2 pull-right">
+                            <div>
+                                <button class="btn btn-default clear-filters-btn" type="button">
+                                    Clear all filters
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th data-column-name="rank" style="background: #272D71; color: white;">Rank</th>
+                    {% for key in entities[0]|keys %}
+                        <th data-column-name="{{ key|lower }}" style="background: #272D71; color: white;">{{- key -}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% set rank = 1 %}
+            {% for entity in entities %}
+                <tr>
+                    <td>
+                        {{- rank -}}
+                    </td>
+                    {% set rank = rank + 1 %}
+                    {% for prop in entity %}
+                        <td>
+                            {{- prop -}}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if attr.dataTable is not defined or attr.dataTable == false %}
+        <button class="btn btn-warning btn-lg pull-right">
+            <i class="fa fa-play"></i>
+            More details about
+            {{ attr.name|title }}
+        </button>
+    {% elseif attr.dataTable == true %}
+        <script>
+            (function () {
+                var currentScript = document.getElementsByTagName('script');
+                currentScript = currentScript[currentScript.length -1];
+
+                // Localize jQuery variable
+                var jQuery;
+
+                /******** Load jQuery if not present *********/
+                if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.4.2') {
+                    var script_tag = document.createElement('script');
+                    script_tag.setAttribute("type","text/javascript");
+                    script_tag.setAttribute("src",
+                        "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
+                    if (script_tag.readyState) {
+                        script_tag.onreadystatechange = function () { // For old versions of IE
+                            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                                scriptLoadHandler();
+                            }
+                        };
+                    } else { // Other browsers
+                        script_tag.onload = scriptLoadHandler;
+                    }
+                    // Try to find the head, otherwise default to the documentElement
+                    (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(script_tag);
+                } else {
+                    // The jQuery version on the window is the one we want to use
+                    jQuery = window.jQuery;
+                    main();
+                }
+
+                /******** Called once jQuery has loaded ******/
+                function scriptLoadHandler() {
+                    // Restore $ and window.jQuery to their previous values and store the
+                    // new jQuery in our local jQuery variable
+                    jQuery = window.jQuery.noConflict(true);
+                    // Call our main function
+                    main();
+                }
+
+                /******** Our main function ********/
+                function main() {
+                    jQuery(document).ready(function(widgetElement) {
+                        var tableWidgetWizard = function () {
+                            var $widgetTable,
+                                $widgetFilters,
+                                $widgetDataTable,
+                                _this = this,
+                                $widgetFiltersColumns;
+
+                            this.init = function init() {
+                                this.$widgetTable = widgetElement.find('.table');
+                                this.$widgetDataTable = this.$widgetTable.DataTable({
+                                    "dom": '<"top"<"pull-left"B>iflp<"clear">>rt<"bottom"iflp<"clear">>',
+                                    buttons: [
+                                        {
+                                            extend: 'collection',
+                                            text: '<i class="fa fa-files-o"></i>',
+                                            buttons: [
+                                                'excel',
+                                                'csv',
+                                                'pdf',
+                                                'print'
+                                            ]
+                                        }
+                                    ]
+                                });
+                                this.$widgetFilters = widgetElement.find('.filter');
+                                this.$widgetFiltersColumns = [];
+                                this.$widgetTable.find('thead th').each(function () {
+                                    var columnFilter = _this.$widgetFilters.has(".filter-input[data-column-name='" + $(this).data('column-name') + "']");
+                                    if(columnFilter.length !== 0){
+                                        _this.$widgetFiltersColumns.push(columnFilter);
+                                    }
+                                    else{
+                                        _this.$widgetFiltersColumns.push(null);
+                                    }
+                                });
+
+                                this.initiateFilters();
+                            };
+
+                            this.initiateFilters = function initiateFilters() {
+                                this.initiateSliderFilters();
+
+                                this.initiateSelectorFilters();
+
+                                this.filtersListener()
+                            };
+
+                            this.initiateSliderFilters = function initiateSliderFilters() {
+                                this.$widgetFilters.find('.slider-filter').each(function () {
+                                    var column = _this.$widgetDataTable.column(_this.getColumnIndex($(this).data('column-name')) - 1);
+                                    var minValue = Math.min.apply(Math, column.data());
+                                    var maxValue = Math.max.apply(Math, column.data());
+                                    var sliderValuesTag = $(this).closest('.filter').find('.slider-values');
+                                    sliderValuesTag.find('.slider-min-value').text(minValue);
+                                    sliderValuesTag.find('.slider-max-value').text(maxValue);
+                                    $(this).slider({
+                                        min: minValue,
+                                        max: maxValue,
+                                        value: [minValue, maxValue]
+                                    });
+                                    $(this).attr('data-current-value', $(this).val());
+                                });
+                            };
+
+                            this.initiateSelectorFilters = function initiateSelectorFilters() {
+                                this.$widgetFilters.find('.selector-filter').each(function () {
+                                    var values = _this.$widgetDataTable.column(_this.getColumnIndex($(this).data('column-name')) - 1).data().unique().sort().toArray();
+                                    var currentFilter = this;
+                                    values.forEach(function (value) {
+                                        var selectorElement = $("<div class='checkbox'><label><input type='checkbox' checked></label></div>");
+                                        $(currentFilter).append(selectorElement);
+                                        selectorElement.append(value);
+                                        selectorElement.find('input').val(value);
+                                    });
+                                    $(this).attr('data-current-value', values);
+                                });
+                            };
+
+                            this.filtersListener = function filtersListener() {
+                                this.$widgetFilters.find('.filter-dropdown-btn').on('click', function () {
+                                    $(this).next('.dropdown-menu').slideToggle();
+                                });
+
+                                this.$widgetFilters.find('.filter-apply-btn').on('click', function () {
+                                    var input = $(this).closest('.filter').find('.filter-input');
+                                    _this.filterSetValue(input, _this.filterGetValue(input));
+                                    _this.drawTable(_this.$widgetDataTable);
+                                    _this.resetFilters();
+                                    $(this).closest('.dropdown-menu').slideToggle();
+                                });
+
+                                widgetElement.find('.clear-filters-btn').on('click', function () {
+                                    _this.clearFilters();
+                                })
+                            };
+
+                            this.sliderFilter = function sliderFilter(input, value) {
+                                value = parseInt(value);
+                                var sliderValue = this.filterGetValue(input);
+                                return (value >= sliderValue[0] && value <= sliderValue[1]);
+                            };
+
+                            this.selectorFilter = function selectorFilter(inputList, value) {
+                                var values = this.filterGetValue(inputList);
+                                return ($.inArray(value, values) >= 0);
+                            };
+
+                            this.filtersLoopFunction =
+                                function( settings, data, dataIndex ) {
+                                if(_this.$widgetFiltersColumns === undefined || _this.$widgetFiltersColumns.length === 0){
+                                    return true;
+                                }
+                                var isValid = true;
+                                for(var i = 0; i < data.length; i++){
+                                    var columnFilter = _this.$widgetFiltersColumns[i];
+                                    if(columnFilter){
+                                        var input = columnFilter.find('.filter-input');
+                                        if(!_this[input.data('filterfn')](input, data[i])){
+                                            isValid = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                                return isValid;
+                            };
+
+                            this.resetFilters = function resetFilters() {
+                                this.$widgetFilters.find('.filter-input').each(function () {
+                                    if($(this).is('.slider-filter')){
+                                        _this.filterSetValue($(this), $(this).data('current-value'));
+                                    }
+                                    else if($(this).is('.selector-filter')){
+                                        _this.filterSetValue($(this), $(this).data('current-value'));
+                                    }
+                                    else if($(this).is('.option-filter')){
+                                        $(this).val($(this).find('option').first().val());
+                                    }
+                                    else{
+                                        $(this).val('');
+                                    }
+                                });
+                            };
+
+                            this.clearFilters = function clearFilters() {
+                                this.$widgetFilters.find('.filter-input').each(function () {
+                                    if($(this).is('.slider-filter')){
+                                        $(this).slider('refresh');
+                                        _this.filterSetValue($(this), $(this).val());
+                                    }
+                                    else if($(this).is('.selector-filter')){
+                                        var values = [];
+                                        $(this).find('input:checked').each(function() {
+                                            $(this).prop('checked', true);
+                                            values.push($(this).val());
+                                        });
+                                        $(this).data('current-value', values);
+                                    }
+                                    else if($(this).is('.option-filter')){
+                                        $(this).val($(this).find('option').first().val());
+                                    }
+                                    else{
+                                        $(this).val('');
+                                    }
+                                });
+                                _this.drawTable(_this.$widgetDataTable.draw());
+                            };
+
+                            this.filterSetValue = function filterSetValue(filter, value){
+                                if(filter.is('.selector-filter')){
+                                    if(typeof value === 'string'){
+                                        value = value.split(',');
+                                        for (var i = 0; i < value.length; i++){
+                                            value[i] = value[i].trim();
+                                        }
+                                    }
+                                    filter.data('current-value', value);
+                                    filter.find('input').each(function () {
+                                        if($.inArray($(this).val(), value) >= 0){
+                                            $(this).prop('checked', true);
+                                        }
+                                        else{
+                                            $(this).prop('checked', false);
+                                        }
+                                    });
+                                }
+                                else if(filter.is('.slider-filter')){
+                                    if(typeof value === 'string'){
+                                        value = value.split(',');
+                                        for (var i = 0; i < value.length; i++){
+                                            value[i] = parseInt(value[i].trim());
+                                        }
+                                    }
+                                    filter.data('current-value', value);
+                                    filter.slider('setValue', value);
+
+                                    filter.closest('.filter').find('.slider-current-value').text(value)
+                                }
+                                else{
+                                    filter.val(value);
+                                }
+                            };
+
+                            this.filterGetValue = function filterSetValue(filter){
+                                var values = [];
+                                if(filter.is('.selector-filter')){
+                                    filter.find('input:checked').each(function () {
+                                        values.push($(this).val())
+                                    });
+                                    return values;
+                                }
+                                else if(filter.is('.slider-filter')){
+                                    values = filter.val();
+                                    if(typeof values === 'string'){
+                                        values = values.split(',');
+                                    }
+                                    values[0] = parseInt(values[0]);
+                                    values[1] = parseInt(values[1]);
+                                    return values;
+                                }
+                                else{
+                                    return filter.val();
+                                }
+                            };
+
+                            this.drawTable = function drawTable(dataTable){
+                                $.fn.dataTable.ext.search[0] = this.filtersLoopFunction;
+                                dataTable.draw();
+                            }
+
+
+                            this.getColumnIndex = function getColumnIndex(columnTitle){
+                                return this.$widgetTable.find('th').index(this.$widgetTable.find("th[data-column-name='" +  columnTitle + "']")) + 1;
+                            };
+                        };
+
+                        widgetElement = $(currentScript).prev('div');
+                        var widget = new tableWidgetWizard(widgetElement);
+                        widget.init();
+                    });
+                }
+            })();
+        </script>
+    {% endif %}
+{% endmacro %}

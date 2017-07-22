@@ -1,0 +1,12 @@
+<div class="box mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <h3 class="box-title">{% filter capitalize %}{% trans %}MATCHING_RESULTS{% endtrans %}{% endfilter %}</h3>
+    </div>
+    <div class="box-body">
+        <div>
+            <p class="text-green">1,634 {% filter capitalize %}{% trans %}MATCHED_PRODUCTS{% endtrans %}{% endfilter %}</p>
+            <p class="text-red">4,200 {% filter capitalize %}{% trans %}NOT_MATCHED_PRODUCTS{% endtrans %}{% endfilter %}</p>
+            <p class="text-orange">76 {% filter capitalize %}{% trans %}MATCHING_PROPOSITIONS{% endtrans %}{% endfilter %}</p>
+        </div>
+    </div>
+</div>

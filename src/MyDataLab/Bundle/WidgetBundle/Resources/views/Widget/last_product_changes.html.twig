@@ -1,0 +1,26 @@
+<div class="box mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+            <i class="fa fa-minus"></i>
+        </button>
+        <h3 class="box-title">{% filter title %}{% trans %}LAST_PRODUCT_CHANGES{% endtrans %}{% endfilter %}</h3>
+    </div>
+    <div class="box-body">
+        <div class="prod">
+            <ul class="col-lg-6 pull-left">
+                <li class="info-box-number">{% filter title %}{% trans %}LAST_TWENTYFOUR_HOURS{% endtrans %}{% endfilter %}</li>
+                <li>{{ totalChanges['24hours'] }} {% trans %}PRICE_CHANGES_AT{% endtrans %} competitors</li>
+                {% for competitor in competitors %}
+                    <li>{{ competitor.changes['24hours'] }} {% trans %}PRICE_CHANGES_AT{% endtrans %} {{ competitor.name }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="col-lg-6 pull-right">
+                <li class="info-box-number">{% filter title %}{% trans %}LAST_SEVEN_DAYS{% endtrans %}{% endfilter %}</li>
+                <li>{{ totalChanges['7days'] }} {% trans %}PRICE_CHANGES_AT{% endtrans %} competitors</li>
+                {% for competitor in competitors %}
+                    <li>{{ competitor.changes['7days'] }} {% trans %}PRICE_CHANGES_AT{% endtrans %} {{ competitor.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

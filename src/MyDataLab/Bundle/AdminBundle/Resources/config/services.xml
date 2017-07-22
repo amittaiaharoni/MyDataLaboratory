@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <!--    <imports>
+        <import resource="breadcrumbs.xml" />
+    </imports>-->
+    <parameters>
+        <parameter key="my_data_lab_admin.breadcrumbs_builder.class">MyDataLab\Bundle\AdminBundle\Service\BreadcrumbsBuilder</parameter>
+        <parameter key="my_data_lab.menu_builder.class">MyDataLab\Bundle\AdminBundle\Service\MenuBuilder</parameter>
+    </parameters>
+    <services>
+        <service id="my_data_lab_admin.breadcrumbs_builder" class="%my_data_lab_admin.breadcrumbs_builder.class%">
+            <argument type="service" id="white_october_breadcrumbs" />
+            <argument type="service" id="router" />
+        </service>
+        <service id="my_data_lab.menu_builder" class="%my_data_lab.menu_builder.class%">
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="request_stack" />
+            <argument>%kernel.root_dir%</argument>
+        </service>
+    </services>
+    <!--    <my-data-lab-admin:config>
+        <breadcrumbs text="test"/>
+    </my-data-lab-admin:config>-->
+</container>

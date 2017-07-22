@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="my_data_lab_frontend_solutions" path="/">
+        <default key="_controller">MyDataLabFrontendBundle:Solutions:index</default>
+    </route>
+    <route id="my_data_lab_frontend_solutions_pricing_intelligence" path="/pricing-intelligence">
+        <default key="_controller">MyDataLabFrontendBundle:Solutions:pricingIntelligence</default>
+    </route>
+    <route id="my_data_lab_frontend_solutions_catalog_analysis" path="/catalogue-analysis">
+        <default key="_controller">MyDataLabFrontendBundle:Solutions:catalogAnalysis</default>
+    </route>
+    <route id="my_data_lab_frontend_solutions_market_survey" path="/market-survey">
+        <default key="_controller">MyDataLabFrontendBundle:Solutions:marketSurvey</default>
+    </route>
+</routes>

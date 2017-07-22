@@ -1,0 +1,11 @@
+<div class="box mdl-widget-gauge mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <h3 class="box-title">{% filter capitalize %}{% trans %}YEAR_OBJECTIVES{% endtrans %}{% endfilter %}</h3>
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>	
+    </div>
+    <div class="box-body" style="text-align:center"> 
+        <div class="gauge" style="text-align:center"></div>				
+    </div>
+    <div class="box-footer"></div>
+    <input type="hidden" class="mdl-widget-source-value" value="75">
+</div>

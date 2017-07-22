@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity 
+        repository-class="MyDataLab\Bundle\ProductBundle\Repository\BrandRepository"
+        name="MyDataLab\Bundle\ProductBundle\Entity\Brand"
+        table="mdl_brands">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="name" type="string" column="name" length="255" unique="true"/>
+        <many-to-many target-entity="MyDataLab\Bundle\RetailersBundle\Entity\Retailer" field="retailers" inversed-by="brands">
+            <join-table name="mdl_retailers_brands">
+                <join-columns>
+                    <join-column name="brand_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="retailer_id" referenced-column-name="id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+    </entity>
+</doctrine-mapping>

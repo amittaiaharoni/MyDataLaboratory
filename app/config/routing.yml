@@ -1,0 +1,25 @@
+my_data_lab_frontend:
+    resource: "@MyDataLabFrontendBundle/Resources/config/routing.xml"
+    prefix:   /{_locale}/
+    defaults:
+        _locale: %locale%
+    requirements: 
+        _locale: \w{2}
+my_data_lab_admin:
+    resource: "@MyDataLabAdminBundle/Resources/config/routing.xml"
+    prefix:   /{_locale}/admin/
+    defaults:
+        _locale: %locale%
+    requirements: 
+        _locale: \w{2}
+
+#my_data_lab:
+#    resource: .
+#    type: mdl
+#    prefix: /{_locale}/
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /en/
+        permanent: true

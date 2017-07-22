@@ -1,0 +1,73 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/mydatalabfrontend/css/glossary.css') }}">
+{% endblock %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_blog') }}">Glossary</a></li>
+    </ol>
+{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}PRICE_COMPETITIVE_GLOSSARY_H1{% endtrans %}</h1>
+            <p style="color:#000; margin:20px 0;" class="lead-green big">
+                {% trans %}FIND_DEFINITION_WEBSITE_P{% endtrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    <section class="well text-center text-md-left">
+        {% set currentRoute = app.request.attributes.get('_route') %}
+        {% set currentParams = app.request.attributes.get('_route_params') %}
+        <div class="container">
+            <div aria-label="First group" role="group" class="col-inset-12 text-center btn-group">
+                {{ render(controller('MyDataLabFrontendBundle:Glossary:lettersPaginator', {'currentRoute': currentRoute, 'currentParams': currentParams})) }}
+            </div>
+        </div>
+    </section>
+    <section class="text-center text-md-left offset-1">
+        <div class="container">
+            <h1>{{ title | capitalize }}</h1>
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <ul class="glossaries">
+                        {% for glossaryList in glossaries %}
+                            <li>
+                                <div>
+                                    <a title="{{ glossaryList.name }}" href="{{ path('my_data_lab_frontend_glossary_definitions', {'glossary': glossaryList.name}) }}">
+                                        {{ glossaryList.name }}
+                                    </a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <span></span>
+                <div class="col-md-9 col-sm-9">
+                    <ul class="glossary">
+                        {% for definition in definitions %}
+                            <li class="col-md-6 col-sm-6">
+                                <div>
+                                    <a title="{{ definition.title }}" href="{{ path('my_data_lab_single_definition', {'glossary': definition.glossary.name, 'slug': definition.slug}) }}">
+                                        {{ definition.title }}
+                                    </a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="well text-center text-md-left">
+        <div class="container">
+            <div aria-label="First group" role="group" class="col-inset-2 text-center btn-group">
+                {{ render(controller('MyDataLabFrontendBundle:Glossary:paginator', {'currentRoute': currentRoute, 'currentParams': currentParams})) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,7 @@
+MyDataLab\Bundle\BlogBundle\Entity\Tag:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true

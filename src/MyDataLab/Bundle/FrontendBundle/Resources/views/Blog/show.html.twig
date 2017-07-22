@@ -1,0 +1,236 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li><a href="{{ path('my_data_lab_frontend_blog') }}">Blog</a></li>
+        <li class="active"><a href="#">{{ post.title | title}}</a></li>
+    </ol>
+{% endblock %}
+{% block meta %}
+    {% spaceless %}
+        {{ parent() }}
+        {% if post.keywords|length %}
+            <meta name="keywords" content="{{ post.keywords|join(',') }}">
+        {% endif %}
+        {% if post.metaDescription %}
+            <meta name="description" content="{{ post.metaDescription }}">
+        {% endif %}
+        <meta name="date" content="{{ post.createdAt|date('Y-m-d') }}" scheme="YYYY-MM-DD">
+        <meta http-equiv="last-modified" content="{{ post.updatedAt|date('Y-m-d@H:i:s e') }}">
+        <meta name="author" content="{{ post.author.username }}">
+    {% endspaceless %}
+{% endblock %}
+{% block content %}
+    <section class="text-center text-md-left offset-1 well well-inset-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 section-border">
+                    <article class="well">
+                        <h1>{{ post.title }}</h1>
+                        <div class="blog-info">
+                            <div class="pull-md-left">
+                                <time datetime="{{ post.createdAt|date(constant('DATE_ATOM')) }}" class="meta fa-calendar">{{ post.createdAt|date }}</time>
+                                <a class="badge fa-user text-uppercase font-secondary">{{ post.author.username }}</a>
+                                <span class="tags"><a class="badge fa-tags"></a>
+                                    {% for tag in post.tags %}
+                                        <a class="post-tag round-xl small">{{ tag.name }}</a>
+                                    {% endfor %}
+                                </span>
+                            </div>
+                        </div>
+                        {{ post.content | raw }}
+                    </article>
+                </div>
+                <div class="col-xs-12 section-border">
+                    <div class="blog-info blog-info-inset text-center text-lg-left">
+                        <div class="pull-lg-left">
+                            <span class="tags wrap-normal">
+                                <a class="badge fa-tags"></a>
+                                {% for tag in post.tags %}
+                                    <a class="post-tag round-xl small">{{ tag.name }}</a>
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <div class="pull-lg-right inline-block"><span class="small font-secondary text-uppercase text-light-clr">Share this</span>
+                            <ul class="list-inline list-inline-4 pull-md-right">
+                                <li><a href="#" class="fa-facebook text-info"></a></li>
+                                <li><a href="#" class="fa-pinterest-p text-danger"></a></li>
+                                <li><a href="#" class="fa-twitter text-primary"></a></li>
+                                <li><a href="#" class="fa-google-plus text-danger"></a></li>
+                                <li><a href="#" class="fa-instagram text-info"></a></li>
+                                <li><a href="#" class="fa-rss"></a></li>
+                                <li><a href="#" class="fa-envelope text-info"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 text-center text-md-left post-links offset-5"><a href="#" class="btn-link pull-md-left fa-angle-left">This is a Standard post with a Slider Gallery</a><br class="hidden-lg hidden-md"><a href="#" class="btn-link pull-md-right fa-angle-right">This is an Embedded Video Post</a></div>
+                <div class="col-xs-12 text-center text-md-left offset-2 section-border">
+                    <div class="post-autor col-inset-2">
+                        <h6>Posted by <span class="text-primary">{{ post.author.username }}</span></h6>
+                        <div class="box-md offset-5">
+                            <div class="box__left"><img src="images/blog-21.jpg" alt="" class="img-circle"></div>
+                            <div class="box__body box__middle">
+                                <p class="big">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae ad repellendus recusandae blanditiis praesentium vitae ab sint earum voluptate velit beatae alias fugit accusantium laboriosam nisi reiciendis deleniti tenetur molestiae maxime id quaerat consequatur fugiat aliquam laborum nam aliquid. Consectetur, perferendis?
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#<div class="col-xs-12 text-center text-md-left well">
+                    <h5>Related Posts:</h5>
+                    <div class="row no-offset">
+                        <div class="col-sm-6 col-md-4">
+                            <article class="thumbnail thumbnail-4 section-border well"><img src="images/blog-3.jpg" alt="">
+                                <div class="caption">
+                                    <h4><a href="blog_post.html">This is a Standard Post with a Preview Image</a></h4>
+                                    <p class="text-dark-variant-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+                                    <div class="blog-info">
+                                        <div class="pull-md-left">
+                                            <time datetime="2015" class="meta fa-calendar">Feb 10, 2014</time><a href="#" class="badge fa-comments font-secondary">13</a>
+                                        </div><a href="blog_post.html" class="btn-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <article class="thumbnail thumbnail-4 section-border well"><img src="images/blog-4.jpg" alt="">
+                                <div class="caption">
+                                    <h4><a href="blog_post.html">This is a Standard Post with a Preview Image</a></h4>
+                                    <p class="text-dark-variant-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+                                    <div class="blog-info">
+                                        <div class="pull-md-left">
+                                            <time datetime="2015" class="meta fa-calendar">Feb 10, 2014</time><a href="#" class="badge fa-comments font-secondary">13</a>
+                                        </div><a href="blog_post.html" class="btn-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <article class="thumbnail thumbnail-4 section-border well"><img src="images/blog-5.jpg" alt="">
+                                <div class="caption">
+                                    <h4><a href="blog_post.html">This is a Standard Post with a Preview Image</a></h4>
+                                    <p class="text-dark-variant-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+                                    <div class="blog-info">
+                                        <div class="pull-md-left">
+                                            <time datetime="2015" class="meta fa-calendar">Feb 10, 2014</time><a href="#" class="badge fa-comments font-secondary">13</a>
+                                        </div><a href="blog_post.html" class="btn-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <article class="thumbnail thumbnail-4 section-border well"><img src="images/blog-6.jpg" alt="">
+                                <div class="caption">
+                                    <h4><a href="blog_post.html">This is a Standard Post with a Preview Image</a></h4>
+                                    <p class="text-dark-variant-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+                                    <div class="blog-info">
+                                        <div class="pull-md-left">
+                                            <time datetime="2015" class="meta fa-calendar">Feb 10, 2014</time><a href="#" class="badge fa-comments font-secondary">13</a>
+                                        </div><a href="blog_post.html" class="btn-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <article class="thumbnail thumbnail-4 section-border well"><img src="images/blog-7.jpg" alt="">
+                                <div class="caption">
+                                    <h4><a href="blog_post.html">This is a Standard Post with a Preview Image</a></h4>
+                                    <p class="text-dark-variant-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+                                    <div class="blog-info">
+                                        <div class="pull-md-left">
+                                            <time datetime="2015" class="meta fa-calendar">Feb 10, 2014</time><a href="#" class="badge fa-comments font-secondary">13</a>
+                                        </div><a href="blog_post.html" class="btn-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <article class="thumbnail thumbnail-4 section-border well"><img src="images/blog-8.jpg" alt="">
+                                <div class="caption">
+                                    <h4><a href="blog_post.html">This is a Standard Post with a Preview Image</a></h4>
+                                    <p class="text-dark-variant-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+                                    <div class="blog-info">
+                                        <div class="pull-md-left">
+                                            <time datetime="2015" class="meta fa-calendar">Feb 10, 2014</time><a href="#" class="badge fa-comments font-secondary">13</a>
+                                        </div><a href="blog_post.html" class="btn-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>#}
+                {#<div class="col-xs-12 text-center text-md-left section-border well">
+                    <h5>3 Comments</h5>
+                    <div class="row comments">
+                        <div class="col-xs-12">
+                            <blockquote class="box-sm">
+                                <div class="box__left text-center"><img src="images/blog-26.jpg" alt="" class="img-circle"></div>
+                                <div class="box__body box__middle btn-shadow round-small">
+                                    <h6>John Doe</h6>
+                                    <time datetime="2015" class="meta">April 24, 2012 at 10:46 am</time>
+                                    <p class="big text-light-clr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae ad repellendus recusandae blanditiis praesentium</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="col-xs-12 inset-1 text-right">
+                            <blockquote class="box-sm back-comment">
+                                <div class="box__left text-center"><img src="images/blog-26.jpg" alt="" class="img-circle"></div>
+                                <div class="box__body box__middle btn-shadow round-small">
+                                    <h6>John Doe</h6>
+                                    <time datetime="2015" class="meta">April 24, 2012 at 10:46 am</time>
+                                    <p class="big text-light-clr">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="col-xs-12 inset-1">
+                            <blockquote class="box-sm">
+                                <div class="box__left text-center"><img src="images/blog-26.jpg" alt="" class="img-circle"></div>
+                                <div class="box__body box__middle btn-shadow round-small">
+                                    <h6>John Doe</h6>
+                                    <time datetime="2015" class="meta">April 24, 2012 at 10:46 am</time>
+                                    <p class="big text-light-clr">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae ad repellendus recusandae blanditiis praesentium
+
+                                    </p>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>#}
+            </div>
+        </div>
+    </section>
+    {#<section class="well well-inset-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5 class="text-bold text-center text-md-left">Leave a Comment</h5>
+                    <form class="row label-insets">
+                        <div class="form-group col-sm-4">
+                            <label for="exampleInputText1" class="text-uppercase font-secondary">First Name</label>
+                            <input type="text" placeholder="Your First Name" id="exampleInputText1" class="form-control">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="exampleInputEmail1" class="text-uppercase font-secondary">E-mail</label>
+                            <input type="email" placeholder="example@domain.com" id="exampleInputEmail1" class="form-control">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="exampleInputText2" class="text-uppercase font-secondary">Website</label>
+                            <input type="text" placeholder="Your Website" id="exampleInputText2" class="form-control">
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="exampleTextarea" class="text-uppercase font-secondary">your message</label>
+                            <textarea id="exampleTextarea" rows="3" placeholder="Write your comment here" class="form-control"></textarea>
+                        </div>
+                        <div class="col-xs-12 text-center">
+                            <button type="submit" class="btn btn-primary btn-xs round-xl form-el-offset-1">Submit comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>#}
+{% endblock %}

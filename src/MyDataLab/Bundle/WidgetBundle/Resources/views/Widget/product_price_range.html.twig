@@ -1,0 +1,27 @@
+<div class="box mdl-widget-column-chart mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"> <i class="fa fa-minus"></i>
+        </button>
+        <h3 class="box-title">{% filter capitalize %}{% trans %}PRODUCTS_RANGE_PRICE{% endtrans %}{% endfilter %}</h3> </div>
+    <table class="mdl-widget-source-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Procantage</th>
+                <th>Nr.Products</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% spaceless %}
+                {% for i, range in ranges %}
+                    <tr>
+                        <td>{% if ranges[i + 1] is not defined %}+{% endif %}{{ range.threshold }}{% if ranges[i + 1] is defined %}-{{ ranges[i + 1].threshold }}{% endif %}&euro;</td>
+                        <td>{{ range.count }}</td>
+                    </tr>
+                {% endfor %}
+            {% endspaceless %}
+        </tbody>
+    </table>
+    <div class="info-box box-body" id="columnBar" style="min-height:160px;">
+    </div>
+    <div class="box-footer"></div>
+</div>

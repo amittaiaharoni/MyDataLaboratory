@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="MyDataLab\Bundle\UserBundle\Repository\UserRepository" name="MyDataLab\Bundle\UserBundle\Entity\User" table="mdl_users">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="status" column="status" type="string" length="10">
+            <options>
+                <option name="default">other</option>
+            </options>
+        </field> 
+        <one-to-many field="widgets" target-entity="MyDataLab\Bundle\WidgetBundle\Entity\Widget" mapped-by="user">
+            <order-by>
+                <order-by-field name="parent" direction="ASC" />
+                <order-by-field name="position" direction="ASC" />
+            </order-by>
+        </one-to-many>
+        <one-to-many field="alerts" target-entity="MyDataLab\Bundle\AlertsBundle\Entity\Alert" mapped-by="user">
+            <order-by>
+                <order-by-field name="created" direction="DESC" />
+            </order-by>
+        </one-to-many>
+        <many-to-many target-entity="MyDataLab\Bundle\RetailersBundle\Entity\Retailer" field="companies">
+            <join-table name="mdl_users_companies">
+                <join-columns>
+                    <join-column name="user_id" referenced-column-name="id" />
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="company_id" referenced-column-name="id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+        <many-to-many target-entity="MyDataLab\Bundle\RetailersBundle\Entity\Retailer" field="competitors">
+            <join-table name="mdl_users_competitors">
+                <join-columns>
+                    <join-column name="user_id" referenced-column-name="id" />
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="competitor_id" referenced-column-name="id" />
+                </inverse-join-columns>
+            </join-table>
+            <order-by>
+                <order-by-field name="added" direction="DESC" />
+            </order-by>
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </many-to-many>
+    </entity>
+</doctrine-mapping>

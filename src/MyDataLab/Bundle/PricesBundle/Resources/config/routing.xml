@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="my_data_lab_prices_homepage" path="/">
+        <default key="_controller">MyDataLabPricesBundle:Default:index</default>
+    </route>
+    <route id="my_data_lab_prices_product" path="/products">
+        <default key="_controller">MyDataLabPricesBundle:Product:index</default>
+    </route>
+    <route id="my_data_lab_prices_product_single" path="/single-product">
+        <default key="_controller">MyDataLabPricesBundle:Product:single</default>
+    </route>
+    <route id="my_data_lab_prices_category" path="/categories">
+        <default key="_controller">MyDataLabPricesBundle:Category:index</default>
+    </route>
+    <route id="my_data_lab_prices_category" path="/categories">
+        <default key="_controller">MyDataLabPricesBundle:Category:index</default>
+    </route>
+    <route id="my_data_lab_prices_brand" path="/brands">
+        <default key="_controller">MyDataLabPricesBundle:Brand:index</default>
+    </route>
+    <route id="my_data_lab_prices_competitor_list" path="competitors-list">
+        <default key="_controller">MyDataLabPricesBundle:Competitor:list</default>
+    </route>
+    
+</routes>

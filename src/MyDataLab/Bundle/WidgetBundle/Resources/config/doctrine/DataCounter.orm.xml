@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity 
+        repository-class="MyDataLab\Bundle\WidgetBundle\Repository\DataCounterRepository" 
+        name="MyDataLab\Bundle\WidgetBundle\Entity\DataCounter" 
+        table="mdl_data_count"
+    >
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="time" type="datetime" column="time"/>
+        <field name="count" type="integer" column="count"/>
+        <field name="entity" type="string" column="entity" length="255"/>
+        <many-to-one target-entity="MyDataLab\Bundle\UserBundle\Entity\User" field="user">
+            <join-column name="user_id" referenced-column-name="id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

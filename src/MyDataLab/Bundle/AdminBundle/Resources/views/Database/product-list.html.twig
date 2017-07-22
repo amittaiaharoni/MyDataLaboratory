@@ -1,0 +1,158 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block contentHeader %}
+    {{ parent() }}
+    <button type="button" class="restore-scenarios btn btn-default"> {% filter title %}{% trans %}RESTORE_TO_DEFAULT_POSITION{% endtrans %}{% endfilter %} </button>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">{% filter title %}{% trans %}PRODUCTS_LIST{% endtrans %}{% endfilter %}</h3> </div>
+        <div class="box-body">
+            <div class="export-csv csvcustom"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table id="productstable" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>{% trans %}PRODUCTS_MDL_ID{% endtrans %}</th>
+                            <th>{% trans %}EAN_13{% endtrans %}</th>
+                            <th>{% trans %}NAME_DESC{% endtrans %}</th>
+                            <th>{% filter upper %}{% trans %}IMG{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}CATEGORIES{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}TOTAL_STOCK{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}PRICE_REDUCTION{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}BRAND{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}AVERAGE_PRICE{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}LOWEST_PRICE{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter title %}{% trans %}HIGHEST_PRICE{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}PRICE_DELTA_IN_EURO{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}PRICE_DELTA_IN_PERCENT{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}OTHER_PRICES{% endtrans %}{% endfilter %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>catalogue
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                        <tr>
+                            <td>Product « MDL » ID</td>
+                            <td>EAN 13</td>
+                            <td>Name / Desc</td>
+                            <td>IMG</td>
+                            <td>Categories</td>
+                            <td>Total Stock</td>
+                            <td>Price Reduction</td>
+                            <td>Brand</td>
+                            <td>Avarage Price</td>
+                            <td>Lowest Price</td>
+                            <td>Highest Price</td>
+                            <td>Price delta in €</td>
+                            <td>Price delta in %</td>
+                            <td>Other prices</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $("#productstable").DataTable();
+        });
+    </script>
+{% endblock %}

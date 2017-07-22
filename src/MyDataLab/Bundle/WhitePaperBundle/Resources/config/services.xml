@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="my_data_lab_white_paper.type.class">MyDataLab\Bundle\WhitePaperBundle\Form\WhitePaperType</parameter>
+    </parameters>
+
+    <services>
+        <service id="my_data_lab_white_paper.type" class="%my_data_lab_white_paper.type.class%">
+            <tag name="form.type" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+            <argument>%whitePaperImagesDirectory%</argument>
+            <argument>%whitePaperFilesDirectory%%</argument>
+        </service>
+    </services>
+</container>

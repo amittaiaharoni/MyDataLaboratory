@@ -1,0 +1,24 @@
+<div class="box mdl-widget mdl-widget-add-retailer" data-widget-id="{{ widget.id }}" data-add-url="{{ path('my_data_lab_retailer_add') }}">
+    <div class="box-header with-border">
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+            <i class="fa fa-minus"></i>
+        </button>
+        <h3 class="box-title">Add an E-retailer to monitor</h3>
+    </div>
+    <div class="box-body">
+        <h3 style="text-align:center">Insert the URL of the E-Retailer </h3>
+        <form class="input-group input-group-sm input-lg mdl-widget-form">
+            <input type="text" class="form-control mdl-widget-add-retailer-value">
+            <span class="input-group-btn">
+                <input type="submit" class="btn btn-flat mdl-widget-add-retailer-submit" style="background:#272D71;color:#fff" value="ADD URL">
+            </span>
+        </form>
+        <br/>
+        {% if lastCompetitor %}
+            <a href="{{ path('my_data_lab_retailers_competitors_list') }}">{{ lastCompetitor.name }}</a>
+        {% endif %}
+        
+    </div>
+    
+    <div class="box-footer"></div>
+</div>

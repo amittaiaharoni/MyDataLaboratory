@@ -1,0 +1,21 @@
+{% extends '@MyDataLabTranslation/Translation/base.html.twig' %}
+{% block title %}Create{% endblock %}
+{% block content %}
+    <div clas="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title fl-l">New Translation</h3>
+                {% block languageSelector %}{{ parent() }}{% endblock %}
+            </div>
+            <div class="box-body">
+                {{ form_start(createForm) }}
+                    {{ form_row(createForm.source) }}
+                    {{ form_row(createForm.target) }}
+                {{ form_end(createForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

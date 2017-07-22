@@ -1,0 +1,118 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-lg-4">
+                <div class="small-box categories">
+                    <div class="inner">
+                        <h3>44</h3>
+                        <p>{% filter capitalize %}{% trans %}CATEGORIES{% endtrans %}{% endfilter %}</p>
+                        <div class="procent4">
+                            <p><i class="ion ion-arrow-up-a"></i></p>
+                            <p>+ 12%</p>
+                        </div>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-file"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">{% filter capitalize %}{% trans %}MORE_INFO{% endtrans %}{% endfilter %} <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="small-box subcategories">
+                    <div class="inner">
+                        <h3>44</h3>
+                        <p>{% filter capitalize %}{% trans %}SUBCATEGORIES{% endtrans %}{% endfilter %}</p>
+                        <div class="procent4">
+                            <p><i class="ion ion-arrow-up-a"></i></p>
+                            <p>+ 12%</p>
+                        </div>
+                    </div>
+                    <div class="icon">
+
+                        <i class="fa fa-files-o"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">{% filter capitalize %}{% trans %}MORE_INFO{% endtrans %}{% endfilter %} <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>	
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">	
+            <div class="box">
+                <div class="box-header"><h3 class="box-title">Categories list</h3></div>
+                <div class="box-body">
+                    <div class="export-csv csvcustom2"></div>
+                    <table id="categories" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>{% filter capitalize %}{% trans %}CATEGORIES{% endtrans %}{% endfilter %}</th>
+                                <th>{% filter capitalize %}{% trans %}PRODUCTS{% endtrans %}{% endfilter %}</th>
+                                <th>{% filter title %}{% trans %}E_RETAILER{% endtrans %}{% endfilter %} 1</th>
+                                <th>{% filter title %}{% trans %}E_RETAILER{% endtrans %}{% endfilter %} 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr><tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr><tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>2495</td>
+                                <td class="text-green">+ 0.7% (38)</td>
+                                <td class="text-red">-2% (11)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $("#categories").DataTable();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb section-border">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter capitalize %}{% trans %}HOME{% endtrans %}{% endfilter %}</a></li>
+        <li><a href="{{ path('my_data_lab_frontend_solutions') }}">{% filter capitalize %}{% trans %}SOLUTIONS{% endtrans %}{% endfilter %}</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_solutions_catalog_analysis') }}">{% filter capitalize %}{% trans %}CATALOGUE_ANALYSIS{% endtrans %}{% endfilter %}</a></li>
+    </ol>
+{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}MARKET_INTELLIGENCE_EXPERTISE_H1{% endtrans %}</h1> 
+            <p style="color:#000; margin:20px 0;" class="lead-green big">
+                {% trans %}MARKET_INTELLIGENCE_BUILD_P{% endtrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    <section class="text-center offset-1 bottomspace">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row-services-performing">
+                        <h2 class="cube-front">{% trans %}ACCURATE_OVERVIEW_MARKET_H2{% endtrans %}</h2>
+                        <h5 class="text-bold arrow-front"> {% trans %}PRECIOUS_PRECISE_DATA_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}MAIN_ACTORS_PERFORMANCE_LI{% endtrans %}</li>
+                            <li>{% trans %}ESTIMATE_WIN_MARKET_LI{% endtrans %}</li>
+                            <li>{% trans %}LEADING_BRANDS_AMOUNT_LI{% endtrans %}</li>
+                        </ul>
+                        <br>
+                        <h5 class="text-bold arrow-front"> {% trans %}LEADERS_MAIN_THREATS_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}MAIN_COMPETITIVE_DANGER_LI{% endtrans %}</li>
+                            <li>{% trans %}FASTEST_WINNER_MARKET_LI{% endtrans %}</li>
+                            <li>{% trans %}TRENDS_TERMS_PRODUCTS_LI{% endtrans %}</li>
+                        </ul>
+                        <br>
+                        <h5 class="text-bold arrow-front"> {% trans %}RAW_DATA_SERVICES_H5{% endtrans %}</h5>
+
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}PROVIDES_MARKET_DEMAND_LI{% endtrans %}</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                    <br>  
+                    <div class="row-services-market">	
+                        <h5 class="cube-front">{% trans %}IDENTIFY_MAIN_DOERS_H5{% endtrans %}</h5>
+                        <br> 
+                        <h5 class="text-bold arrow-front"> {% trans %}IDENTIFY_LEADERS_MARKET_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}BEST_PRACTICES_PERFORMANCES_LI{% endtrans %}</li>
+                            <li>{% trans %}MAIN_BRANDS_SEGMENT_LI{% endtrans %}</li>
+                        </ul>
+                        <br> 	
+                        <h5 class="text-bold arrow-front"> {% trans %}RAW_ALSO_PART_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}PROVIDES_MARKET_DEMAND_LI{% endtrans %}</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                    <br>  
+                    <h5 class="arrow-front">{% trans %}ANSWER_QUESTION_YOURSELF_H5_1{% endtrans %}<a style="color:#00b6c9" href="./contact-us.php">{% trans %}ANSWER_QUESTION_YOURSELF_H5_LINK{% endtrans %}</a>{% trans %}ANSWER_QUESTION_YOURSELF_H5_2{% endtrans %}</h5>
+
+                    <br>  
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                </div>				
+            </div>
+        </div>
+    </section>
+{% endblock %}

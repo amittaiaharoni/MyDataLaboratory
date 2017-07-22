@@ -1,0 +1,8 @@
+{% for i in paginator %}
+    {% if i == '..' %}
+        ..
+    {% else %}
+        {% set hrefParams = currentParams | merge({'page': i}) %}
+        <a href="{{ path(currentRoute, hrefParams) }}" class="btn btn-default round-small {% if i == currentParams.page %}active{% endif %}">{{ i }}</a>
+    {% endif %}
+{% endfor %}

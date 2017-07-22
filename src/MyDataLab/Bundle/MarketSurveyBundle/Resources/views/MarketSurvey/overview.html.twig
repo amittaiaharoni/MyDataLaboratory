@@ -1,0 +1,718 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% import '@MyDataLabMarketSurvey/MarketSurvey/entityTable.html.twig' as entityTable %}
+
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div id="survey-overview" class="survey-overview col-md-12 col-sm-12 col-xs-12">
+                <ul>
+                    <li><a href="#survey-general-overview">OVERVIEW</a></li>
+                    <li><a href="#survey-e-retailers">E-RETAILERS</a></li>
+                    <li><a href="#survey-market-places">MARKET PLACES</a></li>
+                    <li><a href="#survey-brands">BRANDS</a></li>
+                    <li><a href="#survey-products">PRODUCTS</a></li>
+                </ul>
+
+                <div id="survey-general-overview" class="tab">
+
+                    <section class="col-md-12 text-center">
+                        <div class="small-box col-md-3">
+                            <div class="small-box-body">
+                                <h2>15</h2>
+                            </div>
+                            <div class="small-box-footer" style="background: #272D71; color: white;">
+                                <span><strong>E-retailers</strong></span>
+                            </div>
+                        </div>
+                        <div class="small-box col-md-3">
+                            <div class="small-box-body">
+                                <h2>5</h2>
+                            </div>
+                            <div class="small-box-footer" style="background: #272D71; color: white;">
+                                <span><strong>Market Places</strong></span>
+                            </div>
+                        </div>
+                        <div class="small-box col-md-3">
+                            <div class="small-box-body">
+                                <h2>325</h2>
+                            </div>
+                            <div class="small-box-footer" style="background: #99CA3C; color: white;">
+                                <span><strong>Brands</strong></span>
+                            </div>
+                        </div>
+                        <div class="small-box col-md-3">
+                            <div class="small-box-body">
+                                <h2>13,259</h2>
+                            </div>
+                            <div class="small-box-footer" style="background: #99CA3C; color: white;">
+                                <span><strong>Products</strong></span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-6 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header" style="background: #272D71; color: white;">
+                                <h3 class="box-title"><strong>E-retailers & MP Mapping</strong></h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="bubble" data-google-options='{"hAxis":{"title":"Nb of Products"},"vAxis":{"title":"Traffic Weight"},"height":400,"bubble":{}}' data-query="retailers-marketplaces"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-6 text-center">
+                        <div class="box" style="height: 100%;">
+                            <div class="box-header" style="background: #99CA3C ; color: white;">
+                                <h3 class="box-title"><strong>Brands Mapping</strong></h3>
+                            </div>
+                            <div class="box-body" style="height: 80%;">
+                                <div style="height: 100%; width: 100%" class="widget google-chart" data-type="bubble" data-google-options='{"hAxis":{"title":"Nb of Products"},"vAxis":{"title":"Nb of E-retailers & MP"},"height":400,"bubble":{}}' data-query="brands-products"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {% if topRetailers is defined %}
+                        <section class="col-md-6 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #272D71 ; color: white;">
+                                    <h3 class="box-title"><strong>TOP 10 E-retailers</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="top-ten-entities" data-query="retailers">
+                                        {{ entityTable.generateTable(topRetailers, {'name': 'E-Retailers'}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                    {% if topBrands is defined %}
+                        <section class="col-md-6 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #99CA3C ; color: white;">
+                                    <h3 class="box-title"><strong>TOP 10 Brands</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="top-ten-entities" data-query="brands">
+                                        {{ entityTable.generateTable(topBrands, {'name': 'Brands'}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                    {% if topMarketPlaces is defined %}
+                    <section class="col-md-6 text-center">
+                        <div class="box" style="height: 100%;">
+                            <div class="box-header" style="background: #272D71 ; color: white;">
+                                <h3 class="box-title"><strong>TOP 10 Market Places</strong></h3>
+                            </div>
+                            <div class="box-body" style="height: 80%;">
+                                <div style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="top-ten-entities" data-query="market-places">
+                                    {{ entityTable.generateTable(topMarketPlaces, {'name': 'Market Places'}) }}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {% endif %}
+                    {% if topProducts is defined %}
+                        <section class="col-md-6 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #99CA3C ; color: white;">
+                                    <h3 class="box-title"><strong>TOP 10 Products</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="top-ten-entities" data-query="products">
+                                        {{ entityTable.generateTable(topProducts, {'name': 'Products'}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+
+                </div>
+                <div id="survey-e-retailers" class="tab">
+                    {% if retailers is defined %}
+                        <section class="col-md-12 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #272D71 ; color: white;">
+                                    <h3 class="box-title"><strong>TOP E-retailers</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div id="all-entities-retailers" style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="all-entities" data-query="e-retailers">
+                                        {{ entityTable.generateTable(retailers, {
+                                            'name': 'E-Retailers',
+                                            'dataTable': true,
+                                            'filterBy':{
+                                                'Nb of prod.': {'columnName': 'Nb of prod.', 'type': 'slider-filter'},
+                                                'MDL Score': {'columnName': 'MDL Score', 'type': 'selector-filter'},
+                                                'Rank': {'columnName': 'Rank', 'type': 'slider-filter'}
+                                        }}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                    <section class="col-md-7 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">E-Retailers MDL mapping</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="bubble" data-google-options='{"hAxis":{"title":"Nb of Products"},"vAxis":{"title":"Traffic Weight"},"height":400,"bubble":{}}' data-query="retailers-mdl"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-5 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Nb of prod</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="bar" data-google-options='{"hAxis":{"title":"Nb of Products"},"vAxis":{"title":"Traffic Weight"},"legend":"none","annotations":{"alwaysOutside":true,"textStyle":{"fontSize":14,"color":"#000","auraColor":"none"}},"height":400,"bar":{}}' data-query="retailers-mdl"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-9 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">E-Retailers profiles regarding price range of the prod.</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="line" data-google-options='{"hAxis":{"title":"Price range","format":"currency"},"vAxis":{"title":"Nb of Products"},"legend":{"position":"bottom"},"axis":{"x":{},"y":{"0":{"label":"Nb of prod."}}},"height":400,"line":{},"pointSize":15}' data-query="retailers-products_price"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-9 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Average prices practiced by E-retailers compared to their nb of prod.</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="scatter" data-google-options='{"hAxis":{"title":"Nb of Products","minValue":0,"maxValue":2.5},"vAxis":{"title":"Average price in €","minValue":0,"maxValue":1200},"height":400}' data-query="retailers-products_price"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-9 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Product offer by E-Retailers</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="horiz-bar" data-google-options='{"annotations":{"textStyle":{"fontSize":12,"auraColor":"none","color":"#555"}},"legend":{"position":"bottom","alignment":"center"},"isStacked":true,"height":400,"bars":"horizontal","bar":{"groupWidth":"75%"}}' data-query="retailers-products_price"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div id="survey-market-places" class="tab">
+                    {% if marketPlaces is defined %}
+                        <section class="col-md-12 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #272D71 ; color: white;">
+                                    <h3 class="box-title"><strong>TOP Market Places</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div id="all-entities-retailers" style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="all-entities" data-query="e-retailers">
+                                        {{ entityTable.generateTable(marketPlaces, {
+                                            'name': 'Market Places',
+                                            'dataTable': true,
+                                            'filterBy':{
+                                                'Nb of resellers.': {'columnName': 'Nb of resellers.', 'type': 'slider-filter'},
+                                                'Nb of prod.': {'columnName': 'Nb of prod.', 'type': 'slider-filter'},
+                                                'MDL Score': {'columnName': 'MDL Score', 'type': 'selector-filter'},
+                                                'Rank': {'columnName': 'Rank', 'type': 'slider-filter'}
+                                            }}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                </div>
+                <div id="survey-brands" class="tab">
+                    {% if brands is defined %}
+                        <section class="col-md-12 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #272D71 ; color: white;">
+                                    <h3 class="box-title"><strong>TOP Brands</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div id="all-entities-brands" style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="all-entities" data-query="e-retailers">
+                                        {{ entityTable.generateTable(brands, {
+                                            'name': 'Brands',
+                                            'dataTable': true,
+                                            'filterBy':{
+                                                'Nb of MP.': {'columnName': 'Nb of MP.', 'type': 'slider-filter'},
+                                                'Nb of E-ret.': {'columnName': 'Nb of E-ret.', 'type': 'slider-filter'},
+                                                'Nb of E-prod.': {'columnName': 'Nb of prod.', 'type': 'slider-filter'},
+                                                'MDL Score': {'columnName': 'MDL Score', 'type': 'selector-filter'},
+                                                'Rank': {'columnName': 'Rank', 'type': 'slider-filter'}
+                                            }}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+
+                    <section class="col-md-7 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Brands MDL mapping</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="bubble" data-google-options='{"hAxis":{"title":"Nb of Products"},"vAxis":{"title":"Traffic Weight"},"height":400,"bubble":{}}' data-query="brands-mdl"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-5 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Nb of prod</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="bar" data-google-options='{"hAxis":{"title":"Nb of Products"},"vAxis":{"title":"Traffic Weight"},"legend":"none","annotations":{"alwaysOutside":true,"textStyle":{"fontSize":14,"color":"#000","auraColor":"none"}},"height":400,"bar":{}}' data-query="brands-mdl"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-9 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Brands profiles regarding price range of the prod.</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="line" data-google-options='{"hAxis":{"title":"Price range","format":"currency"},"vAxis":{"title":"Nb of Products"},"legend":{"position":"bottom"},"axis":{"x":{},"y":{"0":{"label":"Nb of prod."}}},"height":400,"line":{},"pointSize":15}' data-query="brands-products_price"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-9 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Average prices practiced by brands compared to their nb of prod.</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="scatter" data-google-options='{"hAxis":{"title":"Nb of Products","minValue":0,"maxValue":2.5},"vAxis":{"title":"Average price in €","minValue":0,"maxValue":1200},"height":400}' data-query="brands-products_price"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-md-9 text-center">
+                        <div class="box" style="height: 100%">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Product offer by Brands</h3>
+                            </div>
+                            <div class="box-body" style="height: 80%">
+                                <div style="height: 100%; width: 100%;" class="widget google-chart" data-type="horiz-bar" data-google-options='{"annotations":{"textStyle":{"fontSize":12,"auraColor":"none","color":"#555"}},"legend":{"position":"bottom","alignment":"center"},"isStacked":true,"height":400,"bars":"horizontal","bar":{"groupWidth":"75%"}}' data-query="brands-products_price"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                <div id="survey-products" class="tab">
+                    {% if products is defined %}
+                        <section class="col-md-12 text-center">
+                            <div class="box" style="height: 100%;">
+                                <div class="box-header" style="background: #272D71 ; color: white;">
+                                    <h3 class="box-title"><strong>TOP Products</strong></h3>
+                                </div>
+                                <div class="box-body" style="height: 80%;">
+                                    <div id="all-entities-retailers" style="height: 100%; width: 100%" class="widget" data-type="table" data-widget="all-entities" data-query="e-retailers">
+                                        {{ entityTable.generateTable(products, {
+                                            'dataTable': true,
+                                            'filterBy':{
+                                                'Nb of MP.': {'columnName': 'Nb of MP.', 'type': 'slider-filter'},
+                                                'Nb of E-ret.': {'columnName': 'Nb of E-ret.', 'type': 'slider-filter'},
+                                                'Nb of E-prod.': {'columnName': 'Nb of prod.', 'type': 'slider-filter'},
+                                                'MDL Score': {'columnName': 'MDL Score', 'type': 'selector-filter'},
+                                                'Rank': {'columnName': 'Rank', 'type': 'slider-filter'}
+                                            }}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {#<div class="content-inner">#}
+   {##}
+        {#<div class="row">#}
+            {#<div class="col-md-6 col-xs-12">#}
+                {#<div class="marketing-global-results blue">#}
+                    {#<div class="result fl-l">#}
+                        {#<span class="number">15</span>#}
+                        {#<span class="text">E-retailers</span>#}
+                    {#</div>#}
+
+                    {#<div class="result fl-r">#}
+                        {#<span class="number">15</span>#}
+                        {#<span class="text">E-retailers</span>#}
+                    {#</div>#}
+
+                    {#<span class="title">E-retailers and MP mapping</span>#}
+                    {#<div class="marketing-chart-wrapper" id="chart-retailers"></div>#}
+                {#</div>#}
+            {#</div>#}
+            {##}
+            {##}
+            {#<div class="col-md-6 col-xs-12">#}
+                {#<div class="marketing-global-results green">#}
+                    {#<div class="result fl-l">#}
+                        {#<span class="number">15</span>#}
+                        {#<span class="text">E-retailers</span>#}
+                    {#</div>#}
+
+                    {#<div class="result fl-r">#}
+                        {#<span class="number">15</span>#}
+                        {#<span class="text">E-retailers</span>#}
+                    {#</div>#}
+
+                    {#<span class="title">Brands mapping</span>#}
+                    {#<div class="marketing-chart-wrapper" id="chart-brands"></div>#}
+                {#</div>#}
+            {#</div>#}
+
+        {#</div>#}
+
+    {#</div>#}
+
+{% endblock %}
+
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        (function() {
+            "use strict";
+
+            var survey = {};
+
+            //select data
+            var selectData = function() {
+                return ["All"];
+            };
+
+            var SurveyWizard = function SurveyWizard(elementId) {
+                var $selectElements,
+                    _this = this,
+                    $widgets,
+                    $widgetCustom,
+                    $tabs,
+                    $tabSchemeSteps,
+                    localStorage = localStorage || window.localStorage;
+
+                this.currentStep = 0;
+                this.currentSubStep = 0;
+                this.subStepsLength = 0;
+
+                //init
+                this.init = function init() {
+                    this.loadGoogleCharts();
+                    this.$tabs = $("#" + elementId).find(".step");
+                    this.$tabSchemeSteps = $("#" + elementId).find("li");
+                    $("#"+elementId).tabs({
+                        create: function(event, ui) {},
+                        activate: function(event, ui) {},
+                        heightStyle: "auto"
+                    });
+                };
+
+                $("#"+elementId).on( "tabscreate", function( event, ui ) {
+                    _this.setWizardTab($('#' + ui.panel.attr('id')));
+                } );
+
+                $("#"+elementId).on("tabsactivate", function( event, ui ) {
+                    _this.setWizardTab($('#' + ui.newPanel.attr('id')));
+                });
+
+
+                //set current wizard step
+                this.setWizardTab = function setWizardTab( tab ) {
+                    var date = new Date(),
+                        currentMonth = date.getMonth(),
+                        currentDate = date.getDate(),
+                        currentYear = date.getFullYear();
+                    this.currentTab = tab.attr('id');
+                    this.$widgets = tab.find(".widget");
+                    this.widgetsAmount = this.$widgets.length - 1;
+                    this.customTabFn = false || $(tab).data("customfn");
+
+                    if (this.customStepFn) {
+                        this[this.customStepFn](_this.$subSteps);
+                    } else {
+                        _this.setActiveWidgets(this.$widgets);
+                    }
+
+                };
+
+                //set active sub step in the current wizard step
+                this.setActiveWidgets = function setActiveWidgets(widgets) {
+                    function initializeGoogleCharts() {
+                        var googleCharts = widgets.filter(".google-chart");
+                        googleCharts.each(function (index, chart) {
+                            _this.getChartData($(chart))
+                                .then(function(data) {
+                                    _this.initiateGoogleChart($(chart), data);
+                                })
+                        });
+                    }
+
+                    google.charts.setOnLoadCallback(initializeGoogleCharts);
+                };
+
+                //get items for filling the step's select data
+                this.getChartData = function getChartData(chart) {
+                    var $deferred = $.Deferred(),
+                        data;
+                    switch ($(chart).data('type')){
+                        case 'bubble':
+                            data = [
+                                ['ID',     'Retailer',         'Brand',   'Region',        'Amount'],
+                                ['CAN',    80.66,              1.67,      'North America',  33739900],
+                                ['DEU',    79.84,              1.36,      'Europe',         81902307],
+                                ['DNK',    78.6,               1.84,      'Europe',         5523095],
+                                ['EGY',    72.73,              2.78,      'Middle East',    79716203],
+                                ['GBR',    80.05,              2,         'Europe',         61801570],
+                                ['IRN',    72.49,              1.7,       'Middle East',    73137148],
+                                ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
+                                ['ISR',    81.55,              2.96,      'Middle East',    7485600],
+                                ['RUS',    68.6,               1.54,      'Europe',         141850000],
+                                ['USA',    78.09,              2.05,      'North America',  307007000]
+                            ];
+                            break;
+                        case 'bar':
+                            if($(chart).data('query') === 'brands-mdl'){
+                                data = [
+                                    ['Brand',            'Products'],
+                                    ['Brand 1',        1090],
+                                    ['Brand 2',        995],
+                                    ['Brand 3',        505],
+                                    ['Brand 4',        565],
+                                    ['Brand 5',        230]
+                                ];
+                            }
+                            else if($(chart).data('query') === 'retailers-mdl'){
+                                data = [
+                                    ['Retailer',            'Products'],
+                                    ['E-Retailer 1',        1090],
+                                    ['E-Retailer 2',        995],
+                                    ['E-Retailer 3',        505],
+                                    ['E-Retailer 4',        565],
+                                    ['E-Retailer 5',        230]
+                                ];
+                            }
+                            break;
+                        case 'line':
+                            if($(chart).data('query') === 'brands-products_price'){
+                                data = [
+                                    ['products', 'Brand 1', 'Brand 2', 'Brand 3'],
+                                    [1,  37.8, 80.8, 41.8],
+                                    [2,  30.9, 69.5, 32.4],
+                                    [3,  25.4,   57, 25.7],
+                                    [4,  11.7, 18.8, 10.5],
+                                    [5,  11.9, 17.6, 10.4],
+                                    [6,   8.8, 13.6,  7.7],
+                                    [7,   7.6, 12.3,  9.6],
+                                    [8,  12.3, 29.2, 10.6],
+                                    [9,  16.9, 42.9, 14.8],
+                                    [10, 12.8, 30.9, 11.6],
+                                    [11,  5.3,  7.9,  4.7],
+                                    [12,  6.6,  8.4,  5.2],
+                                    [13,  4.8,  6.3,  3.6],
+                                    [14,  4.2,  6.2,  3.4]
+                                ];
+                            }
+                            else if($(chart).data('query') === 'retailers-products_price'){
+                                data = [
+                                    ['products', 'E-Retailer 1', 'E-Retailer 2', 'E-Retailer 3'],
+                                    [1,  37.8, 80.8, 41.8],
+                                    [2,  30.9, 69.5, 32.4],
+                                    [3,  25.4,   57, 25.7],
+                                    [4,  11.7, 18.8, 10.5],
+                                    [5,  11.9, 17.6, 10.4],
+                                    [6,   8.8, 13.6,  7.7],
+                                    [7,   7.6, 12.3,  9.6],
+                                    [8,  12.3, 29.2, 10.6],
+                                    [9,  16.9, 42.9, 14.8],
+                                    [10, 12.8, 30.9, 11.6],
+                                    [11,  5.3,  7.9,  4.7],
+                                    [12,  6.6,  8.4,  5.2],
+                                    [13,  4.8,  6.3,  3.6],
+                                    [14,  4.2,  6.2,  3.4]
+                                ];
+                            }
+                            break;
+                        case 'scatter':
+                            if($(chart).data('query') === 'brands-products_price'){
+                                data = [
+                                    ['brands', 'price'],
+                                    [ 0.8,      1200],
+                                    [ 0.4,      550],
+                                    [ 1.1,     140],
+                                    [ 0.4,      500],
+                                    [ 2.3,      350],
+                                    [ 2.0,    700]
+                                ];
+                            }
+                            else if($(chart).data('query') === 'retailers-products_price'){
+                                data = [
+                                    ['retailers', 'price'],
+                                    [ 0.8,      1200],
+                                    [ 0.4,      550],
+                                    [ 1.1,     140],
+                                    [ 0.4,      500],
+                                    [ 2.3,      350],
+                                    [ 2.0,    700]
+                                ];
+                            }
+                            break;
+                        case 'horiz-bar':
+                            if($(chart).data('query') === 'brands-products_price'){
+                                data = [
+                                    ['brands', 'E-Retailer 1', 'E-Retailer 2', 'E-Retailer 3', 'E-Retailer 4', 'E-Retailer 5',],
+                                    [ 'Brand 1',      700, 0, 0, 120, 40],
+                                    [ 'Brand 2',      110, 0, 180, 300, 115],
+                                    [ 'Brand 3',     80, 700, 290, 0, 65],
+                                    [ 'Brand 4',      90, 85, 290, 260, 270],
+                                    [ 'Brand 5',      175, 65, 250, 300, 300]
+                                ];
+                            }
+                            else if($(chart).data('query') === 'retailers-products_price'){
+                                data = [
+                                    ['retailers', 'brand 1', 'brand 2', 'brand 3', 'brand 4', 'brand 5',],
+                                    [ 'E-Retailer 1',      700, 0, 0, 120, 40],
+                                    [ 'E-Retailer 2',      110, 0, 180, 300, 115],
+                                    [ 'E-Retailer 3',     80, 700, 290, 0, 65],
+                                    [ 'E-Retailer 4',      90, 85, 290, 260, 270],
+                                    [ 'E-Retailer 5',      175, 65, 250, 300, 300]
+                                ];
+                            }
+                            break;
+                    }
+
+                            $deferred.resolve(data);
+
+                            return $deferred.promise();
+                };
+
+                this.initiateGoogleChart = function initiateGoogleChart(chart, data){
+                    var options = $(chart).data('google-options'),
+                        googleData = new google.visualization.arrayToDataTable(data),
+                        googleChart;
+                    switch ($(chart).data('type')){
+                        case 'bubble':
+                            googleChart = new google.visualization.BubbleChart(chart[0]);
+                            break;
+                        case 'bar':
+                            googleChart = new google.visualization.ColumnChart(chart[0]);
+                            break;
+                        case 'line':
+                            googleChart = new google.visualization.LineChart(chart[0]);
+                            break;
+                        case 'scatter':
+                            googleChart = new google.visualization.ScatterChart(chart[0]);
+                            break;
+                        case 'horiz-bar':
+                            googleChart = new google.visualization.BarChart(chart[0]);
+                            break;
+                    }
+
+                    googleChart.draw(googleData, options);
+                };
+
+                this.initiateTableChart = function initiateTableChart(chart, data) {
+
+                };
+
+                //send survey data
+                this.sendSurvey = function sendSurvey(surveyData) {
+                    var $deferred = $.Deferred();
+
+                    $deferred.resolve(response);
+
+                    return $deferred.promise();
+                };
+
+                this.loadGoogleCharts = function loadGoogleCharts(){
+                    google.charts.load('current', {'packages':['corechart'], 'language': 'fr'});
+                }
+            };
+
+            $(function() {
+                var wizard = new SurveyWizard("survey-overview");
+                wizard.init();
+            });
+        }());
+    </script>
+    <script>
+//       (function() {
+//            'use strict';
+//
+//            //static data
+//            var staticChartData = [
+//                ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
+//                ['CAN',    80.66,              1.67,      'North America',  33739900],
+//                ['DEU',    79.84,              1.36,      'Europe',         81902307],
+//                ['DNK',    78.6,               1.84,      'Europe',         5523095],
+//                ['EGY',    72.73,              2.78,      'Middle East',    79716203],
+//                ['GBR',    80.05,              2,         'Europe',         61801570],
+//                ['IRN',    72.49,              1.7,       'Middle East',    73137148],
+//                ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
+//                ['ISR',    81.55,              2.96,      'Middle East',    7485600],
+//                ['RUS',    68.6,               1.54,      'Europe',         141850000],
+//                ['USA',    78.09,              2.05,      'North America',  307007000]
+//            ],
+//
+//            staticChartOptions = {
+//                hAxis: {title: 'Nb of products'},
+//                vAxis: {title: 'Traffic Weight'},
+//                bubble: {textStyle: {fontSize: 11}}
+//            };
+//
+//            //chart drawer
+//            var ChartDrawer = function ChartDrawer(id, type, url) {
+//                var _this = this;
+//
+//                //get chart data
+//                this.getData = function() {
+//
+//                    var $deferred = $.Deferred();
+//                    $deferred.resolve();
+//
+//                    return $deferred.promise();
+//                };
+//
+//                //init function
+//                this.init = function() {
+//                    this.getData().then(function(data) {
+//                        _this.drawChart(staticChartData, staticChartOptions);
+//                    });
+//                };
+//
+//                //draw chart
+//                this.drawChart = function(data, options) {
+//                    google.charts.load('current', {'packages':['corechart']});
+//                    google.charts.setOnLoadCallback(callbackChart);
+//
+//                    function callbackChart() {
+//                        var chartData = google.visualization.arrayToDataTable(staticChartData),
+//                            chart = new google.visualization[type](document.getElementById(id));
+//
+//                        chart.draw(chartData, staticChartOptions);
+//                    }
+//
+//                }
+//
+//                this.init();
+//
+//            }
+//
+//            //run
+//            $(function() {
+//                var chartRetailers = new ChartDrawer('chart-retailers', 'BubbleChart', '/retailers'),
+//                    chartBrands = new ChartDrawer('chart-brands', 'BubbleChart', '/chart');
+//            });
+//        })();
+//
+    </script>
+{% endblock %}

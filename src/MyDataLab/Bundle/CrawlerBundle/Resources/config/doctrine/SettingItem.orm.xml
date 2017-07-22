@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity 
+        repository-class="MyDataLab\Bundle\CrawlerBundle\Repository\SettingItemRepository" 
+        name="MyDataLab\Bundle\CrawlerBundle\Entity\SettingItem"
+        table="mdl_crawler_setting_items"
+    >
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="selectorId" type="string" column="selector_id" length="255" />
+        <field name="xpath" type="string" column="xpath" length="255" />
+        <field name="image" type="boolean" column="image">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <many-to-one field="retailer" target-entity="MyDataLab\Bundle\RetailersBundle\Entity\Retailer">
+            <join-column name="retailer_id" referenced-column-name="id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,82 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+    <div clas="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title fl-l">{% filter capitalize %}{% trans %}EDIT_OR_ADD_ARTICLES{% endtrans %}{% endfilter %}</h3>
+                <button id="add-article" type="button" class='btn btn-default fl-r' data-add-article="true">{% filter capitalize %}{% trans %}ADD_ARTICLE{% endtrans %}{% endfilter %}</button>
+            </div>
+            <div class="box-body">
+                <table id="blog-posts" class="table table-bordered table-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th>{% filter capitalize %}{% trans %}TITLE{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}UPLOADED{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}LAST_EDITED{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}ACTION{% endtrans %}{% endfilter %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in posts %}
+                            <tr
+                                data-get-url="{{ path('my_data_lab_blog_post_get', {'id': post.id}) }}"
+                                data-update-url="{{ path('my_data_lab_blog_post_update', {'id': post.id}) }}"
+                                data-delete-url="{{ path('my_data_lab_blog_post_delete', {'id': post.id}) }}">
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.createdAt|date }}</td>
+                                <td>{{ post.updatedAt|date }}</td>
+                                <td>
+                                    <button class="btn btn-default edit-post" data-edit="true">{% filter capitalize %}{% trans %}EDIT{% endtrans %}{% endfilter %}</button>&nbsp;
+                                    <button class="btn btn-default delete-post" data-delete="true">{% filter capitalize %}{% trans %}DELETE{% endtrans %}{% endfilter %}</button>
+                                    <a target="_blank" href="{{ path('my_data_lab_blog_post_preview', {'id': post.id}) }}" class="btn btn-default preview-post" data-preview="true">{% filter capitalize %}{% trans %}PREVIEW{% endtrans %}{% endfilter %}</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="popup-page" id="popup-page">
+            <div class="content">
+                <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                <div class="inner">
+                    <div id="popup-post-edit-wrapper" class="popup-post-edit-wrapper">
+                        <h2>Article editor</h2>
+                        {{ form(createForm, {'attr': {
+                            'data-create-url': createUrl,
+                            'id': 'popup-post-content',
+                            'novalidate': 'novalidate',
+                            'name': ''
+                        }}) }}
+                        <input name="image" type="file" id="image-upload" class="hidden">
+                        <div class="popup-msg" id="post-save-prompt">
+                            <div class="content">
+                                <h3>You have unsaved changes.</h3>
+                                <div class="btns-wrapper">
+                                    <button id="save-and-close" type="button" class="btn btn-default">Save and close</button>
+                                    <button id="close-without-save" type="button" class="btn btn-default">Close</button>
+                                    <button id="continue-edit" type="button" class="btn btn-default">Continue editing</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="popup-post-delete-wrapper" class="popup-post-edit-wrapper delete">
+                        <h3>{% filter capitalize %}{% trans %}DO_YOU_WANT_TO_DELETE_THIS_ARTICLE{% endtrans %}{% endfilter %}</h3>
+                        <button id="btn-confirm-delete" type="button" class='btn btn-default'>{% filter capitalize %}{% trans %}YES{% endtrans %}{% endfilter %}</button>
+                        <button id="btn-cancel-delete" type="button" class='btn btn-default'>{% filter capitalize %}{% trans %}NO{% endtrans %}{% endfilter %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/mydatalabadmin/vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabblog/js/blog.js') }}"></script>
+{% endblock %} 

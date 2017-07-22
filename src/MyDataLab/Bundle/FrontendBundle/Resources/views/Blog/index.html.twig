@@ -1,0 +1,38 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_blog') }}">Blog</a></li>
+    </ol>
+{% endblock %}
+{% block content %}
+    <section class="text-center text-md-left offset-1">
+        <div class="container">
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-sm-6 col-md-4">
+                        <article class="thumbnail thumbnail-4 section-border well slow-hover">
+                            <div class="image-slow-wrapper"><img src="/images/{{ post.image }}" alt=""></div>
+                            <div class="caption">
+                                <h4><a href="#">{{ post.title }}</a></h4>
+                                <p class="text-dark-variant-2">{{ post.title|striptags|slice(0, 144) }}</p>
+                                <div class="blog-info">
+                                    <div class="pull-md-left">
+                                        <time datetime="{{ post.createdAt|date(constant('DATE_ATOM')) }}" class="meta fa-calendar">{{ post.createdAt|date }}</time>
+                                        <a href="#" class="badge fa-comments font-secondary">13</a>
+                                    </div>
+                                    <a href="{{ path('my_data_lab_frontend_blog_show', {'slug': post.slug}) }}" class="btn-link">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="well text-center text-md-left">
+        <div class="container">
+            <div aria-label="First group" role="group" class="col-inset-2 text-center btn-group"><a href="#" class="btn btn-default round-small active">1</a><a href="#" class="btn btn-default round-small">2</a><a href="#" class="btn btn-default round-small">3</a><span class="text-light-clr font-secondary">...</span><a href="#" class="btn btn-default round-small">8</a></div>
+        </div>
+    </section>
+{% endblock %}

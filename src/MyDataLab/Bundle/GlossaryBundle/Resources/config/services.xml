@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="my_data_lab_glossary.type.definition.class">MyDataLab\Bundle\GlossaryBundle\Form\DefinitionType</parameter>
+        <parameter key="my_data_lab_glossary.type.glossary.class">MyDataLab\Bundle\GlossaryBundle\Form\GlossaryType</parameter>
+    </parameters>
+    <services>
+        <service id="my_data_lab_glossary.type.definition" class="%my_data_lab_glossary.type.definition.class%">
+            <tag name="form.type" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+        <service id="my_data_lab_glossary.type.glossary" class="%my_data_lab_glossary.type.glossary.class%">
+            <tag name="form.type" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+    </services>
+    <!--
+    <services>
+        <service id="my_data_lab_glossary.example" class="MyDataLab\Bundle\GlossaryBundle\Example">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+</container>

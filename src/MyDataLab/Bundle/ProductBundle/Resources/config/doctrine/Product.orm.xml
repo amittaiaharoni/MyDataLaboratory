@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="MyDataLab\Bundle\ProductBundle\Entity\Product" table="mdl_products" repository-class="MyDataLab\Bundle\ProductBundle\Repository\ProductRepository">
+        <unique-constraints>
+            <unique-constraint name="url" columns="url"/>
+        </unique-constraints>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="siteid" type="integer" column="siteid" nullable="true" />
+        <field name="title" type="string" column="title" length="255"/>
+        <field name="url" type="string" column="url" length="255" nullable="true" />
+        <field name="description" type="string" column="description" length="500" nullable="true" />
+        <field name="keywords" type="string" column="keywords" length="255" nullable="true" />
+        <field name="brand" type="string" column="brand" length="100" nullable="true" />
+        <field name="categories" type="string" column="categories" length="255" nullable="true" />
+        <field name="ean13" type="string" column="EAN13" length="20" nullable="true" />
+        <field name="reference" type="string" column="reference" length="50" nullable="true" />
+        <field name="image" type="string" column="image" length="255" nullable="true" />
+        <field name="imageTitle" type="string" column="image_title" length="100" nullable="true" />
+        <field name="price" type="decimal" column="price" scale="2" precision="10" nullable="true" />
+        <field name="priceOld" type="decimal" column="price_old" scale="2" precision="10" nullable="true" />
+        <field name="typePromo" type="string" column="type_promo" length="30" nullable="true"/>
+        <field name="priceTtcHt" type="decimal" column="price_ttc_ht" scale="2" precision="10" nullable="true" />
+        <field name="currency" type="string" column="currency" length="10" nullable="true" />
+        <field name="shipmentPrice" type="decimal" column="shipment_price" scale="2" precision="10" nullable="true" />
+        <field name="stockState" type="string" column="stock_state" length="20" nullable="true" />
+        <field name="productMark" type="string" column="product_mark" length="20" nullable="true" />
+        <field name="comments" type="text" column="comments" nullable="true" />
+        <field name="lastUpdate" type="datetime" column="last_update" nullable="true" />
+        <many-to-many target-entity="MyDataLab\Bundle\RetailersBundle\Entity\Retailer" field="retailers" inversed-by="products">
+            <join-table name="mdl_retailers_products">
+                <join-columns>
+                    <join-column name="product_id"  referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="retailer_id" referenced-column-name="id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+    </entity>
+</doctrine-mapping>

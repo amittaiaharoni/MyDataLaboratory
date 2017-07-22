@@ -1,0 +1,63 @@
+/*Adverline*/
+var adv_cst_v_tag_103086_brand='CATEGORIE';
+var adv_cst_v_tag_103086_product=TDConf.Config.productId;
+var adv_script='//ads2.adverline.com/retargetproduit/partnertag/103086_tag.js';
+try{
+var adv_header = document.getElementsByTagName("head")[0];
+var adv_rt_script = document.createElement("script");
+adv_rt_script.type="text/javascript";
+adv_rt_script.src= adv_script;
+adv_header.appendChild(adv_rt_script);
+} catch (e) {}
+
+/*CibleLink fhardi*/
+if (document.createElement) {
+var ads_mont = document.createElement('script');
+if (ads_mont) {
+ads_mont.setAttribute("src", ('https:' == document.location.protocol ? 'https://' : 'http://') +
+"sv.ciblelink.com/profiling/perform.php?action=PRODUCT&name=Powersante&product="+TDConf.Config.productId+"&r=" + Math.round(Math.random() * 1000000000));
+ads_mont.type = 'text/javascript';
+ads_mont.async = "async";
+ads_mont.defer = "defer";
+document.getElementsByTagName("head")[0].appendChild(ads_mont);
+}
+}
+
+/*Eperflex Camille J - fhardi 090415*/
+var TDprot = (("https:" == document.location.protocol) ? "https://" : "http://");
+var eperflex = document.createElement('img');
+eperflex.src = TDprot+"email-reflex.com/tags/target.php?source=632&pid="+TDConf.Config.productId;
+eperflex.async = 'yes';
+eperflex.defer='defer';
+document.body.appendChild(eperflex);
+
+/*Yieldify Camille - Fhardi 170615*/
+(function(d) {
+var e = d.createElement('script');
+e.src = d.location.protocol + '//app.yieldify.com/yieldify/code.js?yieldify_id=3945&loca='+window.location.href;
+e.async = true;
+d.getElementsByTagName("head")[0].appendChild(e);
+}(document));
+
+/*Sirdata Amelie / Fhardi 191015*/
+(function(){
+var service = 'product.d';
+var config = {
+
+pa : "21137", // Sirdata Advertiser ID
+u : "", // URL but leave empty if necessary
+r : "", // REFERRER but leave empty if necessary
+product_id : TDConf.Config.productId, // Collect product id
+product_name : TDConf.Config.productName, // COllect product name
+product_price : TDConf.Config.price // Price
+
+};
+var configParams = [];
+for(var v in config){
+configParams .push(v+'='+encodeURIComponent(config[v]));
+}
+  var sddanJS=document.createElement('script');
+  sddanJS.async = true;
+  sddanJS.src='//js.sddan.com/'+service+'?'+ configParams.join('&');
+ document.getElementsByTagName('head')[0].appendChild(sddanJS);
+ })();

@@ -1,0 +1,18 @@
+<div class="box mdl-widget-gauge mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <h3 class="box-title">{% filter capitalize %}{% trans %}DATA_WELL_FILLED{% endtrans %}{% endfilter %} {{ filled }}%</h3>
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"> <i class="fa fa-minus"></i>
+        </button>
+    </div>
+    <div class="info-box box-body">
+        <div class="col-lg-6"> <span class="info-box-number"></span> <span>{% filter capitalize %}{% trans %}EMPTY_INCOMPLETE_FEATURES{% endtrans %}{% endfilter %}</span>
+            <ul>
+                <li>Earn 13 Code</li>
+                <li>Shipment cost...</li>
+            </ul>
+            <a class="btn btn-default">More details</a></div>
+        <div id="chart_div" class="col-lg-6 gauge"></div>
+    </div>
+    <div class="box-footer"></div>
+    <input type="hidden" class="mdl-widget-source-value" value="{{ filled }}">
+</div>

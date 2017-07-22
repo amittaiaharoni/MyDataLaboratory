@@ -1,0 +1,244 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Catalogue{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Exclusive Products in Catalogue</h3>
+                    <div class="export"></div>
+                </div>
+                <div class="box-body">
+                    <div id="tables_selectbox">
+                        <div class="col-md-2 col-md-offset-1">
+                            <dl class="dropdown"> 
+                                <dt>
+                                    <a href="#">
+                                        <span class="hida">E-Retailers</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel"></p>  
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect">
+                                        <ul>
+                                            <li class="center"><input type="checkbox" value="All">All</li>
+                                            <li><input type="checkbox" value="Concurrent 1">Concurrent 1</li>
+                                            <li><input type="checkbox" value="Concurrent 2">Concurrent 2</li>
+                                            <li><input type="checkbox" value="Concurrent 3">Concurrent 3</li>
+                                            <li><input type="checkbox" value="Concurrent 4">Concurrent 4</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dropdown_2"> 
+                                <dt>
+                                    <a href="#">
+                                        <span class="hida_2">Price criteria</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel_2"></p>  
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect_2">
+                                        <ul>
+                                            <li><input type="checkbox" value="I am more expensive">{% trans %}I_MORE_EXPENSIVE{% endtrans %}</li>
+                                            <li><input type="checkbox" value="I am cheaper">{% trans %}I_AM_CHEAPER{% endtrans %}</li>
+                                            <li><input type="checkbox" value="Decreasing">Decreasing</li>
+                                            <li><input type="checkbox" value="Increasing">Increasing</li>
+                                            <li><input type="checkbox" value="Promotion">Promotion</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dropdown_3"> 
+                                <dt>
+                                    <a href="#">
+                                        <span class="hida_3">Categories</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel_3"></p>  
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect_3">
+                                        <ul>
+                                            <li><input type="checkbox" value="All_3">All</li>
+                                            <li><input type="checkbox" value="Perfumes">Perfumes</li>
+                                            <li><input type="checkbox" value="Cosmétiques">Cosmétiques</li>
+                                            <li><input type="checkbox" value="Catégorie 3">Catégorie 3</li>
+                                            <li><input type="checkbox" value="Catégorie 4">Catégorie 4</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dropdown_4"> 
+                                <dt>
+                                    <a href="#">
+                                        <span class="hida_4">Brands</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel_4"></p>  
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect_4">
+                                        <ul>
+                                            <li><input type="checkbox" value="All_4"> All</li>
+                                            <li><input type="checkbox" value="Marque 1">Marque 1</li>
+                                            <li><input type="checkbox" value="Marque 2">Marque 2</li>
+                                            <li><input type="checkbox" value="Marque 3">Marque 3</li>
+                                            <li><input type="checkbox" value="Marque 4">Marque 4</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-default" type="button" id="test3">Clear All Filters</button>
+                        </div>
+                    </div>
+                    <table id="top-products" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>{% filter capitalize %}{% trans %}PRODUCT_EAN_13{% endtrans %}{% endfilter %}</th>
+                                <th>{% filter capitalize %}{% trans %}PRODUCT_ID{% endtrans %}{% endfilter %}</th>
+                                <th>{% trans %}PRODUCT_BR_NAME{% endtrans %}</th>
+                                <th>{% filter capitalize %}{% trans %}BRAND{% endtrans %}{% endfilter %}</th>
+                                <th>{% trans %}E_RETAILER_ONE_BR_PRICE{% endtrans %}</th>
+                                <th>{% trans %}E_RETAILER_TWO_BR_PRICE{% endtrans %}</th>
+                                <th>{% filter capitalize %}{% trans %}NEW{% endtrans %}{% endfilter %}</th>
+                                <th>{% trans %}LOWEST_BR_PRICE{% endtrans %}</th>
+                                <th>{% trans %}AVERAGE_BR_PRICE{% endtrans %}</th>
+                                <th>{% trans %}HIGHEST_BR_PRICE{% endtrans %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0
+                                </td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>22</td>
+                                <td>Internet Explorer 4.0</td>
+                                <td>Win 95+</td>
+                                <td>4</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>54</td>
+                                <td>34</td>
+                                <td>45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $("#top-products").DataTable();
+        });
+    </script>
+{% endblock %}

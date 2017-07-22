@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="my_data_lab_admin_contact_us" path="/contact-us">
+        <default key="_controller">MyDataLabCoreBundle:Default:contactUs</default>
+    </route>
+    <route id="my_data_lab_admin_dashboard" path="/">
+        <default key="_controller">MyDataLabAdminBundle:Admin:dashboard</default>
+    </route>
+    <import resource="@MyDataLabAdminBundle/Resources/config/routing/clients.xml" prefix="/clients/"/>
+    <import resource="@MyDataLabAdminBundle/Resources/config/routing/users.xml" prefix="/users/"/>
+    <import resource="@MyDataLabAdminBundle/Resources/config/routing/turnovers.xml" prefix="/turnover/"/>
+    <import resource="@MyDataLabAdminBundle/Resources/config/routing/database.xml" prefix="/database/"/>
+    <import resource="@MyDataLabBlogBundle/Resources/config/routing.xml" prefix="/blog/"/>
+    <import resource="@MyDataLabGlossaryBundle/Resources/config/routing.xml" prefix="/glossary/"/>
+    <import resource="@MyDataLabWhitePaperBundle/Resources/config/routing.xml" prefix="/white-papers/"/>
+    <import resource="@MyDataLabTranslationBundle/Resources/config/routing.xml" prefix="/translation/"/>
+    <import resource="@MyDataLabUserBundle/Resources/config/routing.xml" prefix="/account/" />
+    <import resource="@MyDataLabWordingBundle/Resources/config/routing.xml" prefix="/wording/" />
+    <import resource="@MyDataLabCatalogsBundle/Resources/config/routing.xml" prefix="/catalogue/" />
+    <import resource="@MyDataLabAlertsBundle/Resources/config/routing.xml" prefix="/alerts/" />
+    <import resource="@MyDataLabPricesBundle/Resources/config/routing.xml" prefix="/prices/" />
+    <import resource="@MyDataLabMarketSurveyBundle/Resources/config/routing.xml" prefix="/market-survey/"/>
+    <import resource="@MyDataLabWidgetBundle/Resources/config/routing.xml" prefix="/widgets/" />
+    <import resource="@MyDataLabRetailersBundle/Resources/config/routing.xml" prefix="/retailers/" />
+    <import resource="@MyDataLabCrawlerBundle/Resources/config/routing.xml" prefix="/crawler/" />
+    <!--<import resource="@MyDataLabPageRoutingBundle/Resources/config/routing.xml" prefix="/page-routing" />-->
+</routes>

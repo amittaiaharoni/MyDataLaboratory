@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="my_data_lab_client_dashboard" path="/dashboard">
+        <default key="_controller">MyDataLabAdminBundle:Client:dashboard</default>
+    </route>
+    <route id="my_data_lab_database_dashboard" path="/">
+        <default key="_controller">MyDataLabAdminBundle:Database:dashboard</default>
+    </route>
+    <route id="my_data_lab_database_product_list" path="/products-list">
+        <default key="_controller">MyDataLabAdminBundle:Database:productList</default>
+    </route>
+    <route id="my_data_lab_database_website_list" path="/websites-list">
+        <default key="_controller">MyDataLabAdminBundle:Database:websiteList</default>
+    </route>
+</routes>

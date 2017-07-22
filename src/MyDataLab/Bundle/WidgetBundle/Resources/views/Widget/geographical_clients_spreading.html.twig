@@ -1,0 +1,43 @@
+<div class="box mdl-widget-map mdl-widget" data-widget-id="{{ widget.id }}">
+    <table class="mdl-widget-source-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Popularity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Germany</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>United States</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>Brazil</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Canada</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>France</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>RU</td>
+                <td>700</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="box-header with-border">
+        <h3 class="box-title">{% filter capitalize %}{% trans %}GEOGRAPHICAL_CLIENTS_SPREADING{% endtrans %}{% endfilter %}</h3>
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+            <i class="fa fa-minus"></i>
+        </button>
+    </div>
+    <div class="chart box-body"></div>
+</div>

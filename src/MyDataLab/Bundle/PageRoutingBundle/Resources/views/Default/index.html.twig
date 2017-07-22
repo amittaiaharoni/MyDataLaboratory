@@ -1,0 +1,39 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}{% filter capitalize %}{% trans %}PAGE_ROUTING{% endtrans %}{% endfilter %}{% endblock %}
+{% block content %}
+    <div clas="col-xs-12">
+        <div class="box">
+            <ul>
+                {% for route in routes %}
+                    <li><a href="{{ path('my_data_lab_page_routing_edit', {'id': route.id}) }}">{{ route.path }}</a></li>
+                    {% endfor %}
+            </ul>
+            {#<div class="box-header">
+                <h3 class="box-title fl-l">{% filter capitalize %}{% trans %}EDIT_OR_ADD_ARTICLES{% endtrans %}{% endfilter %}</h3>
+                <button id="add-article" type="button" class='btn btn-default fl-r' data-add-article="true">{% filter capitalize %}{% trans %}ADD_ARTICLE{% endtrans %}{% endfilter %}</button>
+            </div>
+            <div class="box-body">
+                <table id="blog-posts" class="table table-bordered table-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th>{% filter capitalize %}{% trans %}TITLE{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}UPLOADED{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}LAST_EDITED{% endtrans %}{% endfilter %}</th>
+                            <th>{% filter capitalize %}{% trans %}ACTION{% endtrans %}{% endfilter %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>#}
+            <a href="{{ path('my_data_lab_page_routing_create') }}" class="btn btn-default">{% filter capitalize %}{% trans %}CREATE{% endtrans %}{% endfilter %}</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/mydatalabadmin/vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('bundles/mydatalabblog/js/blog.js') }}"></script>
+{% endblock %} 

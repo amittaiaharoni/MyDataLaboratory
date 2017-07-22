@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="my_data_lab_market_survey_design" path="/design">
+        <default key="_controller">MyDataLabMarketSurveyBundle:MarketSurvey:design</default>
+    </route>
+    <route id="my_data_lab_market_survey_get" path="/get/{attribute}" methods="GET">
+        <default key="_controller">MyDataLabMarketSurveyBundle:MarketSurvey:get</default>
+    </route>
+    <route id="my_data_lab_market_survey_create" path="/create" methods="POST">
+        <default key="_controller">MyDataLabMarketSurveyBundle:MarketSurvey:create</default>
+    </route>
+    <route id="my_data_lab_market_survey_list" path="/list">
+        <default key="_controller">MyDataLabMarketSurveyBundle:MarketSurvey:list</default>
+    </route>
+    <route id="my_data_lab__market_survey_overview" path="/overview">
+        <default key="_controller">MyDataLabMarketSurveyBundle:MarketSurvey:overview</default>
+    </route>
+    <import resource="@MyDataLabMarketSurveyBundle/Resources/config/routing/marketListing.xml" prefix="/list/"/>
+</routes>

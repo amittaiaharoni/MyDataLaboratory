@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="my_data_lab_frontend_homepage" path="/">
+        <default key="_controller">MyDataLabFrontendBundle:Default:index</default>
+    </route>
+    <route id="my_data_lab_frontend_subscription" path="/mydatalaboratory-subscription">
+        <default key="_controller">MyDataLabFrontendBundle:Default:subscription</default>
+    </route>
+    <route id="my_data_lab_frontend_sitemap" path="/sitemap">
+        <default key="_controller">MyDataLabFrontendBundle:Sitemap:index</default>
+    </route>
+    <import resource="@FOSUserBundle/Resources/config/routing/all.xml" />
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/contactUs.xml" prefix="/contact-us/"/>
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/solutions.xml" prefix="/solutions/"/>
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/pricing.xml" prefix="/pricing/"/>
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/faq.xml" prefix="/faq/"/>
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/blog.xml" prefix="/blog/"/>
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/glossary.xml" prefix="/glossary/"/>
+    <import resource="@MyDataLabFrontendBundle/Resources/config/routing/whitePapers.xml" prefix="/white-papers/"/>
+</routes>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters> 
+        <parameter key="my_data_lab_page_routing.route_loader.class">MyDataLab\Bundle\PageRoutingBundle\Routing\MDLLoader</parameter>
+        <parameter key="my_data_lab_page_routing.type.page_routing.class">MyDataLab\Bundle\PageRoutingBundle\Form\PageRoutingType</parameter>
+        <parameter key="my_data_lab_page_routing.routing_file">%kernel.root_dir%/../src/MyDataLab/Bundle/FrontendBundle/Resources/config</parameter>
+    </parameters>
+    <services>
+        <service id="my_data_lab_core.routing_loader" class="%my_data_lab_page_routing.route_loader.class%">
+            <tag name="routing.loader" />
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+            <argument type="service" id="request_stack"></argument>
+        </service>
+        <service id="my_data_lab_page_routing.type.page_routing" class="%my_data_lab_page_routing.type.page_routing.class%">
+            <tag name="form.type" />
+            <argument type="service" id="router"></argument>
+            <argument>%my_data_lab_page_routing.routing_file%</argument>
+        </service>
+    </services>
+</container>

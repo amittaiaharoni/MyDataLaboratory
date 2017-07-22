@@ -1,0 +1,53 @@
+<div class="box mdl-widget-colored-column-chart mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-header with-border">
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+            <i class="fa fa-minus"></i>
+        </button>
+        <h3 class="box-title">{% filter title %}{% trans %}PRICES_COMPARED{% endtrans %}{% endfilter %}</h3>
+    </div>
+    <table class="mdl-widget-source-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Percentage</th>
+                <th>Nr.Products</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>-50%</td><td>1</td></tr>
+            <tr><td>-45%</td><td>1</td></tr>
+            <tr><td>-40%</td><td>5</td></tr>
+            <tr><td>-35%</td><td>4</td></tr>
+            <tr><td>-30%</td><td>8</td></tr>
+            <tr><td>-25%</td><td>13</td></tr>
+            <tr><td>-20%</td><td>27</td></tr>
+            <tr><td>-15%</td><td>69</td></tr>
+            <tr><td>-10%</td><td>105</td></tr>
+            <tr><td>-5%</td><td>156</td></tr>
+            <tr><td>-0%</td><td>283</td></tr>
+            <tr><td>same</td><td>22</td></tr>
+            <tr><td>+0%</td><td>112</td></tr>
+            <tr><td>+5%</td><td>60</td></tr>
+            <tr><td>+10%</td><td>44</td></tr>
+            <tr><td>+15%</td><td>35</td></tr>
+            <tr><td>+20%</td><td>21</td></tr>
+            <tr><td>+25%</td><td>12</td></tr>
+            <tr><td>+30%</td><td>8</td></tr>
+            <tr><td>+35%</td><td>8</td></tr>
+            <tr><td>+40%</td><td>1</td></tr>
+            <tr><td>+45%</td><td>2</td></tr>
+            <tr><td>+50%</td><td>3</td></tr>
+        </tbody>
+    </table>
+    <div class="box-body chart"></div>
+    <div class="box-footer">
+        <a href="/admin/pages/prices/products.php">
+            <div class="legend_style" style="width:40%;background:#E12010;">2.568 {% filter capitalize %}{% trans %}PRODUCTS_MORE_EXPENSIVE{% endtrans %}{% endfilter %}</div>
+        </a>
+        <a href="/admin/pages/prices/products.php">
+            <div class="legend_style" style="width:20%;background:#5866FF;">22 {% filter capitalize %}{% trans %}PRODUCTS_EQUAL_PRICE{% endtrans %}{% endfilter %}</div>
+        </a>
+        <a href="/admin/pages/prices/products.php">
+            <div class="legend_style" style="width:40%;background:#99ca3c;">1.564 {% filter capitalize %}{% trans %}CHEAPER_PRODUCTS{% endtrans %}{% endfilter %} </div>
+        </a>
+    </div>
+</div>

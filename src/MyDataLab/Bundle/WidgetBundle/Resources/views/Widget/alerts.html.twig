@@ -1,0 +1,13 @@
+<div class="small-box alerts mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="inner">
+        <h3>{{ alertsCount }}</h3>
+        <p>{% filter capitalize %}{% trans %}ALERTS{% endtrans %}{% endfilter %}</p>
+    </div>
+    <div class="icon">
+        <i class="fa fa-bell"></i>
+    </div>
+    <a href="#" class="small-box-footer">
+    {% filter capitalize %}{% trans %}MORE_INFO{% endtrans %}{% endfilter %}
+    <i class="fa fa-arrow-circle-right"></i>
+</a>
+</div>

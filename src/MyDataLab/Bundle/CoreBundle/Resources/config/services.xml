@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="my_data_lab_core.locale_listener.class">MyDataLab\Bundle\CoreBundle\EventListener\LocaleListener</parameter>
+        <parameter key="my_data_lab_core.langauge_provider.class">MyDataLab\Bundle\CoreBundle\Service\LanguageProvider</parameter>
+        <parameter key="my_data_lab_core.langauge.class">MyDataLab\Bundle\CoreBundle\Entity\Language</parameter>
+        <parameter key="my_data_lab_core.vendor_manger.class">MyDataLab\Bundle\VendorsApiBundle\StubEntity\VendorManager</parameter>
+    </parameters>
+    <services>
+        <service id="my_data_lab_core.locale_listener" class="%my_data_lab_core.locale_listener.class%">
+            <argument>%kernel.default_locale%</argument>
+            <tag name="kernel.event_subscriber" />
+        </service>
+        <service id="my_data_lab_core.langauge_provider" class="%my_data_lab_core.langauge_provider.class%">
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+            <argument>%my_data_lab_core.langauge.class%</argument>
+        </service>
+        <service id="my_data_lab_core.vendor_manager" class="%my_data_lab_core.vendor_manger.class%">
+        </service>
+    </services>
+</container>

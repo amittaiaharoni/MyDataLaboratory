@@ -1,0 +1,17 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block slider %}{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}LOGIN_H1{% endtrans %}</h1> 
+        </div>
+    </section>
+    {% if error %}
+        <div class="alert alert-danger">
+            <strong>{% trans %}login.error{% endtrans %}!</strong> {{ error.messageKey|trans({}, 'messages') }}
+        </div>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+{% endblock content %}

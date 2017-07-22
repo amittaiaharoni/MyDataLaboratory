@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="items_per_page">40</parameter>
+        <parameter key="admin_email">admin@wochat.io</parameter>
+        <parameter key="admin_contact">contact@mydatalaboratory.com</parameter>
+        <parameter key="sitemap_location">%kernel.root_dir%/../web</parameter>
+    </parameters>
+
+    <services>
+        <service id="my_data_lab_frontend_page_name.twig_extension" class="MyDataLab\Bundle\FrontendBundle\Twig\MDLExtension" public="false">
+            <!--<argument type="service" id="request_stack" />-->
+            <tag name="twig.extension" />
+        </service>
+    </services>
+</container>

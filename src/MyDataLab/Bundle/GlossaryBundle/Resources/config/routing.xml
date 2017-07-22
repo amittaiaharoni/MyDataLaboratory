@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://symfony.com/schema/routing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+  <route id="my_data_lab_glossary_homepage" path="/">
+    <default key="_controller">MyDataLabGlossaryBundle:Glossary:index</default>
+  </route>
+  <route id="my_data_lab_glossary_create" path="/create/glossary">
+    <default key="_controller">MyDataLabGlossaryBundle:Glossary:create</default>
+  </route>
+  <route id="my_data_lab_glossary_new" path="/new/glossary" methods="POST">
+    <default key="_controller">MyDataLabGlossaryBundle:Glossary:new</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_delete" path="/delete/glossary/{id}" methods="DELETE">
+    <default key="_controller">MyDataLabGlossaryBundle:Glossary:delete</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_update" path="/edit/glossary/{id}">
+    <default key="_controller">MyDataLabGlossaryBundle:Glossary:update</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_definitions" path="/{id}">
+    <default key="_controller">MyDataLabGlossaryBundle:Definition:index</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_definitions_create" path="/{id}/create/definition">
+    <default key="_controller">MyDataLabGlossaryBundle:Definition:create</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_definitions_new" path="/{id}/new/definition" methods="POST">
+    <default key="_controller">MyDataLabGlossaryBundle:Definition:new</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_definitions_delete" path="/delete/definition/{id}" methods="DELETE">
+    <default key="_controller">MyDataLabGlossaryBundle:Definition:delete</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+  <route id="my_data_lab_glossary_definitions_update" path="/edit/definition/{id}">
+    <default key="_controller">MyDataLabGlossaryBundle:Definition:update</default>
+    <requirement key="id">\d+</requirement>
+  </route>
+</routes>

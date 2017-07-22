@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="my_data_lab_alert_homepage" path="/">
+        <default key="_controller">MyDataLabDashboardBundle:Alert:index</default>
+    </route>
+    <route id="my_data_lab_alert_list" path="/list">
+        <default key="_controller">MyDataLabDashboardBundle:Alert:list</default>
+    </route>
+    <route id="my_data_lab_alert_read" path="/read">
+        <default key="_controller">MyDataLabDashboardBundle:Alert:read</default>
+    </route>
+    <route id="my_data_lab_alert_create" path="/create">
+        <default key="_controller">MyDataLabDashboardBundle:Alert:create</default>
+    </route>
+</routes>

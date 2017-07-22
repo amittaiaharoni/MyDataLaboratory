@@ -1,0 +1,402 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Catalogue{% endblock %}
+{% block content %}
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{% filter title %}{% trans %}GLOBAL_ANALYSIS{% endtrans %}{% endfilter %}</h3>
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <div class="box-body">
+                    <div id="tables_selectbox">
+                        <div class="col-md-2 col-md-offset-1">
+                            <dl class="dropdown">
+                                <dt>
+                                    <a>
+                                        <span class="hida">{% filter title %}{% trans %}E_RETAILERS{% endtrans %}{% endfilter %}</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel"></p>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect">
+                                        <ul>
+                                            <li class="center"><input type="checkbox" value="All" />All</li>
+                                            <li><input type="checkbox" value="Concurrent 1" />Concurrent 1</li>
+                                            <li><input type="checkbox" value="Concurrent 2" />Concurrent 2</li>
+                                            <li><input type="checkbox" value="Concurrent 3" />Concurrent 3</li>
+                                            <li><input type="checkbox" value="Concurrent 4" />Concurrent 4</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dropdown_2">
+                                <dt>
+                                    <a>
+                                        <span class="hida_2">{% filter capitalize %}{% trans %}PRICE_CRITERIA{% endtrans %}{% endfilter %}</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel_2"></p>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect_2">
+                                        <ul>
+                                            <li><input type="checkbox" value="I am more expensive">{% trans %}I_MORE_EXPENSIVE{% endtrans %}</li>
+                                            <li><input type="checkbox" value="I am cheaper">{% trans %}I_AM_CHEAPER{% endtrans %}</li>
+                                            <li><input type="checkbox" value="Decreasing">Decreasing</li>
+                                            <li><input type="checkbox" value="Increasing">Increasing</li>
+                                            <li><input type="checkbox" value="Promotion">Promotion</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dropdown_3">
+                                <dt>
+                                    <a>
+                                        <span class="hida_3">{% filter capitalize %}{% trans %}CATEGORIES{% endtrans %}{% endfilter %}</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel_3"></p>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect_3">
+                                        <ul>
+                                            <li>
+                                                <input type="checkbox" value="All_3" />All
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" value="Perfumes" />Perfumes
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" value="Cosmétiques" />Cosmétiques
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" value="Catégorie 3" />Catégorie 3
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" value="Catégorie 4" />Catégorie 4
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-default">Filter</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dropdown_4">
+                                <dt>
+                                    <a>
+                                        <span class="hida_4">{% filter capitalize %}{% trans %}BRANDS{% endtrans %}{% endfilter %}</span><i class="fa fa-caret-right text-yellow"></i>
+                                        <p class="multiSel_4"></p>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="mutliSelect_4">
+                                        <ul>
+                                            <li><input type="checkbox" value="All_4">All</li>
+                                            <li><input type="checkbox" value="Marque 1">Marque 1</li>
+                                            <li><input type="checkbox" value="Marque 2">Marque 2</li>
+                                            <li><input type="checkbox" value="Marque 3">Marque 3</li>
+                                            <li><input type="checkbox" value="Marque 4">Marque 4</li>
+                                            <li><button class="btn btn-default">Filter</button></li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-default" type="button" id="test">{% filter title %}{% trans %}CLEAR_ALL_FILTERS{% endtrans %}{% endfilter %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sortable1" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{% filter capitalize %}{% trans %}PRODUCTS_BRAND_ERETAILER{% endtrans %}{% endfilter %}</h3>
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                        <i class="fa fa-minus"></i>
+                    </button>	 
+                </div>
+                <div class="box-body">
+                    <div id="chart_div"></div>
+                </div>
+        </section>
+
+        <section id="sortable2" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{% filter capitalize %}{% trans %}PRICE_EACH_RETAILER_BRAND{% endtrans %}{% endfilter %}</h3>
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                        <i class="fa fa-minus"></i>
+                    </button>	 
+                </div>
+                <div class="box-body">
+                    <div id="chart_div2"></div>
+                </div>
+        </section>
+        <section id="sortable3" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{% filter capitalize %}{% trans %}PRODUCTS_PRICE_RANGE_ERETAILER{% endtrans %}{% endfilter %}</h3>
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                        <i class="fa fa-minus"></i>
+                    </button>	 
+                </div>
+                <div class="box-body">
+                    <div id="chart_div3"></div>
+                </div>
+        </section>
+        <section id="sortable4" class="connectedSortable col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{% filter capitalize %}{% trans %}POSITION_VS_NUMBER_PRODUCTS{% endtrans %}{% endfilter %}</h3>
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                        <i class="fa fa-minus"></i>
+                    </button>	 
+                </div>
+                <div class="box-body">
+                    <div id="chart_div4"></div>
+                </div>
+        </section>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            var chk1 = $("input[type='checkbox'][value='All']");
+            var chk2 = $("input[type='checkbox'][value='Concurrent 1']");
+            var chk3 = $("input[type='checkbox'][value='Concurrent 2']");
+            var chk4 = $("input[type='checkbox'][value='Concurrent 3']");
+            var chk5 = $("input[type='checkbox'][value='Concurrent 4']");
+
+            chk1.on('change', function () {
+                chk2.prop('checked', this.checked);
+                chk3.prop('checked', this.checked);
+                chk4.prop('checked', this.checked);
+                chk5.prop('checked', this.checked);
+
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var chk1 = $("input[type='checkbox'][value='All_3']");
+            var chk2 = $("input[type='checkbox'][value='Perfumes']");
+            var chk3 = $("input[type='checkbox'][value='Cosmétiques']");
+            var chk4 = $("input[type='checkbox'][value='Catégorie 3']");
+            var chk5 = $("input[type='checkbox'][value='Catégorie 4']");
+
+            chk1.on('change', function () {
+                chk2.prop('checked', this.checked);
+                chk3.prop('checked', this.checked);
+                chk4.prop('checked', this.checked);
+                chk5.prop('checked', this.checked);
+
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var chk1 = $("input[type='checkbox'][value='All_4']");
+            var chk2 = $("input[type='checkbox'][value='Marque 1']");
+            var chk3 = $("input[type='checkbox'][value='Marque 2']");
+            var chk4 = $("input[type='checkbox'][value='Marque 3']");
+            var chk5 = $("input[type='checkbox'][value='Marque 4']");
+
+            chk1.on('change', function () {
+                chk2.prop('checked', this.checked);
+                chk3.prop('checked', this.checked);
+                chk4.prop('checked', this.checked);
+                chk5.prop('checked', this.checked);
+
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            "use strict";
+            //Make the dashboard widgets sortable Using jquery UI
+            $("#sortable1, #sortable2, #sortable3, #sortable4").sortable({
+                connectWith: ".connectedSortable",
+                appendTo: 'body',
+                opacity: 0.8,
+                placeholder: "sort-highlight",
+                tolerance: "pointer",
+                forcePlaceholderSize: true,
+                cursor: 'move',
+                dropOnEmpty: true,
+                helper: "clone",
+                zIndex: 999999
+            });
+            //bootstrap WYSIHTML5 - text editor
+            $(".textarea").wysihtml5();
+            google.charts.load('current', {'packages': ['corechart', 'line']});
+            google.charts.setOnLoadCallback(drawVisualization);
+            google.charts.setOnLoadCallback(drawSeriesChart);
+            google.charts.setOnLoadCallback(drawChart);
+            google.charts.setOnLoadCallback(drawChart2);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('number', 'Day');
+                data.addColumn('number', 'Guardians of the Galaxy');
+                data.addColumn('number', 'The Avengers');
+                data.addColumn('number', 'Transformers: Age of Extinction');
+
+                data.addRows([
+                    [1, 37.8, 80.8, 41.8],
+                    [2, 30.9, 69.5, 32.4],
+                    [3, 25.4, 57, 25.7],
+                    [4, 11.7, 18.8, 10.5],
+                    [5, 11.9, 17.6, 10.4],
+                    [6, 8.8, 13.6, 7.7],
+                    [7, 7.6, 12.3, 9.6],
+                    [8, 12.3, 29.2, 10.6],
+                    [9, 16.9, 42.9, 14.8],
+                    [10, 12.8, 30.9, 11.6],
+                    [11, 5.3, 7.9, 4.7],
+                    [12, 6.6, 8.4, 5.2],
+                    [13, 4.8, 6.3, 3.6],
+                    [14, 4.2, 6.2, 3.4]
+                ]);
+
+                var options = {
+                    chart: {
+
+                    },
+                    width: "100%",
+                    height: "100%",
+                    legend: {position: 'none', maxLines: 3},
+                    colors: ['#272D71', '#00B6C9', '#99CA3C', '#FFF611', '#E15D10', '#4A1036']
+
+                };
+
+                var chart = new google.charts.Line(document.getElementById('chart_div3'));
+
+                chart.draw(data, options);
+            }
+            function drawChart2() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+                        'Western', 'Literature', {role: 'annotation'}],
+                    ['2010', 10, 24, 20, 32, 18, 5, ''],
+                    ['2020', 16, 22, 23, 30, 16, 9, ''],
+                    ['2030', 28, 19, 29, 30, 12, 13, '']
+                ]);
+
+                var options = {
+                    width: 500,
+                    height: 200,
+                    legend: {position: 'top', maxLines: 3},
+                    bar: {groupWidth: '55%'},
+                    isStacked: true,
+                    colors: ['#272D71', '#00B6C9', '#99CA3C', '#FFF611', '#E15D10', '#4A1036']
+                };
+                var chart_bar = new google.visualization.BarChart(document.getElementById('chart_div'));
+                chart_bar.draw(data, options);
+            }
+            function drawVisualization() {
+                // Some raw data (not necessarily accurate)
+                var data = google.visualization.arrayToDataTable([
+                    ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+                    ['2004/05', 165, 938, 522, 998, 450, 614.6],
+                    ['2005/06', 135, 1120, 599, 1268, 288, 682],
+                    ['2006/07', 157, 1167, 587, 807, 397, 623],
+                    ['2007/08', 139, 1110, 615, 968, 215, 609.4],
+                    ['2008/09', 136, 691, 629, 1026, 366, 569.6]
+                ]);
+
+                var options = {
+
+                    vAxis: {title: 'Cups'},
+                    hAxis: {title: 'Month'},
+                    seriesType: 'bars',
+                    series: {5: {type: 'line'}},
+                    colors: ['#272D71', '#00B6C9', '#99CA3C', '#FFF611', '#E15D10']
+                };
+
+                var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+                chart.draw(data, options);
+            }
+
+            function drawSeriesChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['ID', 'Life Expectancy', 'Fertility Rate', 'Region', 'Population'],
+                    ['CAN', 80.66, 1.67, 'North America', 33739900],
+                    ['DEU', 79.84, 1.36, 'Europe', 81902307],
+                    ['DNK', 78.6, 1.84, 'Europe', 5523095],
+                    ['EGY', 72.73, 2.78, 'Middle East', 79716203],
+                    ['GBR', 80.05, 2, 'Europe', 61801570],
+                    ['IRN', 72.49, 1.7, 'Middle East', 73137148],
+                    ['IRQ', 68.09, 4.77, 'Middle East', 31090763],
+                    ['ISR', 81.55, 2.96, 'Middle East', 7485600],
+                    ['RUS', 68.6, 1.54, 'Europe', 141850000],
+                    ['USA', 78.09, 2.05, 'North America', 307007000]
+                ]);
+
+                var options = {
+
+                    hAxis: {title: 'Life Expectancy'},
+                    vAxis: {title: 'Fertility Rate'},
+                    bubble: {textStyle: {fontSize: 11}},
+                    colors: ['#272D71', '#00B6C9', '#99CA3C', '#FFF611', '#E15D10', '#4A1036']
+                };
+
+                var chart = new google.visualization.BubbleChart(document.getElementById('chart_div4'));
+                chart.draw(data, options);
+            }
+            var list = $(".ui-sortable");
+
+            $('body').on('click', '.restore-scenarios', function () {
+                list.sortable('cancel');
+                drawVisualization();
+                drawSeriesChart();
+                drawChart();
+                drawChart2();
+            });
+            //Capture Initial List
+            var initial = [];
+            $(".ui-sortable").each(function (index, anchor) {
+                initial.push(anchor.innerHTML);
+            });
+            //Restore default list
+            $('body').on('click', '.restore-scenarios', function () {
+                $(".ui-sortable").each(function (index, anchor) {
+                    anchor.innerHTML = initial[index];
+
+                    drawVisualization();
+                    drawSeriesChart();
+                    drawChart();
+                    drawChart2();
+                });
+            });
+            //Fix for google charts drag and drop
+
+            $(".ui-sortable").sortable({
+                update: function () {
+                    drawVisualization();
+                    drawSeriesChart();
+                    drawChart2();
+                }
+            });
+            $(window).resize(function () {
+                drawVisualization();
+                drawSeriesChart();
+                drawChart();
+                drawChart2();
+            });
+        });
+    </script>
+{% endblock %}

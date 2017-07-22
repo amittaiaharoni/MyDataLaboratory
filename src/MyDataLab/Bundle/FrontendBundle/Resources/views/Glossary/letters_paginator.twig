@@ -1,0 +1,8 @@
+<ul class="pagination pagination-sm">
+    {% for i in paginator %}
+            <li>
+                {% set hrefParams = currentParams | merge({'letter': i}) %}
+                <a href="{{ path(currentRoute, hrefParams) }}" class="{% if i == currentParams.letter %}active{% endif %}">{{ i }}</a>
+            </li>
+    {% endfor %}
+</ul>

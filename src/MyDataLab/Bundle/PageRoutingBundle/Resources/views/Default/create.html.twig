@@ -1,0 +1,5 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}{% filter capitalize %}{% trans %}PAGE_ROUTING{% endtrans %}{% endfilter %}{% endblock %}
+{% block content %}
+    {{ form(createForm) }}
+{% endblock %}

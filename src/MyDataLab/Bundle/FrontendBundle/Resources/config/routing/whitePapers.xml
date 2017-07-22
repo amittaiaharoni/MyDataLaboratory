@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="my_data_lab_frontend_white_paper_download" path="/download/{hash}">
+        <default key="_controller">MyDataLabFrontendBundle:WhitePaper:download</default>
+    </route>
+    <route id="my_data_lab_frontend_white_paper_submit_lead" path="/submit/{id}">
+        <default key="_controller">MyDataLabFrontendBundle:WhitePaper:submitLead</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+    <route id="my_data_lab_frontend_white_paper_show" path="/{slug}">
+        <default key="_controller">MyDataLabFrontendBundle:WhitePaper:show</default>
+    </route>
+    <route id="my_data_lab_frontend_white_paper_homepage" path="/">
+        <default key="_controller">MyDataLabFrontendBundle:WhitePaper:index</default>
+    </route>
+</routes>

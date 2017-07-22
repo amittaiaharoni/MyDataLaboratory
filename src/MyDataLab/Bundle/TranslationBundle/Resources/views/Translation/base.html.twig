@@ -1,0 +1,19 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block languageSelector %}
+    {% set currentRoute = app.request.attributes.get('_route') %}
+    {% set currentParams = app.request.attributes.get('_route_params') %}
+    <select class="fl-r" id="language-selector">
+        {% spaceless %}
+            {% for language in languageProvider.getLanguages() %}
+                {% set switchRoute = app.request.attributes.get('_route') %}
+                {% set switchParams = app.request.attributes.get('_route_params') | merge({'locale': language.code})%}
+                <option value="{{ path(switchRoute, switchParams) }}" {% if currentParams.locale == switchParams.locale %}selected{% endif %}>{{ language.name | capitalize }}</option>
+                {% if loop.revindex0 == 1 %}|{% endif %}
+            {% endfor %}
+        {% endspaceless %}
+    </select>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/mydatalabtranslation/js/translation.js') }}"></script>
+{% endblock %}

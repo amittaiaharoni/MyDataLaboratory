@@ -1,0 +1,44 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% import _self as sitemap %}
+{% macro generateList(array, isFirstItem) %}
+    {% import _self as sitemap %}
+    <div class="list-group {% if isFirstItem %}well list-group-root{% set isFirstItem = false %}{% endif %}">
+        {% for key, item in array.children %}
+            <a href="{{ item.link }}" class="list-group-item">{{ key }}</a>
+            {% if item.children is defined and item.children is not empty %}
+                {{ sitemap.generateList(item) }}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endmacro %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/mydatalabfrontend/css/sitemap.css') }}">
+{% endblock %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">Home</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_sitemap') }}">Sitemap</a></li>
+    </ol>
+{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}SITEMAP_PAGE_TITLE_H1{% endtrans %}</h1>
+            <p style="color:#000; margin:20px 0;" class="lead-green big">
+                {% trans %}SITEMAP_PAGE_DESCRIPTION_P{% endtrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    <section class="text-center text-md-left offset-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-md-10 col-lg-offset-1">
+                    {{ sitemap.generateList(sitemapping, true) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

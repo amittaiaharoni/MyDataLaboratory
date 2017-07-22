@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="MyDataLab\Bundle\ProductBundle\Entity\Site" table="sites">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="url" type="string" column="url" length="500" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="email" type="string" column="email" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tel" type="string" column="tel" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="rcs" type="string" column="rcs" length="100" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="address" type="string" column="address" length="100" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="cms" type="string" column="cms" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="title" type="string" column="title" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="favicon" type="string" column="favicon" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="socialnetwork" type="string" column="socialnetwork" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="productTitle" type="string" column="product_title" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="productUrl" type="string" column="product_url" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="description" type="string" column="description" length="500" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="keywords" type="string" column="keywords" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="brand" type="string" column="brand" length="100" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="categoryId" type="boolean" column="category_id" nullable="true"/>
+        <field name="ean13" type="string" column="EAN13" length="20" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="reference" type="string" column="reference" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="image" type="string" column="image" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="imageTitle" type="string" column="image_title" length="100" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="price" type="string" column="price" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="priceOld" type="string" column="price_old" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="typePromo" type="string" column="type_promo" length="30" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="priceTtcHt" type="string" column="price_ttc_ht" length="30" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="currency" type="string" column="currency" length="30" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="shipmentPrice" type="string" column="shipment_price" length="50" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="stockState" type="string" column="stock_state" length="20" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="productMark" type="string" column="product_mark" length="20" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="breadcrumb" type="string" column="breadcrumb" length="30" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeProductTitle" type="string" column="tag_type_product_title" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeProductUrl" type="string" column="tag_type_product_url" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeDescription" type="string" column="tag_type_description" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeKeywords" type="string" column="tag_type_keywords" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeBrand" type="string" column="tag_type_brand" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeCategories" type="string" column="tag_type_categories" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeEan13" type="string" column="tag_type_ean13" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeReference" type="string" column="tag_type_reference" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeImage" type="string" column="tag_type_image" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeImageTitle" type="string" column="tag_type_image_title" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypePrice" type="string" column="tag_type_price" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypePriceOld" type="string" column="tag_type_price_old" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeTypePromo" type="string" column="tag_type_type_promo" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypePriceTtcHt" type="string" column="tag_type_price_ttc_ht" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeCurrency" type="string" column="tag_type_currency" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeShipmentPrice" type="string" column="tag_type_shipment_price" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeStockState" type="string" column="tag_type_stock_state" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeProductMark" type="string" column="tag_type_product_mark" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="tagTypeBreadcrumb" type="string" column="tag_type_breadcrumb" length="10" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="scanning" type="boolean" column="scanning" nullable="true">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <field name="lastScan" type="datetime" column="last_scan" nullable="true"/>
+        <field name="comments" type="text" column="comments" length="65535" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="date" type="datetime" column="date" nullable="false">
+        </field>
+    </entity>
+</doctrine-mapping>

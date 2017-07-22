@@ -1,0 +1,13 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Competitors list{% endblock %}
+{% block content %}
+    <ul id="competitors-list" data-delete-url="{{ path('my_data_lab_retailer_delete', {'id': ':id'}) }}">
+        {% for competitor in competitors %}
+            <li><a href="{{ path('my_data_lab_crawler_config', {'retailerId': competitor.id}) }}">{{ competitor.name }}</a> <i data-id="{{ competitor.id }}" class="fa fa-trash-o" aria-hidden="true"></i> </li>
+            {% endfor %}
+    </ul>
+{% endblock %}
+{% block scripts %} 
+    {{ parent() }}
+    <script src="{{ asset('bundles/mydatalabretailers/js/retailers-list.js') }}"></script>
+{% endblock %}

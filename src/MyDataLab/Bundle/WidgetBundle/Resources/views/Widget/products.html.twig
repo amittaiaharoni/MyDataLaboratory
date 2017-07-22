@@ -1,0 +1,34 @@
+<div class="small-box products mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="inner">
+        <h3>{{ count }}</h3>
+        <p>{% filter capitalize %}{% trans %}PRODUCTS{% endtrans %}{% endfilter %}</p>
+        <div class="procent3">
+            <p>
+                {% if prevCount == count %}
+                    <i class="ion ion-equal"></i>
+                {% elseif prevCount < count %}
+                    <i class="ion ion-arrow-up-a"></i>
+                {% else %}
+                    <i class="ion ion-arrow-down-a"></i>
+                {% endif %}
+            </p>
+            {% spaceless %}
+                <p>
+                    {% if prevCount != 0 %}
+                        {% if prevCount < count %}+ {% endif %}
+                        {% if prevCount != count %}
+                            {{ 100 * (count / prevCount - 1)|round }}
+                            %
+                        {% endif %}
+                    {% endif %}
+                </p>
+            {% endspaceless %}
+        </div>
+    </div>
+    <div class="icon">
+        <i class="fa fa-barcode"></i>
+    </div>
+    <a href="#" class="small-box-footer">{% filter capitalize %}{% trans %}MORE_INFO{% endtrans %}{% endfilter %}
+        <i class="fa fa-arrow-circle-right"></i>
+    </a>
+</div>

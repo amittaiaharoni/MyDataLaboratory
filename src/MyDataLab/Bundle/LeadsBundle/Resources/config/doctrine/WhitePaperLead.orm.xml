@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="MyDataLab\Bundle\LeadsBundle\Repository\LeadRepository" name="MyDataLab\Bundle\LeadsBundle\Entity\WhitePaperLead">
+    <field name="phone" type="string" column="phone" length="255" nullable="true"/>
+    <field name="companyName" type="string" column="company_name" length="255" nullable="true"/>
+    <field name="jobTitle" type="string" column="job_title" length="255" nullable="true"/>
+    <field name="country" type="string" column="country" length="255"/>
+    <many-to-one target-entity="MyDataLab\Bundle\WhitePaperBundle\Entity\WhitePaper" field="leadSource">
+      <join-column name="source_id" referenced-column-name="id" />
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

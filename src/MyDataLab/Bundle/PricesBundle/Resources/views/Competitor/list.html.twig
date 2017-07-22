@@ -1,0 +1,145 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Competitors / E-Retailers{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-4">
+            
+        </div>
+        <div class="col-lg-8">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $("#e-retailers").DataTable();
+        });
+
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['gauge', 'corechart', 'bar']});
+
+        google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart2);
+        google.charts.setOnLoadCallback(drawColumn4);
+        function drawChart3() {
+            var data2 = google.visualization.arrayToDataTable([
+                ['Status', 'Nr. of products'],
+                ['I am cheaper', 8],
+                ['Prices are equal', 12],
+                ['I am more expensive', 16],
+            ]);
+
+
+            var piechart_options = {
+
+                chartArea: {width: '90%', height: '80%'},
+                width: '100%',
+                height: '100%',
+                colors: ['#99CA3C', '#5866FF', '#E12010']
+            };
+            var piechart = new google.visualization.PieChart(document.getElementById('chart_div3'));
+            piechart.draw(data2, piechart_options);
+
+
+
+
+        }
+
+
+
+        function drawChart2() {
+            var data3 = google.visualization.arrayToDataTable([
+                ["Competitor Name", "I am cheaper", "Prices are equal", "I am more expensive", {role: 'annotation'}],
+                ["Competitor 1", 50, 10, 40, " "],
+                ["Competitor 2", 50, 30, 20, " "],
+                ["Competitor 3", 30, 20, 50, " "]
+
+            ]);
+
+
+            var options_stacked = {
+
+                isStacked: true,
+                chartArea: {width: '90%', height: '80%'},
+                width: '100%',
+                height: '100%',
+                legend: {position: 'top', maxLines: 3},
+                yAxis: {minValue: 0},
+                bar: {groupWidth: '75%'},
+                colors: ['#99CA3C', '#5866FF', '#E12010']
+            };
+
+
+            var chart2 = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart2.draw(data3, options_stacked);
+        }
+
+        function drawColumn4() {
+            var data = google.visualization.arrayToDataTable([
+                ["Procantage", "Nr.Products", {role: "style"}],
+                ["-50%", 1, "#E12010"],
+                ["-45%", 1, "#E12010"],
+                ["-40%", 5, "#E12010"],
+                ["-35%", 4, "#E12010"],
+                ["-30%", 8, "#E12010"],
+                ["-25%", 13, "#E12010"],
+                ["-20%", 27, "#E12010"],
+                ["-15%", 69, "#E12010"],
+                ["-10%", 105, "#E12010"],
+                ["-5%", 156, "#E12010"],
+                ["-0%", 283, "#E12010"],
+                ["same", 22, "#5866FF"],
+                ["+0%", 112, "#99ca3c"],
+                ["+5%", 60, "#99ca3c"],
+                ["+10%", 44, "#99ca3c"],
+                ["+15%", 35, "#99ca3c"],
+                ["+20%", 21, "#99ca3c"],
+                ["+25%", 12, "#99ca3c"],
+                ["+30%", 8, "#99ca3c"],
+                ["+35%", 8, "#99ca3c"],
+                ["+40%", 1, "#99ca3c"],
+                ["+45%", 2, "#99ca3c"],
+                ["+50%", 3, "#99ca3c"],
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"},
+
+                2]);
+
+            var options = {
+
+                chartArea: {width: '90%', height: '70%'},
+                fontSize: 8,
+                vAxis: {title: "Number of Products", slantedText: true, slantedTextAngle: 90, gridlines: {count: 0}},
+                bar: {groupWidth: "90%"},
+                legend: {position: "none"},
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("chart_div4"));
+            chart.draw(view, options);
+        }
+
+
+    </script>
+{% endblock %}

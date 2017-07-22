@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="my_data_lab.products.widget_handler.products" class="MyDataLab\Bundle\ProductBundle\WidgetHandler\ProductsWidgetHandler">
+            <tag name="mdl.widget_handler" alias="products" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="my_data_lab.products.widget_handler.categories" class="MyDataLab\Bundle\ProductBundle\WidgetHandler\CategoriesWidgetHandler">
+            <tag name="mdl.widget_handler" alias="categories" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="my_data_lab.products.widget_handler.subcategories" class="MyDataLab\Bundle\ProductBundle\WidgetHandler\SubCategoriesWidgetHandler">
+            <tag name="mdl.widget_handler" alias="subcategories" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="my_data_lab.products.widget_handler.brands" class="MyDataLab\Bundle\ProductBundle\WidgetHandler\BrandsWidgetHandler">
+            <tag name="mdl.widget_handler" alias="brands" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="my_data_lab.products.widget_handler.product_price_range" class="MyDataLab\Bundle\ProductBundle\WidgetHandler\ProductPriceRangeWidgetHandler">
+            <tag name="mdl.widget_handler" alias="product_price_range" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="my_data_lab.products.widget_handler.filled_data" class="MyDataLab\Bundle\ProductBundle\WidgetHandler\FilledDataWidgetHandler">
+            <tag name="mdl.widget_handler" alias="filled_data" />
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+    </services>
+</container>

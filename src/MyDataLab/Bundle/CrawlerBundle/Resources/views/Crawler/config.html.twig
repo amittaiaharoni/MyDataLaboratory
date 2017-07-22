@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="{{ asset('bundles/mydatalabcrawler/css/setup-crawler.css') }}"></link>
+    </head>
+    <body>
+        <iframe id="iframeSite" src="{{ donwloadedPageUrl }}" name="" data-submit-url="{{ path('my_data_lab_crawler_save_config') }}"></iframe>
+        <div id="layerSelector" class="layerSelector"></div>
+        <div id="layerPropertySelector" class="layerPropertySelector"></div>
+        <div id="elementsMenu" class="elementsMenu">
+            <ul>
+                <li><a href="{{ path('my_data_lab_prices_competitor_list') }}">Back</a></li>
+                {% for setting in settings %}
+                    <li data-selectorid="{{ setting.selectorId }}" data-xpath="{{ setting.xpath }}"
+                        data-image="{{ setting.image }}"
+                        >
+                        <span>{{ setting.selectorId|trans(domain='carwler.settings') }}</span>
+                        {% if setting.image %}
+                            <br>
+                            <img>
+                        {% else %} 
+                            <input type="text" value="" disabled/>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <input type="submit" class="btn submit" value="Save"/>
+            <div class="btn"></div>
+        </div>
+        <script src="{{ asset('bundles/mydatalabadmin/vendor/jquery/jquery-2.2.3.min.js') }}"></script>
+        <script src="{{ asset('bundles/mydatalabcrawler/js/setup-crawler.js') }}"></script>
+    </body>
+</html>

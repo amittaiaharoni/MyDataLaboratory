@@ -1,0 +1,1604 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+
+            <trans-unit id="ACCOUNT_STATUS">
+                <source>ACCOUNT_STATUS</source>
+                <target>online</target>
+            </trans-unit>
+
+            <trans-unit id="ACCURATE_MARKET_OVERVIEW_LI">
+                <source>ACCURATE_MARKET_OVERVIEW_LI</source>
+                <target>Accurate market overview</target>
+            </trans-unit>
+
+            <trans-unit id="ACCURATE_OVERVIEW_MARKET_H2">
+                <source>ACCURATE_OVERVIEW_MARKET_H2</source>
+                <target>E-retailers are able to have an accurate overview of their market</target>
+            </trans-unit>
+
+            <trans-unit id="ACTION">
+                <source>ACTION</source>
+                <target>action</target>
+            </trans-unit>
+
+            <trans-unit id="AD_HOC_RESEARCH_LI">
+                <source>AD_HOC_RESEARCH_LI</source>
+                <target>Ad Hoc market research</target>
+            </trans-unit>
+
+            <trans-unit id="ADD_ARTICLE">
+                <source>ADD_ARTICLE</source>
+                <target>add article</target>
+            </trans-unit>
+
+            <trans-unit id="ADMIN_DASHBOARD">
+                <source>ADMIN_DASHBOARD</source>
+                <target>admin dashboard</target>
+            </trans-unit>
+
+            <trans-unit id="ALERTS">
+                <source>ALERTS</source>
+                <target>alerts</target>
+            </trans-unit>
+
+            <trans-unit id="ALERTS_LIST">
+                <source>ALERTS_LIST</source>
+                <target>alerts list</target>
+            </trans-unit>
+
+            <trans-unit id="ALERTS_MOVES_INDENTIFIED_LI">
+                <source>ALERTS_MOVES_INDENTIFIED_LI</source>
+                <target>Automatic alerts when strategic moves are identified (price or product availabilities) in e-retailer’s website</target>
+            </trans-unit>
+
+            <trans-unit id="ANALYSIS_AT_GLANCE_H5">
+                <source>ANALYSIS_AT_GLANCE_H5</source>
+                <target>Analysis at a glance</target>
+            </trans-unit>
+
+            <trans-unit id="ANALYSIS_MAXIMIZE_SUPPLY_H5">
+                <source>ANALYSIS_MAXIMIZE_SUPPLY_H5</source>
+                <target>Catalogue analysis to maximize your supply strategy</target>
+            </trans-unit>
+
+            <trans-unit id="ANALYZING_COMPETITORS_CATALOGUE_LI">
+                <source>ANALYZING_COMPETITORS_CATALOGUE_LI</source>
+                <target>Analyzing competitors catalogue</target>
+            </trans-unit>
+
+            <trans-unit id="ANALYZING_COMPETITORS_REPUTATION_LI">
+                <source>ANALYZING_COMPETITORS_REPUTATION_LI</source>
+                <target>Analyzing competitors e-reputation</target>
+            </trans-unit>
+
+            <trans-unit id="ANALYZING_PRICING_STRATEGY_LI">
+                <source>ANALYZING_PRICING_STRATEGY_LI</source>
+                <target>Analyzing competitors pricing strategy</target>
+            </trans-unit>
+
+            <trans-unit id="ANALYZING_WEBSITES_TECHNOLOGY_LI">
+                <source>ANALYZING_WEBSITES_TECHNOLOGY_LI</source>
+                <target>Analyzing competitors websites technology and ranking</target>
+            </trans-unit>
+
+            <trans-unit id="ANSWER_QUESTION_YOURSELF_H5_1">
+                <source>ANSWER_QUESTION_YOURSELF_H5_1</source>
+                <target>My Data Laboratory is able to answer to the question you ask to yourself about your market, competitors, brands and best practices of a specific ecommerce sector. </target>
+            </trans-unit>
+
+            <trans-unit id="ANSWER_QUESTION_YOURSELF_H5_2">
+                <source>ANSWER_QUESTION_YOURSELF_H5_2</source>
+                <target>Just &lt;a style="color</target>
+            </trans-unit>
+
+            <trans-unit id="AUTOMATIC_ALERTS_CHANGES">
+                <source>AUTOMATIC_ALERTS_CHANGES</source>
+                <target>Automatic alerts of price changes</target>
+            </trans-unit>
+
+            <trans-unit id="AUTOMATIC_CATALOGUE_DAILY_LI">
+                <source>AUTOMATIC_CATALOGUE_DAILY_LI</source>
+                <target>Automatic catalogue extraction on a daily basis</target>
+            </trans-unit>
+
+            <trans-unit id="AUTOMATIC_EXTRACTION_DAILY_LI">
+                <source>AUTOMATIC_EXTRACTION_DAILY_LI</source>
+                <target>Automatic tools with price extraction on a daily basis</target>
+            </trans-unit>
+
+            <trans-unit id="AUTOMATIC_EXTRACTION_TREATMENT_H5">
+                <source>AUTOMATIC_EXTRACTION_TREATMENT_H5</source>
+                <target>Automatic data extraction and treatment</target>
+            </trans-unit>
+
+            <trans-unit id="AUTOMATIC_PRICES_EXTRACTION_LI">
+                <source>AUTOMATIC_PRICES_EXTRACTION_LI</source>
+                <target>Automatic prices extraction</target>
+            </trans-unit>
+
+            <trans-unit id="AUTOMATIC_PRICING_SOLUTION_H2">
+                <source>AUTOMATIC_PRICING_SOLUTION_H2</source>
+                <target>Our automatic pricing solution to your issues</target>
+            </trans-unit>
+
+            <trans-unit id="AVAIBILIT_OPPROTUNITIES">
+                <source>AVAIBILIT_OPPROTUNITIES</source>
+                <target>avaibility opprotunities</target>
+            </trans-unit>
+
+            <trans-unit id="AVERAGE_BR_PRICE">
+                <source>AVERAGE_BR_PRICE</source>
+                <target>average&lt;br&gt;price</target>
+            </trans-unit>
+
+            <trans-unit id="AVERAGE_PRICE">
+                <source>AVERAGE_PRICE</source>
+                <target>avarage price</target>
+            </trans-unit>
+
+            <trans-unit id="BEST_PRACTICES_PERFORMANCES_LI">
+                <source>BEST_PRACTICES_PERFORMANCES_LI</source>
+                <target>Who have the best e-commerce practices and performances to sell my brand ?</target>
+            </trans-unit>
+
+            <trans-unit id="BETA_VERSION_TRIAL_H2">
+                <source>BETA_VERSION_TRIAL_H2</source>
+                <target>BETA VERSION FREE TRIAL&lt;br&gt;&lt;span style="font-size</target>
+            </trans-unit>
+
+            <trans-unit id="BLOG">
+                <source>BLOG</source>
+                <target>blog</target>
+            </trans-unit>
+
+            <trans-unit id="BRAND">
+                <source>BRAND</source>
+                <target>brand</target>
+            </trans-unit>
+
+            <trans-unit id="BRAND_SURVEY_STUDIES_LI">
+                <source>BRAND_SURVEY_STUDIES_LI</source>
+                <target>Brand survey and e-retailers market studies</target>
+            </trans-unit>
+
+            <trans-unit id="BRANDS_DISTRIBUTORS_ONLINE_H5">
+                <source>BRANDS_DISTRIBUTORS_ONLINE_H5</source>
+                <target>Brands are able to monitor their distributors online to know who is selling their products online and what is the range of the prices charged by distributors.</target>
+            </trans-unit>
+
+            <trans-unit id="BRANDS_LIST">
+                <source>BRANDS_LIST</source>
+                <target>brands list</target>
+            </trans-unit>
+
+            <trans-unit id="BRANDS_MONITOR_PRICING_H2">
+                <source>BRANDS_MONITOR_PRICING_H2</source>
+                <target>Brands monitor their pricing strategy on-line</target>
+            </trans-unit>
+
+            <trans-unit id="BRANDS_STAY_TRENDY_LI">
+                <source>BRANDS_STAY_TRENDY_LI</source>
+                <target>Find new brands to sale and stay trendy</target>
+            </trans-unit>
+
+            <trans-unit id="BUILD_REGARDING_STRATEGY_LI">
+                <source>BUILD_REGARDING_STRATEGY_LI</source>
+                <target>(Re-)build your products portfolio regarding your supply strategy</target>
+            </trans-unit>
+
+            <trans-unit id="CATALOGUE_ANALYSIS">
+                <source>CATALOGUE_ANALYSIS</source>
+                <target>catalogue analysis</target>
+            </trans-unit>
+
+            <trans-unit id="CATALOGUES">
+                <source>CATALOGUES</source>
+                <target>catalogues</target>
+            </trans-unit>
+
+            <trans-unit id="CATEGORIES">
+                <source>CATEGORIES</source>
+                <target>categories</target>
+            </trans-unit>
+
+            <trans-unit id="CATEGORY_BRAND_COMPETITOR_LI">
+                <source>CATEGORY_BRAND_COMPETITOR_LI</source>
+                <target>Analysis by category, by brand, by competitor…</target>
+            </trans-unit>
+
+            <trans-unit id="CHEAPER_PRODUCTS">
+                <source>CHEAPER_PRODUCTS</source>
+                <target>cheaper products</target>
+            </trans-unit>
+
+            <trans-unit id="CLEAR_ALL_FILTERS">
+                <source>CLEAR_ALL_FILTERS</source>
+                <target>clear all filters</target>
+            </trans-unit>
+
+            <trans-unit id="CLEAR_CHARTS_TABLES">
+                <source>CLEAR_CHARTS_TABLES</source>
+                <target>Clear charts &amp; tables</target>
+            </trans-unit>
+
+            <trans-unit id="CLEAR_VALUABLE_CHARTS_LI">
+                <source>CLEAR_VALUABLE_CHARTS_LI</source>
+                <target>Clear and valuable dashboards and charts</target>
+            </trans-unit>
+
+            <trans-unit id="CLEAR_VALUABLE_DASHBOARD_LI">
+                <source>CLEAR_VALUABLE_DASHBOARD_LI</source>
+                <target>Clear and valuable dashboards and chart</target>
+            </trans-unit>
+
+            <trans-unit id="CLEAR_VALUABLE_DELIVERABLES_LI">
+                <source>CLEAR_VALUABLE_DELIVERABLES_LI</source>
+                <target>A clear and valuable deliverables</target>
+            </trans-unit>
+
+            <trans-unit id="CLIENT_DASHBOARD">
+                <source>CLIENT_DASHBOARD</source>
+                <target>client dashboard</target>
+            </trans-unit>
+
+            <trans-unit id="CLIENT_ID">
+                <source>CLIENT_ID</source>
+                <target>client ID</target>
+            </trans-unit>
+
+            <trans-unit id="CLIENTS">
+                <source>CLIENTS</source>
+                <target>clients</target>
+            </trans-unit>
+
+            <trans-unit id="CLIENTS_LIST">
+                <source>CLIENTS_LIST</source>
+                <target>clients list</target>
+            </trans-unit>
+
+            <trans-unit id="CLOSE">
+                <source>CLOSE</source>
+                <target>close</target>
+            </trans-unit>
+
+            <trans-unit id="COMMERCIAL_STOCK_FLOW_LI">
+                <source>COMMERCIAL_STOCK_FLOW_LI</source>
+                <target>Commercial action when stock-flow of your products are low</target>
+            </trans-unit>
+
+            <trans-unit id="COMPANY">
+                <source>COMPANY</source>
+                <target>company</target>
+            </trans-unit>
+
+            <trans-unit id="COMPARE_PRODUCTS_PORTFOLIO_P">
+                <source>COMPARE_PRODUCTS_PORTFOLIO_P</source>
+                <target>The catalogue analysis tool developed by My Data Laboratory allows e-retailers to compare their own products portfolio with the products portfolio of their competitors</target>
+            </trans-unit>
+
+            <trans-unit id="COMPETITOR_PRICE_DISTRIBUTION">
+                <source>COMPETITOR_PRICE_DISTRIBUTION</source>
+                <target>competitor price distribution</target>
+            </trans-unit>
+
+            <trans-unit id="COMPETITORS_E_RETAILERS">
+                <source>COMPETITORS_E_RETAILERS</source>
+                <target>Competitors / E-Retailers</target>
+            </trans-unit>
+
+            <trans-unit id="COMPETITORS_MONITORED">
+                <source>COMPETITORS_MONITORED</source>
+                <target>competitors monitored</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT">
+                <source>CONTACT</source>
+                <target>contact</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_EMAIL">
+                <source>CONTACT_EMAIL</source>
+                <target>contact email</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_FIRST_NAME">
+                <source>CONTACT_FIRST_NAME</source>
+                <target>contact first name</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_LAST_NAME">
+                <source>CONTACT_LAST_NAME</source>
+                <target>contact last name</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_MDL">
+                <source>CONTACT_MDL</source>
+                <target>contact MDL</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_OUR_TEAM_H3">
+                <source>CONTACT_OUR_TEAM_H3</source>
+                <target>CONTACT&lt;br&gt;OUR TEAM</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_TO_TRY_P">
+                <source>CONTACT_TO_TRY_P</source>
+                <target>Contact us &lt;strong&gt;to try our E-Commerce Pricing and Competitive Intelligence solution&lt;/strong&gt; or if you need more information</target>
+            </trans-unit>
+
+            <trans-unit id="CONTACT_US">
+                <source>CONTACT_US</source>
+                <target>contact us</target>
+            </trans-unit>
+
+            <trans-unit id="CREATE_ALERT">
+                <source>CREATE_ALERT</source>
+                <target>create alert</target>
+            </trans-unit>
+
+            <trans-unit id="CUSTOMIZATION_OF_ANALYSIS_H5">
+                <source>CUSTOMIZATION_OF_ANALYSIS_H5</source>
+                <target>Customization of analysis</target>
+            </trans-unit>
+
+            <trans-unit id="DAILY_PRICING_EXTRACTION_LI">
+                <source>DAILY_PRICING_EXTRACTION_LI</source>
+                <target>Daily pricing extraction</target>
+            </trans-unit>
+
+            <trans-unit id="DASHBOARD">
+                <source>DASHBOARD</source>
+                <target>dashboard</target>
+            </trans-unit>
+
+            <trans-unit id="DATA_WELL_FILLED">
+                <source>DATA_WELL_FILLED</source>
+                <target>data are well filled in for</target>
+            </trans-unit>
+
+            <trans-unit id="DATABASE">
+                <source>DATABASE</source>
+                <target>database</target>
+            </trans-unit>
+
+            <trans-unit id="DATABASE_DASHBOARD">
+                <source>DATABASE_DASHBOARD</source>
+                <target>database dashboard</target>
+            </trans-unit>
+
+            <trans-unit id="DATALABORATORY_LATEST_NEWS_H3">
+                <source>DATALABORATORY_LATEST_NEWS_H3</source>
+                <target>My Data Laboratory latest news</target>
+            </trans-unit>
+
+            <trans-unit id="DATASHEETS">
+                <source>DATASHEETS</source>
+                <target>datasheets</target>
+            </trans-unit>
+
+            <trans-unit id="DELAYED_DELIVERY_COMPETITORS">
+                <source>DELAYED_DELIVERY_COMPETITORS</source>
+                <target>with delayed delivery at competitors</target>
+            </trans-unit>
+
+            <trans-unit id="DELETE">
+                <source>DELETE</source>
+                <target>delete</target>
+            </trans-unit>
+
+            <trans-unit id="DESCRIPTION">
+                <source>DESCRIPTION</source>
+                <target>description</target>
+            </trans-unit>
+
+            <trans-unit id="DISTRIBUTORS_CATALOGUE_FACING_H5_1">
+                <source>DISTRIBUTORS_CATALOGUE_FACING_H5_1</source>
+                <target>Brands are able to monitor their distributors catalogue online to know their on-line sales strategy and to find out the brands they are facing in on-line stores.</target>
+            </trans-unit>
+
+            <trans-unit id="DISTRIBUTORS_CATALOGUE_FACING_H5_2">
+                <source>DISTRIBUTORS_CATALOGUE_FACING_H5_2</source>
+                <target> </target>
+            </trans-unit>
+
+            <trans-unit id="DO_YOU_WANT_TO_DELETE_THIS_ARTICLE">
+                <source>DO_YOU_WANT_TO_DELETE_THIS_ARTICLE</source>
+                <target>do you want to delete this article?</target>
+            </trans-unit>
+
+            <trans-unit id="DONT_DROWN_DATA_H5">
+                <source>DONT_DROWN_DATA_H5</source>
+                <target>Don’t stay drown under thousands of data</target>
+            </trans-unit>
+
+            <trans-unit id="DONT_LOSE_COMPETITORS_LI">
+                <source>DONT_LOSE_COMPETITORS_LI</source>
+                <target>Don’t lose sales because of your competitors moves</target>
+            </trans-unit>
+
+            <trans-unit id="DONT_WASTE_TIME_H5">
+                <source>DONT_WASTE_TIME_H5</source>
+                <target>Don’t waste time surfing on e-retailers websites</target>
+            </trans-unit>
+
+            <trans-unit id="DRAG_DROP_TECHNOLOGY_LI">
+                <source>DRAG_DROP_TECHNOLOGY_LI</source>
+                <target>Drag and drop technology</target>
+            </trans-unit>
+
+            <trans-unit id="E_COMMERCE_PARTNER">
+                <source>E_COMMERCE_PARTNER</source>
+                <target>E-Commerce partner</target>
+            </trans-unit>
+
+            <trans-unit id="E_COMMERCES">
+                <source>E_COMMERCES</source>
+                <target>E-Commerces</target>
+            </trans-unit>
+
+            <trans-unit id="E_REPUTATION">
+                <source>E_REPUTATION</source>
+                <target>E-Reputation</target>
+            </trans-unit>
+
+            <trans-unit id="E_RETAILER">
+                <source>E_RETAILER</source>
+                <target>E-retailer</target>
+            </trans-unit>
+
+            <trans-unit id="E_RETAILER_ONE_BR_PRICE">
+                <source>E_RETAILER_ONE_BR_PRICE</source>
+                <target>E-Retailer 1&lt;br&gt;Price</target>
+            </trans-unit>
+
+            <trans-unit id="E_RETAILER_ONE_PRICE">
+                <source>E_RETAILER_ONE_PRICE</source>
+                <target>E-Retailer 1 Price</target>
+            </trans-unit>
+
+            <trans-unit id="E_RETAILER_TWO_BR_PRICE">
+                <source>E_RETAILER_TWO_BR_PRICE</source>
+                <target>E-Retailer 2&lt;br&gt;Price</target>
+            </trans-unit>
+
+            <trans-unit id="E_RETAILER_TWO_PRICE">
+                <source>E_RETAILER_TWO_PRICE</source>
+                <target>E-Retailer 2 Price</target>
+            </trans-unit>
+
+            <trans-unit id="E_RETAILERS">
+                <source>E_RETAILERS</source>
+                <target>E-retailers</target>
+            </trans-unit>
+
+            <trans-unit id="EAN_13">
+                <source>EAN_13</source>
+                <target>EAN 13</target>
+            </trans-unit>
+
+            <trans-unit id="EASY_TO_USE_H5">
+                <source>EASY_TO_USE_H5</source>
+                <target>Easy-to-use</target>
+            </trans-unit>
+
+            <trans-unit id="EASY_USE_TOOL_H5">
+                <source>EASY_USE_TOOL_H5</source>
+                <target>A performing and easy-to-use tool for e-retailers and brands</target>
+            </trans-unit>
+
+            <trans-unit id="EDIT">
+                <source>EDIT</source>
+                <target>edit</target>
+            </trans-unit>
+
+            <trans-unit id="EDIT_OR_ADD_ARTICLES">
+                <source>EDIT_OR_ADD_ARTICLES</source>
+                <target>edit or add articles</target>
+            </trans-unit>
+
+            <trans-unit id="EMAIL">
+                <source>EMAIL</source>
+                <target>email</target>
+            </trans-unit>
+
+            <trans-unit id="EMPTY_INCOMPLETE_FEATURES">
+                <source>EMPTY_INCOMPLETE_FEATURES</source>
+                <target>empty or incomplete features</target>
+            </trans-unit>
+
+            <trans-unit id="ENTER_YOUR_EMAIL">
+                <source>ENTER_YOUR_EMAIL</source>
+                <target>Enter your e-mail</target>
+            </trans-unit>
+
+            <trans-unit id="ERETAILERS_PRODUCTS_COMMON">
+                <source>ERETAILERS_PRODUCTS_COMMON</source>
+                <target>E-retailers list – Products in common</target>
+            </trans-unit>
+
+            <trans-unit id="ESTIMATE_WIN_MARKET_LI">
+                <source>ESTIMATE_WIN_MARKET_LI</source>
+                <target>Estimate marketing and development efforts to win a place on the targeted market</target>
+            </trans-unit>
+
+            <trans-unit id="EXCLUSIVE_PRODUCTS_CATALOGUE">
+                <source>EXCLUSIVE_PRODUCTS_CATALOGUE</source>
+                <target>exclusive products in catalogue</target>
+            </trans-unit>
+
+            <trans-unit id="EXPERTS_MARKET_SECTORS_LI">
+                <source>EXPERTS_MARKET_SECTORS_LI</source>
+                <target>A network of experts in many market sectors</target>
+            </trans-unit>
+
+            <trans-unit id="EXTRACTION_PLATFORM_MARKETPLACE_LI">
+                <source>EXTRACTION_PLATFORM_MARKETPLACE_LI</source>
+                <target>Price extraction on every kind of e-commerce platform and marketplace</target>
+            </trans-unit>
+
+            <trans-unit id="FAQ">
+                <source>FAQ</source>
+                <target>faq</target>
+            </trans-unit>
+
+            <trans-unit id="FASTEST_WINNER_MARKET_LI">
+                <source>FASTEST_WINNER_MARKET_LI</source>
+                <target>Who is the fastest winner of market shares ?</target>
+            </trans-unit>
+
+            <trans-unit id="FILTERS_SEARCH_ENGINE_LI">
+                <source>FILTERS_SEARCH_ENGINE_LI</source>
+                <target>Filters and search engine by keywords to refine analysis</target>
+            </trans-unit>
+
+            <trans-unit id="FILTERS_SEARCH_ENGINE_SECOND_LI">
+                <source>FILTERS_SEARCH_ENGINE_SECOND_LI</source>
+                <target>Filters and search engine by keywords to refine analysis</target>
+            </trans-unit>
+
+            <trans-unit id="FLOW_ADJUSTMENTS_REGARDING_STRATEGY_H5">
+                <source>FLOW_ADJUSTMENTS_REGARDING_STRATEGY_H5</source>
+                <target>Manage your stock-flow adjustments regarding competitive purchasing strategy</target>
+            </trans-unit>
+
+            <trans-unit id="FOLLOW_SPECIAL_SALES_LI">
+                <source>FOLLOW_SPECIAL_SALES_LI</source>
+                <target>Follow special sales (sold out sales, special discounts, Christmas sales, etc.)</target>
+            </trans-unit>
+
+            <trans-unit id="FOLLOW_THE">
+                <source>FOLLOW_THE</source>
+                <target>follow the</target>
+            </trans-unit>
+
+            <trans-unit id="FREE_TRIAL">
+                <source>FREE_TRIAL</source>
+                <target>free trial</target>
+            </trans-unit>
+
+            <trans-unit id="FREE_TRIAL_LINK">
+                <source>FREE_TRIAL_LINK</source>
+                <target>FREE&lt;br&gt;TRIAL!</target>
+            </trans-unit>
+
+            <trans-unit id="GLOBAL_ANALYSIS">
+                <source>GLOBAL_ANALYSIS</source>
+                <target>global analysis</target>
+            </trans-unit>
+
+            <trans-unit id="HEADQUARTERS">
+                <source>HEADQUARTERS</source>
+                <target>headquarters</target>
+            </trans-unit>
+
+            <trans-unit id="HIGHEST_BR_PRICE">
+                <source>HIGHEST_BR_PRICE</source>
+                <target>highest&lt;br&gt;price</target>
+            </trans-unit>
+
+            <trans-unit id="HIGHEST_PRICE">
+                <source>HIGHEST_PRICE</source>
+                <target>highest price</target>
+            </trans-unit>
+
+            <trans-unit id="HISTORY_PRODUCT_PRICES_LI">
+                <source>HISTORY_PRODUCT_PRICES_LI</source>
+                <target>History of product prices</target>
+            </trans-unit>
+
+            <trans-unit id="HOME">
+                <source>HOME</source>
+                <target>home</target>
+            </trans-unit>
+
+            <trans-unit id="I_AM_CHEAPER">
+                <source>I_AM_CHEAPER</source>
+                <target>I am cheaper</target>
+            </trans-unit>
+
+            <trans-unit id="I_MORE_EXPENSIVE">
+                <source>I_MORE_EXPENSIVE</source>
+                <target>I am more expensive</target>
+            </trans-unit>
+
+            <trans-unit id="IDENTIFY_LEADERS_MARKET_H5">
+                <source>IDENTIFY_LEADERS_MARKET_H5</source>
+                <target>Identify the e-commerce leaders of their market</target>
+            </trans-unit>
+
+            <trans-unit id="IDENTIFY_MAIN_DOERS_H5">
+                <source>IDENTIFY_MAIN_DOERS_H5</source>
+                <target>Brands are able to identify the main doers in terms of sales</target>
+            </trans-unit>
+
+            <trans-unit id="IDENTIFY_NICHE_CATALOGUE_H5">
+                <source>IDENTIFY_NICHE_CATALOGUE_H5</source>
+                <target>Identify the niche products of your catalogue</target>
+            </trans-unit>
+
+            <trans-unit id="IDENTIFY_SALE_DO_H5">
+                <source>IDENTIFY_SALE_DO_H5</source>
+                <target>Identify products you don’t sale but your competitors do</target>
+            </trans-unit>
+
+            <trans-unit id="IMG">
+                <source>IMG</source>
+                <target>img</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_MESSAGES_MANY">
+                <source>INBOX_MESSAGES_MANY</source>
+                <target>you have %count% messages</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_MESSAGES_NONE">
+                <source>INBOX_MESSAGES_NONE</source>
+                <target>you have no messages</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_MESSAGES_ONE">
+                <source>INBOX_MESSAGES_ONE</source>
+                <target>you have 1 message</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_NOTIFY_MANY">
+                <source>INBOX_NOTIFY_MANY</source>
+                <target>you have %count% notifications</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_NOTIFY_NONE">
+                <source>INBOX_NOTIFY_NONE</source>
+                <target>you have no notifications</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_NOTIFY_ONE">
+                <source>INBOX_NOTIFY_ONE</source>
+                <target>you have 1 notification</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_TASKS_MANY">
+                <source>INBOX_TASKS_MANY</source>
+                <target>you have %count% tasks</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_TASKS_NONE">
+                <source>INBOX_TASKS_NONE</source>
+                <target>you have no tasks</target>
+            </trans-unit>
+
+            <trans-unit id="INBOX_TASKS_ONE">
+                <source>INBOX_TASKS_ONE</source>
+                <target>you have 1 task</target>
+            </trans-unit>
+
+            <trans-unit id="INCREASE_DECREASE_REGARDING_H5">
+                <source>INCREASE_DECREASE_REGARDING_H5</source>
+                <target>Increase or decrease prices regarding competitive prices and product availability</target>
+            </trans-unit>
+
+            <trans-unit id="INCREASE_THIRTY_DAYS">
+                <source>INCREASE_THIRTY_DAYS</source>
+                <target>increase in 30 days</target>
+            </trans-unit>
+
+            <trans-unit id="INNOVATIVE_PRODUCT_ALGORITHMS_LI">
+                <source>INNOVATIVE_PRODUCT_ALGORITHMS_LI</source>
+                <target>Innovative product-matching algorithms</target>
+            </trans-unit>
+
+            <trans-unit id="INTUITIVE_INTERFACE_LI">
+                <source>INTUITIVE_INTERFACE_LI</source>
+                <target>Intuitive interface</target>
+            </trans-unit>
+
+            <trans-unit id="INVOICE">
+                <source>INVOICE</source>
+                <target>invoice</target>
+            </trans-unit>
+
+            <trans-unit id="INVOICE_PRINT">
+                <source>INVOICE_PRINT</source>
+                <target>invoice print</target>
+            </trans-unit>
+
+            <trans-unit id="KEEP_EYE_COMPETITION_H5">
+                <source>KEEP_EYE_COMPETITION_H5</source>
+                <target>Keep an eye on competition</target>
+            </trans-unit>
+
+            <trans-unit id="KEYWORDS_LIST">
+                <source>KEYWORDS_LIST</source>
+                <target>keywords list</target>
+            </trans-unit>
+
+            <trans-unit id="LABORATORY_YOU_PERFORM_H2">
+                <source>LABORATORY_YOU_PERFORM_H2</source>
+                <target>My Data Laboratory Pricing Intelligence Tool has been made for you to perform</target>
+            </trans-unit>
+
+            <trans-unit id="LAST_EDITED">
+                <source>LAST_EDITED</source>
+                <target>last edited</target>
+            </trans-unit>
+
+            <trans-unit id="LAST_PRODUCT_CHANGES">
+                <source>LAST_PRODUCT_CHANGES</source>
+                <target>last product changes</target>
+            </trans-unit>
+
+            <trans-unit id="LAST_SEVEN_DAYS">
+                <source>LAST_SEVEN_DAYS</source>
+                <target>last 7 days</target>
+            </trans-unit>
+
+            <trans-unit id="LAST_TWENTYFOUR_HOURS">
+                <source>LAST_TWENTYFOUR_HOURS</source>
+                <target>last 24 hours</target>
+            </trans-unit>
+
+            <trans-unit id="LEADERS_MAIN_THREATS_H5">
+                <source>LEADERS_MAIN_THREATS_H5</source>
+                <target>Leaders of a specific market area are able to find out the main threats</target>
+            </trans-unit>
+
+            <trans-unit id="LEADING_BRANDS_AMOUNT_LI">
+                <source>LEADING_BRANDS_AMOUNT_LI</source>
+                <target>Find out the leading brands sold and the amount of products in competitors’ catalogues</target>
+            </trans-unit>
+
+            <trans-unit id="LOG_IN">
+                <source>LOG_IN</source>
+                <target>log in</target>
+            </trans-unit>
+
+            <trans-unit id="LOWEST_BR_PRICE">
+                <source>LOWEST_BR_PRICE</source>
+                <target>lowest&lt;br&gt;price</target>
+            </trans-unit>
+
+            <trans-unit id="LOWEST_PRICE">
+                <source>LOWEST_PRICE</source>
+                <target>lowest price</target>
+            </trans-unit>
+
+            <trans-unit id="MAIN_ACTORS_PERFORMANCE_LI">
+                <source>MAIN_ACTORS_PERFORMANCE_LI</source>
+                <target>Discover the main actors of the market and their performances</target>
+            </trans-unit>
+
+            <trans-unit id="MAIN_BRANDS_SEGMENT_LI">
+                <source>MAIN_BRANDS_SEGMENT_LI</source>
+                <target>What are the main brands in my market segment ?</target>
+            </trans-unit>
+
+            <trans-unit id="MAIN_COMPETITIVE_DANGER_LI">
+                <source>MAIN_COMPETITIVE_DANGER_LI</source>
+                <target>Where is the main competitive danger ? A specific competitor, actors on market places…?</target>
+            </trans-unit>
+
+            <trans-unit id="MAIN_NAVIGATION">
+                <source>MAIN_NAVIGATION</source>
+                <target>main navigation</target>
+            </trans-unit>
+
+            <trans-unit id="MARKET_INTELLIGENCE">
+                <source>MARKET_INTELLIGENCE</source>
+                <target>market intelligence</target>
+            </trans-unit>
+
+            <trans-unit id="MARKET_INTELLIGENCE_BUILD_P">
+                <source>MARKET_INTELLIGENCE_BUILD_P</source>
+                <target>The Market Intelligence team of My Data Laboratory builds market research and market survey in all e-commerce areas. Ad Hoc studies are made on demand</target>
+            </trans-unit>
+
+            <trans-unit id="MARKET_INTELLIGENCE_EXPERTISE_H1">
+                <source>MARKET_INTELLIGENCE_EXPERTISE_H1</source>
+                <target>A Market Intelligence team and e-commerce expertise</target>
+            </trans-unit>
+
+            <trans-unit id="MARKET_INTELLIGENCE_TEAM_H5">
+                <source>MARKET_INTELLIGENCE_TEAM_H5</source>
+                <target>A Market Intelligence team</target>
+            </trans-unit>
+
+            <trans-unit id="MARKET_SURVEY">
+                <source>MARKET_SURVEY</source>
+                <target>market survey</target>
+            </trans-unit>
+
+            <trans-unit id="MARKETING_COMMERCIAL_ROI_LI">
+                <source>MARKETING_COMMERCIAL_ROI_LI</source>
+                <target>Maximize your Marketing and commercial activities ROI</target>
+            </trans-unit>
+
+            <trans-unit id="MARKETING_NICHE_PRODUCTS_LI">
+                <source>MARKETING_NICHE_PRODUCTS_LI</source>
+                <target>Maximize your marketing efforts on niche products</target>
+            </trans-unit>
+
+            <trans-unit id="MATCHED_PRODUCTS">
+                <source>MATCHED_PRODUCTS</source>
+                <target>matched products</target>
+            </trans-unit>
+
+            <trans-unit id="MATCHING">
+                <source>MATCHING</source>
+                <target>matching</target>
+            </trans-unit>
+
+            <trans-unit id="MATCHING_PROPOSITIONS">
+                <source>MATCHING_PROPOSITIONS</source>
+                <target>matching propositions</target>
+            </trans-unit>
+
+            <trans-unit id="MATCHING_RESULTS">
+                <source>MATCHING_RESULTS</source>
+                <target>matching results</target>
+            </trans-unit>
+
+            <trans-unit id="MAXIMIZE_MARKETING_ROI_LI">
+                <source>MAXIMIZE_MARKETING_ROI_LI</source>
+                <target>Maximize your Marketing ROI</target>
+            </trans-unit>
+
+            <trans-unit id="MAXIMIZE_YOUR_MARGINS_LI">
+                <source>MAXIMIZE_YOUR_MARGINS_LI</source>
+                <target>Maximize your margins</target>
+            </trans-unit>
+
+            <trans-unit id="MDL_SOLUTIONS_USED">
+                <source>MDL_SOLUTIONS_USED</source>
+                <target>MDL Solutions Used</target>
+            </trans-unit>
+
+            <trans-unit id="MISSING_PRODUCTS_CATALOGUE">
+                <source>MISSING_PRODUCTS_CATALOGUE</source>
+                <target>missing products in catalogue</target>
+            </trans-unit>
+
+            <trans-unit id="MORE_DETAILS">
+                <source>MORE_DETAILS</source>
+                <target>more details</target>
+            </trans-unit>
+
+            <trans-unit id="MORE_INFO">
+                <source>MORE_INFO</source>
+                <target>more info</target>
+            </trans-unit>
+
+            <trans-unit id="MORE_INFO_US_H3">
+                <source>MORE_INFO_US_H3</source>
+                <target>MORE INFO&lt;br&gt;ABOUT US</target>
+            </trans-unit>
+
+            <trans-unit id="MULTI_USERS_LI">
+                <source>MULTI_USERS_LI</source>
+                <target>Multi-users</target>
+            </trans-unit>
+
+            <trans-unit id="MY_ACCOUNT">
+                <source>MY_ACCOUNT</source>
+                <target>my account</target>
+            </trans-unit>
+
+            <trans-unit id="MY_DASHBOARD">
+                <source>MY_DASHBOARD</source>
+                <target>my dashboard</target>
+            </trans-unit>
+
+            <trans-unit id="MY_DATABASE">
+                <source>MY_DATABASE</source>
+                <target>my database</target>
+            </trans-unit>
+
+            <trans-unit id="MYDATALAB">
+                <source>MYDATALAB</source>
+                <target>MyDataLab</target>
+            </trans-unit>
+
+            <trans-unit id="NAME_DESC">
+                <source>NAME_DESC</source>
+                <target>Name / Desc</target>
+            </trans-unit>
+
+            <trans-unit id="NEED_ANALYZE_FULL_H5">
+                <source>NEED_ANALYZE_FULL_H5</source>
+                <target>You may also need to analyze the full product catalogue of your competitors or e-retailers! We do have a solution for you!</target>
+            </trans-unit>
+
+            <trans-unit id="NEED_ANALYZE_FULL_LINK">
+                <source>NEED_ANALYZE_FULL_LINK</source>
+                <target>Look at our Catalogue Analysis Tool</target>
+            </trans-unit>
+
+            <trans-unit id="NEGOTIATE_PURCHASING_PRICES_H5">
+                <source>NEGOTIATE_PURCHASING_PRICES_H5</source>
+                <target>Negotiate better purchasing prices from your product providers</target>
+            </trans-unit>
+
+            <trans-unit id="NEW">
+                <source>NEW</source>
+                <target>new</target>
+            </trans-unit>
+
+            <trans-unit id="NEXT">
+                <source>NEXT</source>
+                <target>next</target>
+            </trans-unit>
+
+            <trans-unit id="NICHE_LEADING_POLICIES_LI">
+                <source>NICHE_LEADING_POLICIES_LI</source>
+                <target>Optimize your niche products and leading products policies</target>
+            </trans-unit>
+
+            <trans-unit id="NO">
+                <source>NO</source>
+                <target>no</target>
+            </trans-unit>
+
+            <trans-unit id="NO_INSTALLATION_REQUIRED_LI">
+                <source>NO_INSTALLATION_REQUIRED_LI</source>
+                <target>No installation required (SaaS solution)</target>
+            </trans-unit>
+
+            <trans-unit id="NOT_MATCHED_PRODUCTS">
+                <source>NOT_MATCHED_PRODUCTS</source>
+                <target>not matched products</target>
+            </trans-unit>
+
+            <trans-unit id="NUM_OF_ERETAILERS_FOLLOWED">
+                <source>NUM_OF_ERETAILERS_FOLLOWED</source>
+                <target># of E-retailers followed</target>
+            </trans-unit>
+
+            <trans-unit id="NUM_OF_PRODUCTS_IN_CATALOGUE">
+                <source>NUM_OF_PRODUCTS_IN_CATALOGUE</source>
+                <target># of products in catalogue</target>
+            </trans-unit>
+
+            <trans-unit id="NUM_OF_USERS">
+                <source>NUM_OF_USERS</source>
+                <target># of users</target>
+            </trans-unit>
+
+            <trans-unit id="NUMBER_OF_PRODUCTS">
+                <source>NUMBER_OF_PRODUCTS</source>
+                <target>number of products</target>
+            </trans-unit>
+
+            <trans-unit id="OBTAIN_CRUNCH_PERCIOUS_LI">
+                <source>OBTAIN_CRUNCH_PERCIOUS_LI</source>
+                <target>Powerful tools to obtain and crunch the precious data</target>
+            </trans-unit>
+
+            <trans-unit id="OPTIMIZE_COMMERCIAL_ACTIVITIES_H5">
+                <source>OPTIMIZE_COMMERCIAL_ACTIVITIES_H5</source>
+                <target>Optimize your commercial activities</target>
+            </trans-unit>
+
+            <trans-unit id="OPTIMIZE_PORTFOLIO_PROFITABILITY_H2">
+                <source>OPTIMIZE_PORTFOLIO_PROFITABILITY_H2</source>
+                <target>Optimize your products portfolio strategy to maximize your profitability</target>
+            </trans-unit>
+
+            <trans-unit id="OPTIMIZE_PRICING_POLICIES_LI">
+                <source>OPTIMIZE_PRICING_POLICIES_LI</source>
+                <target>Optimize your pricing policies</target>
+            </trans-unit>
+
+            <trans-unit id="OPTIMIZE_PRODUCT_PORTFOLIO_LI">
+                <source>OPTIMIZE_PRODUCT_PORTFOLIO_LI</source>
+                <target>Optimize your product portfolio</target>
+            </trans-unit>
+
+            <trans-unit id="OPTIMIZE_SUPPLY_STRATEGY_LI">
+                <source>OPTIMIZE_SUPPLY_STRATEGY_LI</source>
+                <target>Optimize your supply strategy</target>
+            </trans-unit>
+
+            <trans-unit id="OTHER_PRICES">
+                <source>OTHER_PRICES</source>
+                <target>other prices</target>
+            </trans-unit>
+
+            <trans-unit id="OVERSEE_CATALOGUE_SUPPLY_LI">
+                <source>OVERSEE_CATALOGUE_SUPPLY_LI</source>
+                <target>Oversee e-retailers catalogue and find out their supply strategy</target>
+            </trans-unit>
+
+            <trans-unit id="OVERSEE_FINAL_CHARGED_H5">
+                <source>OVERSEE_FINAL_CHARGED_H5</source>
+                <target>Oversee the final customer prices charged</target>
+            </trans-unit>
+
+            <trans-unit id="PARAMETERS">
+                <source>PARAMETERS</source>
+                <target>parameters</target>
+            </trans-unit>
+
+            <trans-unit id="PHONE">
+                <source>PHONE</source>
+                <target>phone</target>
+            </trans-unit>
+
+            <trans-unit id="PORTFOLIO_STRONGLY_COMPETED_H5">
+                <source>PORTFOLIO_STRONGLY_COMPETED_H5</source>
+                <target>Define the products portfolio that is strongly competed</target>
+            </trans-unit>
+
+            <trans-unit id="POSITION_VS_NUMBER_PRODUCTS">
+                <source>POSITION_VS_NUMBER_PRODUCTS</source>
+                <target>brand position regarding average price vs number of products</target>
+            </trans-unit>
+
+            <trans-unit id="POWERFUL_MATCHING_ALGORITHMS_LI">
+                <source>POWERFUL_MATCHING_ALGORITHMS_LI</source>
+                <target>Powerful and innovative product-matching algorithms</target>
+            </trans-unit>
+
+            <trans-unit id="POWERFUL_PRICING_INTELLIGENCE_H1">
+                <source>POWERFUL_PRICING_INTELLIGENCE_H1</source>
+                <target>A powerful pricing intelligence tool</target>
+            </trans-unit>
+
+            <trans-unit id="POWERFUL_ROBOTS_LI">
+                <source>POWERFUL_ROBOTS_LI</source>
+                <target>Powerful robots</target>
+            </trans-unit>
+
+            <trans-unit id="PRECIOUS_PRECISE_DATA_H5">
+                <source>PRECIOUS_PRECISE_DATA_H5</source>
+                <target>New comers get precious and precise data about the targeted e-commerce market</target>
+            </trans-unit>
+
+            <trans-unit id="PREVIOUS">
+                <source>PREVIOUS</source>
+                <target>previous</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_CHANGES_AT">
+                <source>PRICE_CHANGES_AT</source>
+                <target>price changes at</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_CRITERIA">
+                <source>PRICE_CRITERIA</source>
+                <target>price criteria</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_CURSOR">
+                <source>PRICE_CURSOR</source>
+                <target>price cursor</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_DATA_DAILY_LI">
+                <source>PRICE_DATA_DAILY_LI</source>
+                <target>Automatic Price and Data extraction on a daily basis (other frequency on demand)</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_DELTA_IN_EURO">
+                <source>PRICE_DELTA_IN_EURO</source>
+                <target>price delta in €</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_DELTA_IN_PERCENT">
+                <source>PRICE_DELTA_IN_PERCENT</source>
+                <target>price delta in %</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_EACH_RETAILER_BRAND">
+                <source>PRICE_EACH_RETAILER_BRAND</source>
+                <target>average price for each e-retailer by brand</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_ERETAILER">
+                <source>PRICE_ERETAILER</source>
+                <target>price Eretailer</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_HISTORY">
+                <source>PRICE_HISTORY</source>
+                <target>price history</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_POSITIONING_BRAND_LI">
+                <source>PRICE_POSITIONING_BRAND_LI</source>
+                <target>Find out the price positioning of your brand on-line</target>
+            </trans-unit>
+
+            <trans-unit id="PRICE_REDUCTION">
+                <source>PRICE_REDUCTION</source>
+                <target>price reduction</target>
+            </trans-unit>
+
+            <trans-unit id="PRICES">
+                <source>PRICES</source>
+                <target>prices</target>
+            </trans-unit>
+
+            <trans-unit id="PRICES_ARE_EQUAL">
+                <source>PRICES_ARE_EQUAL</source>
+                <target>prices are equal</target>
+            </trans-unit>
+
+            <trans-unit id="PRICES_COMPARED">
+                <source>PRICES_COMPARED</source>
+                <target>prices compared</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING">
+                <source>PRICING</source>
+                <target>pricing</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_COMPETITIVE_INTELLIGENCE_H1">
+                <source>PRICING_COMPETITIVE_INTELLIGENCE_H1</source>
+                <target>E-Commerce Pricing and Competitive Intelligence for E-Retailers and Brands</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_COMPETITIVE_INTELLIGENCE_H2">
+                <source>PRICING_COMPETITIVE_INTELLIGENCE_H2</source>
+                <target>Your Pricing and Competitive Intelligence Partner</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_INTELLIGENCE">
+                <source>PRICING_INTELLIGENCE</source>
+                <target>pricing intelligence</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_INTELLIGENCE_DESCRIPTION_P">
+                <source>PRICING_INTELLIGENCE_DESCRIPTION_P</source>
+                <target>My Data Laboratory Pricing Intelligence Tool allows e-retailers to follow the pricing of the competition and to be alerted of the price changes in the e-commerce website of their competitors.</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_OPPROTUNITIES">
+                <source>PRICING_OPPROTUNITIES</source>
+                <target>pricing opprotunities</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_OPTIMIZE_STRATEGY_H5">
+                <source>PRICING_OPTIMIZE_STRATEGY_H5</source>
+                <target>Pricing Intelligence to optimize your pricing strategy</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_STRATEGY_MARKETING_LI">
+                <source>PRICING_STRATEGY_MARKETING_LI</source>
+                <target>Use your pricing strategy as a Marketing claim</target>
+            </trans-unit>
+
+            <trans-unit id="PRICING_SURVEY">
+                <source>PRICING_SURVEY</source>
+                <target>pricing survey</target>
+            </trans-unit>
+
+            <trans-unit id="PROD_PRICE">
+                <source>PROD_PRICE</source>
+                <target>prod. price</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCT_BR_NAME">
+                <source>PRODUCT_BR_NAME</source>
+                <target>product&lt;br&gt;name</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCT_EAN_13">
+                <source>PRODUCT_EAN_13</source>
+                <target>product EAN 13</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCT_ID">
+                <source>PRODUCT_ID</source>
+                <target>product ID</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCT_MATCHING_MANUAL_LI">
+                <source>PRODUCT_MATCHING_MANUAL_LI</source>
+                <target>Automatic product-matching with possible manual matching optimization</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCT_NAME">
+                <source>PRODUCT_NAME</source>
+                <target>product name</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS">
+                <source>PRODUCTS</source>
+                <target>products</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_BRAND_ERETAILER">
+                <source>PRODUCTS_BRAND_ERETAILER</source>
+                <target>number of products by brand for each e-retailer</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_CANDIDATES_PRICE_RAISE">
+                <source>PRODUCTS_CANDIDATES_PRICE_RAISE</source>
+                <target>products candidates for price raise</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_CANDIDATES_PRICE_REDUCTION">
+                <source>PRODUCTS_CANDIDATES_PRICE_REDUCTION</source>
+                <target>products candidates for price reduction</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_EQUAL_PRICE">
+                <source>PRODUCTS_EQUAL_PRICE</source>
+                <target>produts with equal price</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_LIST">
+                <source>PRODUCTS_LIST</source>
+                <target>products list</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_MDL_ID">
+                <source>PRODUCTS_MDL_ID</source>
+                <target>Product « MDL » ID</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_MISSING_CATALOGUE">
+                <source>PRODUCTS_MISSING_CATALOGUE</source>
+                <target>products are missing in my catalogue</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_MORE_EXPENSIVE">
+                <source>PRODUCTS_MORE_EXPENSIVE</source>
+                <target>products more expensive</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_OUT_STOCK_COMPETITORS">
+                <source>PRODUCTS_OUT_STOCK_COMPETITORS</source>
+                <target>products out of stock at competitors</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_PRICE_RANGE_ERETAILER">
+                <source>PRODUCTS_PRICE_RANGE_ERETAILER</source>
+                <target>number of products by price range by e-retailer</target>
+            </trans-unit>
+
+            <trans-unit id="PRODUCTS_RANGE_PRICE">
+                <source>PRODUCTS_RANGE_PRICE</source>
+                <target>number of products by range of price</target>
+            </trans-unit>
+
+            <trans-unit id="PROMOTIONAL_EFFORTS_SPECIFIC_LI">
+                <source>PROMOTIONAL_EFFORTS_SPECIFIC_LI</source>
+                <target>Optimize your promotional efforts on this specific group of products</target>
+            </trans-unit>
+
+            <trans-unit id="PROVIDES_MARKET_DEMAND_LI">
+                <source>PROVIDES_MARKET_DEMAND_LI</source>
+                <target>Our tools and development team provides market data on demand. Contact us !</target>
+            </trans-unit>
+
+            <trans-unit id="QUICK_STRATEGIC_DECISION_LI">
+                <source>QUICK_STRATEGIC_DECISION_LI</source>
+                <target>Quick strategic decision</target>
+            </trans-unit>
+
+            <trans-unit id="RAW_ALSO_PART_H5">
+                <source>RAW_ALSO_PART_H5</source>
+                <target>Getting raw market data for brands is also part of My Data Laboratory services</target>
+            </trans-unit>
+
+            <trans-unit id="RAW_DATA_SERVICES_H5">
+                <source>RAW_DATA_SERVICES_H5</source>
+                <target>Getting raw market data for E-Retailers is also part of My Data Laboratory services</target>
+            </trans-unit>
+
+            <trans-unit id="READ_ALERT">
+                <source>READ_ALERT</source>
+                <target>read alerts</target>
+            </trans-unit>
+
+            <trans-unit id="REFINE_SUPPLY_STRATEGY_LI">
+                <source>REFINE_SUPPLY_STRATEGY_LI</source>
+                <target>Refine your supply strategy</target>
+            </trans-unit>
+
+            <trans-unit id="RESPONSIVE_DESIGN_ANALYSIS_LI">
+                <source>RESPONSIVE_DESIGN_ANALYSIS_LI</source>
+                <target>Responsive design to check analysis on mobile or tablet</target>
+            </trans-unit>
+
+            <trans-unit id="RESTORE_TO_DEFAULT_POSITION">
+                <source>RESTORE_TO_DEFAULT_POSITION</source>
+                <target>restore to default position</target>
+            </trans-unit>
+
+            <trans-unit id="RETAILERS_OPTIMIZE_WHEN_NECESSARY_H2">
+                <source>RETAILERS_OPTIMIZE_WHEN_NECESSARY_H2</source>
+                <target>E-retailers optimize their pricing strategy on-line, and also off-line when necessary</target>
+            </trans-unit>
+
+            <trans-unit id="SAVE_CHANGES">
+                <source>SAVE_CHANGES</source>
+                <target>save changes</target>
+            </trans-unit>
+
+            <trans-unit id="SAVE_TIME_MONEY_H5">
+                <source>SAVE_TIME_MONEY_H5</source>
+                <target>Everything is made for you to save time and earn money! Don’t hesitate and &lt;a style="color</target>
+            </trans-unit>
+
+            <trans-unit id="SEARCH">
+                <source>SEARCH</source>
+                <target>search</target>
+            </trans-unit>
+
+            <trans-unit id="SEARCH_ENGINE_KEYWORDS_LI">
+                <source>SEARCH_ENGINE_KEYWORDS_LI</source>
+                <target>Filters and search engine by keywords to refine analysis</target>
+            </trans-unit>
+
+            <trans-unit id="SECTOR_REVIEW-LI">
+                <source>SECTOR_REVIEW-LI</source>
+                <target>Sector review</target>
+            </trans-unit>
+
+            <trans-unit id="SEE_ALL_MESSAGES">
+                <source>SEE_ALL_MESSAGES</source>
+                <target>see ALL messages</target>
+            </trans-unit>
+
+            <trans-unit id="SELECT_PRODUCT_SHEET">
+                <source>SELECT_PRODUCT_SHEET</source>
+                <target>select a product sheet</target>
+            </trans-unit>
+
+            <trans-unit id="SEMANTIC_ANALYSIS">
+                <source>SEMANTIC_ANALYSIS</source>
+                <target>semantic analysis</target>
+            </trans-unit>
+
+            <trans-unit id="SIGN_IN">
+                <source>SIGN_IN</source>
+                <target>sign in</target>
+            </trans-unit>
+
+            <trans-unit id="SOLUTION_TODAY_H3">
+                <source>SOLUTION_TODAY_H3</source>
+                <target>SOLUTION TODAY!</target>
+            </trans-unit>
+
+            <trans-unit id="SOLUTIONS">
+                <source>SOLUTIONS</source>
+                <target>solutions</target>
+            </trans-unit>
+
+            <trans-unit id="STAR_PRODUCTS">
+                <source>STAR_PRODUCTS</source>
+                <target>start products</target>
+            </trans-unit>
+
+            <trans-unit id="STAR_PRODUCTS_HIGHLIGHTS_LI">
+                <source>STAR_PRODUCTS_HIGHLIGHTS_LI</source>
+                <target>Star products highlights</target>
+            </trans-unit>
+
+            <trans-unit id="STAY_CONNECTED_US_H3">
+                <source>STAY_CONNECTED_US_H3</source>
+                <target>STAY CONNECTED WITH US</target>
+            </trans-unit>
+
+            <trans-unit id="STAY_TO_DATE_P">
+                <source>STAY_TO_DATE_P</source>
+                <target>Stay up to date with My Data Laboratory latest news, offers and developments</target>
+            </trans-unit>
+
+            <trans-unit id="STRATEGIC_CATALOGUE_ANALYSIS_H1">
+                <source>STRATEGIC_CATALOGUE_ANALYSIS_H1</source>
+                <target>A strategic catalogue analysis tool</target>
+            </trans-unit>
+
+            <trans-unit id="STRATEGIC_DESICIONS">
+                <source>STRATEGIC_DESICIONS</source>
+                <target>stategic desicions</target>
+            </trans-unit>
+
+            <trans-unit id="STREAM_CATALOGUE_IMPORT_LI">
+                <source>STREAM_CATALOGUE_IMPORT_LI</source>
+                <target>Stream or catalogue import</target>
+            </trans-unit>
+
+            <trans-unit id="SUBCATEGORIES">
+                <source>SUBCATEGORIES</source>
+                <target>subcategories</target>
+            </trans-unit>
+
+            <trans-unit id="SUPPLY_STRATEGY_FLOW_LI">
+                <source>SUPPLY_STRATEGY_FLOW_LI</source>
+                <target>Optimize your supply strategy and cash flow</target>
+            </trans-unit>
+
+            <trans-unit id="TABLE_ANALYSIS_EXPORTATION_LI">
+                <source>TABLE_ANALYSIS_EXPORTATION_LI</source>
+                <target>Table and analysis exportation</target>
+            </trans-unit>
+
+            <trans-unit id="TEAM_ANSWER_QUESTIONS_H5">
+                <source>TEAM_ANSWER_QUESTIONS_H5</source>
+                <target>A Market intelligence team to answer to your specific questions regarding your own market</target>
+            </trans-unit>
+
+            <trans-unit id="TEAM_PASSIONAE_CONSULTANTS_LI">
+                <source>TEAM_PASSIONAE_CONSULTANTS_LI</source>
+                <target>A team of e-commerce passionate consultants</target>
+            </trans-unit>
+
+            <trans-unit id="TERMS_OF_USE">
+                <source>TERMS_OF_USE</source>
+                <target>All Rights Reserved &lt;a href="terms.html"&gt;Terms of Use and Privacy Policy&lt;/a&gt;</target>
+            </trans-unit>
+
+            <trans-unit id="TITLE">
+                <source>TITLE</source>
+                <target>title</target>
+            </trans-unit>
+
+            <trans-unit id="TOP_PRODUCTS_ANALYSIS">
+                <source>TOP_PRODUCTS_ANALYSIS</source>
+                <target>top products analysis</target>
+            </trans-unit>
+
+            <trans-unit id="TOTAL_STOCK">
+                <source>TOTAL_STOCK</source>
+                <target>total stock</target>
+            </trans-unit>
+
+            <trans-unit id="TRENDS_TERMS_PRODUCTS_LI">
+                <source>TRENDS_TERMS_PRODUCTS_LI</source>
+                <target>What are the market trends in terms of brands or products?</target>
+            </trans-unit>
+
+            <trans-unit id="TRY_OUR_INTELLIGENCE_H3">
+                <source>TRY_OUR_INTELLIGENCE_H3</source>
+                <target>TRY OUR PRICING INTELLIGENCE&lt;br&gt;SOLUTION TODAY!</target>
+            </trans-unit>
+
+            <trans-unit id="TURNOVER">
+                <source>TURNOVER</source>
+                <target>turnover</target>
+            </trans-unit>
+
+            <trans-unit id="TURNOVER_MONTH">
+                <source>TURNOVER_MONTH</source>
+                <target>turnover month</target>
+            </trans-unit>
+
+            <trans-unit id="TURNOVER_SINCE_FIRST_SUBSCRIPTION">
+                <source>TURNOVER_SINCE_FIRST_SUBSCRIPTION</source>
+                <target>Turnover since 1st subscription</target>
+            </trans-unit>
+
+            <trans-unit id="TURNOVER_Y2D">
+                <source>TURNOVER_Y2D</source>
+                <target>turnover Y2D</target>
+            </trans-unit>
+
+            <trans-unit id="TURNOVER_YOY">
+                <source>TURNOVER_YOY</source>
+                <target>turnover YoY</target>
+            </trans-unit>
+
+            <trans-unit id="ULTIMATE_PRICING_INTELLIGENCE_H5">
+                <source>ULTIMATE_PRICING_INTELLIGENCE_H5</source>
+                <target>E-retailers and Brands get the ultimate Pricing Intelligence Tool to improve Pricing strategy, to maximize sales, to optimize supply and commercial strategies, to manage stock-flows and cash flow, and so much more…</target>
+            </trans-unit>
+
+            <trans-unit id="UPDATE_MARKET_SURVEY_H5">
+                <source>UPDATE_MARKET_SURVEY_H5</source>
+                <target>We probably update the market survey of your business, ask us the abstract or contact us to buy the full version</target>
+            </trans-unit>
+
+            <trans-unit id="UPLOADED">
+                <source>UPLOADED</source>
+                <target>uploaded</target>
+            </trans-unit>
+
+            <trans-unit id="USERS">
+                <source>USERS</source>
+                <target>users</target>
+            </trans-unit>
+
+            <trans-unit id="VALUABLE_INSIGHTS_LI">
+                <source>VALUABLE_INSIGHTS_LI</source>
+                <target>Valuable insights</target>
+            </trans-unit>
+
+            <trans-unit id="VIEW_ALL">
+                <source>VIEW_ALL</source>
+                <target>view ALL</target>
+            </trans-unit>
+
+            <trans-unit id="VIEW_ALL_TASKS">
+                <source>VIEW_ALL_TASKS</source>
+                <target>view ALL tasks</target>
+            </trans-unit>
+
+            <trans-unit id="WAITING_FOR_MATCHING">
+                <source>WAITING_FOR_MATCHING</source>
+                <target>waiting for matching</target>
+            </trans-unit>
+
+            <trans-unit id="WEBSITE">
+                <source>WEBSITE</source>
+                <target>website</target>
+            </trans-unit>
+
+            <trans-unit id="WEBSITE_ANALYSIS">
+                <source>WEBSITE_ANALYSIS</source>
+                <target>website analysis</target>
+            </trans-unit>
+
+            <trans-unit id="WEBSITE_URL">
+                <source>WEBSITE_URL</source>
+                <target>website URL</target>
+            </trans-unit>
+
+            <trans-unit id="WEBSITES_LIST">
+                <source>WEBSITES_LIST</source>
+                <target>websites list</target>
+            </trans-unit>
+
+            <trans-unit id="WHO_WE_ARE">
+                <source>WHO_WE_ARE</source>
+                <target>who we are</target>
+            </trans-unit>
+
+            <trans-unit id="WIN_OPTIMIZE_MARGINS_LI">
+                <source>WIN_OPTIMIZE_MARGINS_LI</source>
+                <target>Win sales and optimize your margins</target>
+            </trans-unit>
+
+            <trans-unit id="WORDING">
+                <source>WORDING</source>
+                <target>wording</target>
+            </trans-unit>
+
+            <trans-unit id="YES">
+                <source>YES</source>
+                <target>yes</target>
+            </trans-unit>
+
+            <trans-unit id="">
+                <source></source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="PAGE_ROUTING">
+                <source>PAGE_ROUTING</source>
+                <target>Page routing</target>
+            </trans-unit>
+            <trans-unit id="CREATE" >
+                <source>CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="LOGIN_H1">
+                <source>LOGIN_H1</source>
+                <target>E-commerce pricing and competitive intelligence for e-retailers and brands</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

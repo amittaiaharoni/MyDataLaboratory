@@ -1,0 +1,85 @@
+widgets:
+    - name: previous_month
+      parent: sortable1
+    - name: this_month
+      parent: sortable1
+    - name: year_objectives
+      parent: sortable1
+    - name: year_to_date
+      parent: sortable1
+    - name: year_to_year
+      parent: sortable1
+    - name: geographical_clients_spreading
+      parent: sortable2
+    - name: turnover
+      parent: sortable2
+    - name: datasheets
+      parent: sortable3
+    - name: indexed_sites
+      parent: sortable4
+    - name: products
+      parent: sortable5
+    - name: categories
+      parent: sortable5
+    - name: star_products
+      parent: sortable5
+    - name: brands
+      parent: sortable6
+    - name: subcategories
+      parent: sortable6
+    - name: alerts
+      parent: sortable6
+    - name: latest_news
+      parent: sortable7
+    - name: filled_data
+      parent: sortable8
+    - name: product_price_range
+      parent: sortable9
+    - name: e_retailers
+      parent: sortable10
+    - name: e_retailers_common_products
+      parent: sortable10
+    - name: competitors_brands
+      parent: sortable11
+    - name: matching_results
+      parent: sortable11
+    - name: missing_products
+      parent: sortable11
+    - name: e_retailers_products
+      parent: sortable12
+    - name: e_retailers_matching_results
+      parent: sortable12
+    - name: competitors_monitored
+      parent: sortable13
+    - name: competitors_price_distribution
+      parent: sortable14
+    - name: last_product_changes
+      parent: sortable15
+    - name: strategic_desicions
+      parent: sortable16
+    - name: prices_compared
+      parent: sortable17
+    - name: this_month
+      parent: sortable18
+    - name: previous_month
+      parent: sortable19
+    - name: year_to_date
+      parent: sortable20
+    - name: year_to_year
+      parent: sortable21
+    - name: turnover
+      parent: sortable22
+    - name: year_objectives
+      parent: sortable23
+    - name: add_e_retailer
+      parent: sortable24
+    - name: prices_compared_e_retailers
+      parent: sortable25
+    - name: e_retailers_list
+      parent: sortable26
+    - name: competitors_monitored
+      parent: sortable27
+    - name: competitors_price_distribution
+      parent: sortable28
+    - name: e_retailers_rankings
+      parent: sortable29

@@ -1,0 +1,88 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Contact MyDataLaboratory{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4 contact_left">
+                <ul class="leftul">
+                    <li>
+                        <h3 class="box-title">Adress</h3>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat vitae purus non ultricies.
+                    </li>
+                    <li>
+                        <h3 class="box-title">We are open</h3>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat vitae purus non ultricies.
+                    </li>
+                    <li>
+                        <h3 class="box-title">Phone</h3>
+                        +00000000000
+                    </li>
+                    <li>
+                        <h3 class="box-title">Email</h3>
+                        tested@ddd.com
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-md-8 contact_right">
+                <form class="form-horizontal">
+                    <div class="col-md-6">
+                        <h3 class="box-title">Subject</h3>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-btn">
+                                <button type="button" style="width:100%;" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Select a subject
+                                    <span class="fa fa-caret-down"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Subject</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="box-title">Who to contact</h3>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-btn">
+                                <button type="button" style="width:100%;" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Select a department
+                                    <span class="fa fa-caret-down"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Subject</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="box-title">Message</h3>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea style="min-height:150px;" class="form-control" name="comment" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="box-title">My Email</h3>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-btn">
+                                <input class="form-control" id="inputEmail3" type="email" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="box-title">&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-btn">
+                                <button type="submit" style="width:100%;" class="btn btn-info">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

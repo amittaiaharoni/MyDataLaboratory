@@ -1,0 +1,56 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block slider %}{% endblock %}
+{% block content %}
+    <main class="page-content">
+        <div class="breadcrumb section-border">
+            <!--Start section-->
+            <section class="well-sm">
+                <div class="container">
+                    <div class="row flow-offset-1">
+                        <div class="col-md-6 col-md-offset-3 btn-shadow inset-sm-min img-rounded bg-info" >
+                            <h5 class="text-center" style="color:#FFFFFF">Try the beta version of the ultimate tool to monitor prices of your competitors or resellers.<br>
+                                You want to be the firsts to try it for free?<br> Just subscribe here !</h5>
+                            <form class="row label-insets" method="POST">
+                                <div class="form-group col-sm-6">
+                                    <label for="exampleInputText1" class="text-uppercase font-secondary" >First Name</label>
+                                    <input type="text" placeholder="First Name" name="FirstName" class="round-small form-control" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="exampleInputText2" class="text-uppercase font-secondary">Last Name</label>
+                                    <input type="text" placeholder="Last Name" name="LastName" class="round-small form-control" required>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label for="exampleInputEmail1" class="text-uppercase font-secondary">E-mail</label>
+                                    <input type="email" placeholder="example@domain.com" name="Email" class="round-small form-control" required> 
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="exampleInputPass1" class="text-uppercase font-secondary">Company Name</label>
+                                    <input type="CompanyName" placeholder="Company Name" name="CompanyName" class="round-small form-control" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="exampleInputPass1" class="text-uppercase font-secondary">Website</label>
+                                    <input type="Website" placeholder="Website" name="Website" class="round-small form-control" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="exampleInputPass1" class="text-uppercase font-secondary">Telephone</label>
+                                    <input type="Telephone" placeholder="Telephone" name="Telephone" class="round-small form-control" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-success btn-xs round-small btn-block form-el-offset-1  round-xl">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>E-commerce pricing and competitive intelligence for e-retailers and brands </h1> 
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb section-border">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter capitalize %}{% trans %}HOME{% endtrans %}{% endfilter %}</a></li>
+        <li><a href="{{ path('my_data_lab_frontend_solutions') }}">{% filter capitalize %}{% trans %}SOLUTIONS{% endtrans %}{% endfilter %}</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_solutions_pricing_intelligence') }}">{% filter title %}{% trans %}PRICING_INTELLIGENCE{% endtrans %}{% endfilter %}</a></li>
+    </ol>
+{% endblock %}
+{% block headerAdditionalSections %}
+    <section class="well-xl well-xl-variant-1 text-center">
+        <div class="container">
+            <h1>{% trans %}POWERFUL_PRICING_INTELLIGENCE_H1{% endtrans %}</h1>
+            <p style="color:#000; margin:20px 0;" class="lead-green big">
+                {% trans %}PRICING_INTELLIGENCE_DESCRIPTION_P{% endtrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    <section class="text-center offset-1 bottomspace">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row-services-performing">
+                        <h2 class="cube-front">{% trans %}RETAILERS_OPTIMIZE_WHEN_NECESSARY_H2{% endtrans %}</h2>
+
+                        <h5 class="text-bold arrow-front"> {% trans %}INCREASE_DECREASE_REGARDING_H5{% endtrans %}</h5>
+
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}WIN_OPTIMIZE_MARGINS_LI{% endtrans %}</li>
+                            <li>{% trans %}MAXIMIZE_MARKETING_ROI_LI{% endtrans %}</li>
+                            <li>{% trans %}PRICING_STRATEGY_MARKETING_LI{% endtrans %}</li>
+                        </ul>
+
+                        <br>
+                        <h5 class="text-bold arrow-front"> {% trans %}NEGOTIATE_PURCHASING_PRICES_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}MAXIMIZE_YOUR_MARGINS_LI{% endtrans %}</li>					  
+                        </ul>
+                        <br>
+                        <h5 class="text-bold arrow-front"> {% trans %}FLOW_ADJUSTMENTS_REGARDING_STRATEGY_H5{% endtrans %}</h5>
+
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}SUPPLY_STRATEGY_FLOW_LI{% endtrans %}</li>
+                            <li>{% trans %}OPTIMIZE_PRODUCT_PORTFOLIO_LI{% endtrans %}</li>
+                        </ul>
+                        <br>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                    <br> 	
+                    <h5 class="text-bold arrow-front"> {% trans %}BRANDS_DISTRIBUTORS_ONLINE_H5{% endtrans %}</h5>
+                    <div class="row-services-market">			
+                        <h2 class="cube-front">{% trans %}BRANDS_MONITOR_PRICING_H2{% endtrans %}</h2>
+                        <br> 
+                        <h5 class="text-bold arrow-front"> {% trans %}OVERSEE_FINAL_CHARGED_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}OPTIMIZE_PRICING_POLICIES_LI{% endtrans %}</li>
+                            <li>{% trans %}FOLLOW_SPECIAL_SALES_LI{% endtrans %}</li>
+                        </ul>
+                        <br> 	
+                        <h5 class="text-bold arrow-front"> {% trans %}OPTIMIZE_COMMERCIAL_ACTIVITIES_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}COMMERCIAL_STOCK_FLOW_LI{% endtrans %}</li>
+                            <li>{% trans %}FILTERS_SEARCH_ENGINE_LI{% endtrans %}</li>
+                            <li>{% trans %}MARKETING_COMMERCIAL_ROI_LI{% endtrans %}</li>
+                        </ul>
+                        <br> 	
+                        <h5 class="text-bold arrow-front"> {% trans %}KEEP_EYE_COMPETITION_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}PRICE_POSITIONING_BRAND_LI{% endtrans %}</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>
+                    <br> 	
+                    <h5 class="text-bold arrow-front"> {% trans %}ULTIMATE_PRICING_INTELLIGENCE_H5{% endtrans %}</h5>
+
+
+                    <div class="row-services-market">
+                        <br>  
+                        <h2 class="cube-front">{% trans %}LABORATORY_YOU_PERFORM_H2{% endtrans %}</h2>
+
+                        <h5 class="text-bold arrow-front"> {% trans %}AUTOMATIC_EXTRACTION_TREATMENT_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}PRICE_DATA_DAILY_LI{% endtrans %}</li>
+                            <li>{% trans %}PRODUCT_MATCHING_MANUAL_LI{% endtrans %}</li>
+                            <li>{% trans %}ALERTS_MOVES_INDENTIFIED_LI{% endtrans %}</li>
+                        </ul>
+                        <br>   
+                        <h5 class="text-bold arrow-front"> {% trans %}CUSTOMIZATION_OF_ANALYSIS_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}HISTORY_PRODUCT_PRICES_LI{% endtrans %}</li>
+                            <li>{% trans %}FILTERS_SEARCH_ENGINE_SECOND_LI{% endtrans %}</li>
+                            <li>{% trans %}CATEGORY_BRAND_COMPETITOR_LI{% endtrans %}</li>
+                            <li>{% trans %}STAR_PRODUCTS_HIGHLIGHTS_LI{% endtrans %}</li>
+                            <li>{% trans %}DRAG_DROP_TECHNOLOGY_LI{% endtrans %}</li>
+                        </ul>
+                        <br>   
+                        <h5 class="text-bold arrow-front"> {% trans %}EASY_TO_USE_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}NO_INSTALLATION_REQUIRED_LI{% endtrans %}</li>
+                            <li>{% trans %}STREAM_CATALOGUE_IMPORT_LI{% endtrans %}</li>
+                            <li>{% trans %}INTUITIVE_INTERFACE_LI{% endtrans %}</li>
+                            <li>{% trans %}MULTI_USERS_LI{% endtrans %}</li>
+                        </ul>	  
+                        <br>   
+                        <h5 class="text-bold arrow-front"> {% trans %}ANALYSIS_AT_GLANCE_H5{% endtrans %}</h5>
+                        <ul class="marked-list indent-list max-width-xs">
+                            <li>{% trans %}CLEAR_VALUABLE_DASHBOARD_LI{% endtrans %}</li>
+                            <li>{% trans %}TABLE_ANALYSIS_EXPORTATION_LI{% endtrans %}</li>
+                            <li>{% trans %}RESPONSIVE_DESIGN_ANALYSIS_LI{% endtrans %}</li>
+                        </ul>	 
+                    </div>			 
+                    <div class="clear"></div>
+                    <div class="shadow-divisor"></div>
+                    <div class="clear"></div>				  
+                    <br> 	
+                    <h5 class="text-bold arrow-front"> {% trans %}SAVE_TIME_MONEY_H5{% endtrans %}<a style="color:#00b6c9" href="./mydatalaboratory-subscription.php">{% trans %}SAVE_TIME_MONEY_H5_LINK{% endtrans %}try our solution today</a> {% trans %}SAVE_TIME_MONEY_H5_2{% endtrans %}we offer you a 10-days free trial</h5>
+                    <br> 	
+                    <h5 class="text-bold arrow-front"> {% trans %}NEED_ANALYZE_FULL_H5{% endtrans %}<a style="color:#00b6c9" href="{{ path('my_data_lab_frontend_solutions_catalog_analysis') }}">{% trans %}ANALYZE_FULL_LINK{% endtrans %}</a></h5>
+                    <br> 	
+                    <h5 class="text-bold arrow-front"> {% trans %}UPDATE_MARKET_SURVEY_H5{% endtrans %}<a style="color:#00b6c9" href="./market-survey.php">{% trans %}UPDATE_MARKET_SURVEY_H5_LINK{% endtrans %}</a>{% trans %}UPDATE_MARKET_SURVEY_H5_2{% endtrans %}</h5>
+                    <br>  
+
+                </div>				
+            </div>
+
+        </div></section>
+{% endblock %}

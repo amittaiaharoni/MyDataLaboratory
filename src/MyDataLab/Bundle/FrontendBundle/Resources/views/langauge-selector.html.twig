@@ -1,0 +1,10 @@
+<div class="select-language">
+    {% spaceless %}
+        {% for language in languageProvider.getLanguages() %}
+            {% set currentRoute = app.request.attributes.get('_route') %}
+            {% set currentParams = app.request.attributes.get('_route_params') | merge({'_locale': language.code})%}
+            <a title="{{ language.name }}" href="{{ path(currentRoute, currentParams) }}">{{ language.code | upper }}</a>
+            {% if loop.revindex0 == 1 %}|{% endif %}
+        {% endfor %}
+    {% endspaceless %}
+</div>

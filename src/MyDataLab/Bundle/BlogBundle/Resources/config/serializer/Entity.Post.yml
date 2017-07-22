@@ -1,0 +1,27 @@
+MyDataLab\Bundle\BlogBundle\Entity\Post:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        title:
+            expose: true
+        slug:
+            expose: true
+        metaDescription:
+            expose: true
+        createdAt:
+            expose: true
+        updatedAt:
+            expose: true
+        content:
+            expose: true
+        tags:
+            expose: true
+        keywords:
+            expose: true
+        metaDescription:
+            expose: true
+        image:
+            expose: true
+        language:
+            expose: true

@@ -1,0 +1,37 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Glossary{% endblock %}
+{% block content %}
+    <div clas="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title fl-l">{% filter capitalize %}{% trans %}EDIT_OR_ADD_DEFINITIONS{% endtrans %}{% endfilter %}</h3>
+                <a href="{{ path('my_data_lab_glossary_create') }}" id="add-article" type="button" class='btn btn-default fl-r' data-add-article="true">{% filter capitalize %}{% trans %}ADD_DEFINITION{% endtrans %}{% endfilter %}</a>
+            </div>
+            <div class="box-body">
+                <table id="glossary-definitions" class="table table-bordered table-striped text-center" width="100%">
+                    <thead>
+                    <tr>
+                        <th>{% filter capitalize %}{% trans %}TITLE{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter capitalize %}{% trans %}LANGUAGE{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter capitalize %}{% trans %}ACTION{% endtrans %}{% endfilter %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for subGlossary in sub_glossaries %}
+                        <tr>
+                            <td><a href="{{ path('my_data_lab_glossary_definitions', {'id': subGlossary.id}) }}">{{ subGlossary.name }}</a></td>
+                            <td>{{ subGlossary.language.code }}</td>
+                            <td>
+                                <a href="{{ path('my_data_lab_glossary_update', {'id': subGlossary.id}) }}" class="btn btn-default edit-definition" data-edit="true">{% filter capitalize %}{% trans %}EDIT{% endtrans %}{% endfilter %}</a>&nbsp;
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

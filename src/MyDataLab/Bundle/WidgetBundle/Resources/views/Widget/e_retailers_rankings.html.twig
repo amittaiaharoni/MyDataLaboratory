@@ -1,0 +1,202 @@
+<div class="box mdl-widget" data-widget-id="{{ widget.id }}">
+    <div class="box-body">
+        <div class="export-csv csvcustom"></div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="tables_selectbox">
+                <div class="col-md-2 col-md-offset-1">
+                    <dl class="dropdown">
+                        <dt>
+                            <a>
+                                <span class="hida">E-Retailers</span><i class="fa fa-caret-right text-yellow"></i>
+                                <p class="multiSel"></p>
+                            </a>
+                        </dt>
+                        <dd>
+                            <div class="mutliSelect">
+                                <ul>
+                                    <li class="center">
+                                        <input type="checkbox" value="All" />All
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Concurrent 1" />Concurrent 1
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Concurrent 2" />Concurrent 2
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Concurrent 3" />Concurrent 3
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Concurrent 4" />Concurrent 4
+                                    </li>
+                                    <li>
+                                        <button>Filter</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-2">
+                    <dl class="dropdown_2">
+                        <dt>
+                            <a>
+                                <span class="hida_2">Price criteria</span><i class="fa fa-caret-right text-yellow"></i>
+                                <p class="multiSel_2"></p>
+                            </a>
+                        </dt>
+                        <dd>
+                            <div class="mutliSelect_2">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" value="I am more expensive" />{% trans %}I_MORE_EXPENSIVE{% endtrans %}
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="I am cheaper" />{% trans %}I_AM_CHEAPER{% endtrans %}
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Decreasing" />Decreasing
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Increasing" />Increasing
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Promotion" />Promotion
+                                    </li>
+                                    <li>
+                                        <button>Filter</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-2">
+                    <dl class="dropdown_3">
+                        <dt>
+                            <a>
+                                <span class="hida_3">Categories</span><i class="fa fa-caret-right text-yellow"></i>
+                                <p class="multiSel_3"></p>
+                            </a>
+                        </dt>
+                        <dd>
+                            <div class="mutliSelect_3">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" value="All_3" />All
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Perfumes" />Perfumes
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Cosmétiques" />Cosmétiques
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Catégorie 3" />Catégorie 3
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Catégorie 4" />Catégorie 4
+                                    </li>
+                                    <li>
+                                        <button>Filter</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-2">
+                    <dl class="dropdown_4">
+                        <dt>
+                            <a>
+                                <span class="hida_4">Brands</span><i class="fa fa-caret-right text-yellow"></i>
+                                <p class="multiSel_4"></p>
+                            </a>
+                        </dt>
+                        <dd>
+                            <div class="mutliSelect_4">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" value="All_4" /> All
+                                    </li>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Marque 1" />Marque 1
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Marque 2" />Marque 2
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Marque 3" />Marque 3
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="Marque 4" />Marque 4
+                                    </li>
+                                    <li>
+                                        <button>Filter</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-default" id="test">Clear All Filters</button>
+                </div>
+            </div>
+            <table id="e-retailers" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Favicon</th>
+                        <th>Eretailer</th>
+                        <th>Alexa Rank<br/>Fr</th>
+                        <th>Alexa Rank<br/>Int</th>
+                        <th>Prod in<br/>catalogue</th>
+                        <th>Prod in<br/>common</th>
+                        <th>Additonal<br/>products</th>
+                        <th>Brands in<br/>catalogue</th>
+                        <th>Brands in<br/>common</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="{{ asset('bundles/mydatalabadmin/img/products/sephora_fav.png') }}" alt="Sephora" height="60" width="60">
+                        </td>
+                        <td><a href="competitors.php">Sephora.com</a></td>
+                        <td>37</span></td>
+                        <td>37</span></td>
+                        <td>66</span></td>
+                        <td>50</span></td>
+                        <td>37</span></td>
+                        <td>66</span></td>
+                        <td>50</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ asset('bundles/mydatalabadmin/img/products/marionnaud_fav.png') }}" alt="Marionnaud" height="60" width="60">
+                        </td>
+                        <td><a href="competitors.php">Marionnaud.fr</a></td>
+                        <td>37</span></td>
+                        <td>37</span></td>
+                        <td>66</span></td>
+                        <td>50</span></td>
+                        <td>37</span></td>
+                        <td>66</span></td>
+                        <td>50</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ asset('bundles/mydatalabadmin/img/products/sephora_fav.png') }}" alt="Sephora" height="60" width="60">
+                        </td>
+                        <td><a href="competitors.php">Sephora</a></td>
+                        <td>37</span></td>
+                        <td>37</span></td>
+                        <td>66</span></td>
+                        <td>50</span></td>
+                        <td>37</span></td>
+                        <td>66</span></td>
+                        <td>50</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{# empty Twig template #}
+{% block _post_image_row %}
+    <div class="form-group">
+        <label class="control-label required" for="post_image">Image</label>
+        <div class="input-file-wrapper">
+            <span id="post-image-value" class="input-file-text">{{ form.vars.value }}</span>
+            <input type="file" id="post_image" type="file" name="post[image]" required="required">
+        </div>
+    </div>
+{% endblock %}

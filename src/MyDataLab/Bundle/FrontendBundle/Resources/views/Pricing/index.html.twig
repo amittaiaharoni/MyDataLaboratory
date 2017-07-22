@@ -1,0 +1,256 @@
+{% extends 'MyDataLabFrontendBundle::base.html.twig' %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb section-border">
+        <li><a href="{{ path('my_data_lab_frontend_homepage') }}">{% filter title %}{% trans %}HOME{% endtrans %}{% endfilter %}</a></li>
+        <li class="active"><a href="{{ path('my_data_lab_frontend_solutions') }}">{% filter title %}{% trans %}SOLUTIONS{% endtrans %}{% endfilter %}</a></li>
+    </ol>
+{% endblock %}
+{% block content %}
+    <section class="text-center well well-sm section-border">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 bg-white">
+                    <h1>Choose Your Plan</h1>
+                    <p style="color:#000; margin:20px 0;" class="lead-green big">
+                        We worked out an amazing combination of vast functionality
+                        and user's comfort. It will totally impress you with its power!
+                    </p>
+                </div>
+            </div>
+            <div class="row offset-1 flow-offset-2 pricing-border-left">
+                <div class="col-sm-6 col-lg-3 pricing-box pricing-box-hover bg-white">
+                    <div class="thumbnail thumbnail-3">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6><span class="icon icon-xl icon-light fa-hand-pointer-o"></span>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">free</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst. Quisque non consectetur lorem.</p><a href="#" class="btn btn-variant-1 btn-default btn-sm round-xl">Start for free</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 pricing-box pricing-box-hover bg-white">
+                    <div class="thumbnail thumbnail-3">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">Freelancer</h6><span class="icon icon-xl icon-light fa-hand-peace-o"></span>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">$20</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst. Quisque non consectetur lorem.</p><a href="#" class="btn btn-variant-1 btn-default btn-sm round-xl">Start for free</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 pricing-box pricing-box-hover bg-white">
+                    <div class="thumbnail thumbnail-3">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">SpiderMan</h6><span class="icon icon-xl icon-light fa-hand-spock-o"></span>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">$50</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst. Quisque non consectetur lorem.</p><a href="#" class="btn btn-variant-1 btn-default btn-sm round-xl">Start for free</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 pricing-box pricing-box-hover bg-white">
+                    <div class="thumbnail thumbnail-3">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">ironMan</h6><span class="icon icon-xl icon-light fa-hand-stop-o"></span>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">$100</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst. Quisque non consectetur lorem.</p><a href="#" class="btn btn-variant-1 btn-default btn-sm round-xl">Start for free</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End section-->
+    <!--Start section-->
+    <section class="text-center text-sm-left well well-sm section-border">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 bg-white text-center">
+                    <h1 class="text-bold">Choose Your Plan</h1>
+                    <p class="lead">
+                        We worked out an amazing combination of vast functionality
+                        and user's comfort. It will totally impress you with its power!
+                    </p>
+                </div>
+            </div>
+            <div class="row offset-1 flow-offset-2">
+                <div class="col-sm-6 col-lg-5">
+                    <div class="thumbnail thumbnail-6 pricing-box"><span class="icon icon-xl fa-battery-half text-primary"></span>
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <div class="caption">
+                            <h1 class="h1__before text-uppercase text-bold letter-spacing-1">20</h1>
+                            <p>
+                                Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst. Quisque non consectetur lorem.
+
+                            </p>
+                            <div class="row inset-1 flow-offset-2">
+                                <div class="col-md-6">
+                                    <ul class="marked-list marked-list-2">
+                                        <li>Highly Customizable</li>
+                                        <li>Pre-Built Pages</li>
+                                        <li>Clean Design</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="marked-list marked-list-3">
+                                        <li>Extensive Options</li>
+                                        <li>Top Notch Quality</li>
+                                        <li>Responsive Design</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-5 col-lg-offset-2">
+                    <div class="thumbnail thumbnail-6 pricing-box"><span class="icon icon-xl fa-battery-4 text-success"></span>
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">Full business</h6>
+                        <div class="caption">
+                            <h1 class="h1__before text-uppercase text-bold letter-spacing-1">59</h1>
+                            <p>
+                                Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst. Quisque non consectetur lorem.
+
+                            </p>
+                            <div class="row inset-1 flow-offset-2">
+                                <div class="col-md-6">
+                                    <ul class="marked-list marked-list-2">
+                                        <li>Highly Customizable</li>
+                                        <li>Pre-Built Pages</li>
+                                        <li>Clean Design</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="marked-list marked-list-3">
+                                        <li>Extensive Options</li>
+                                        <li>Top Notch Quality</li>
+                                        <li>Responsive Design</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End section-->
+
+    <!--Start section-->
+    <section class="text-center well well-sm section-border">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 bg-white text-center">
+                    <h1 class="text-bold">Choose Your Plan</h1>
+                    <p class="lead">
+                        We worked out an amazing combination of vast functionality
+                        and user's comfort. It will totally impress you with its power!
+                    </p>
+                </div>
+            </div>
+            <div class="row offset-1 flow-offset-2">
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-4 pricing-box pricing-box-2">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">$20</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst.</p><a href="#" class="btn btn-variant-1 btn-primary btn-default btn-sm round-xl">Let's do it</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-4 pricing-box pricing-box-2">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">$50</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst.</p><a href="#" class="btn btn-variant-1 btn-primary btn-default btn-sm round-xl">Let's do it</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-4 pricing-box pricing-box-2">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <div class="caption">
+                            <h2 class="text-uppercase text-bold letter-spacing-1">$20</h2>
+                            <p>Duis ligula turpis, placerat eget lobortis vitae, euismod vulputate orci. Suspendisse potenti. In hac habitasse platea dictumst.</p><a href="#" class="btn btn-variant-1 btn-primary btn-default btn-sm round-xl">Let's do it</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End section-->
+
+    <!--Start section-->
+    <section class="text-center well well-sm bg-dark-var1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <h1 class="text-bold">Choose Your Plan</h1>
+                    <p class="lead">
+                        We worked out an amazing combination of vast functionality
+                        and user's comfort. It will totally impress you with its power!
+                    </p>
+                </div>
+            </div>
+            <div class="row offset-1 flow-offset-2">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="thumbnail thumbnail-3 pricing-box pricing-box-3 bg-white">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <h2 class="text-uppercase text-bold letter-spacing-1 text-primary"><sup>$</sup>20<sub>/mo</sub></h2>
+                        <div class="caption">
+                            <ul class="list-unstyled">
+                                <li>Highly Customizable</li>
+                                <li>Pre-Built Pages</li>
+                                <li>Clean Design</li>
+                                <li>Extensive Options</li>
+                                <li><a href="#" class="link">Get started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="thumbnail thumbnail-3 pricing-box pricing-box-3 bg-white">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <h2 class="text-uppercase text-bold letter-spacing-1 text-primary"><sup>$</sup>143<sub>/mo</sub></h2>
+                        <div class="caption">
+                            <ul class="list-unstyled">
+                                <li>Highly Customizable</li>
+                                <li>Pre-Built Pages</li>
+                                <li>Clean Design</li>
+                                <li>Extensive Options</li>
+                                <li><a href="#" class="link">Get started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="thumbnail thumbnail-3 pricing-box pricing-box-3 bg-white">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <h2 class="text-uppercase text-bold letter-spacing-1 text-primary"><sup>$</sup>170<sub>/mo</sub></h2>
+                        <div class="caption">
+                            <ul class="list-unstyled">
+                                <li>Highly Customizable</li>
+                                <li>Pre-Built Pages</li>
+                                <li>Clean Design</li>
+                                <li>Extensive Options</li>
+                                <li><a href="#" class="link">Get started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="thumbnail thumbnail-3 pricing-box pricing-box-3 bg-white">
+                        <h6 class="text-uppercase text-light-clr letter-spacing-1">economy</h6>
+                        <h2 class="text-uppercase text-bold letter-spacing-1 text-primary"><sup>$</sup>419<sub>/mo</sub></h2>
+                        <div class="caption">
+                            <ul class="list-unstyled">
+                                <li>Highly Customizable</li>
+                                <li>Pre-Built Pages</li>
+                                <li>Clean Design</li>
+                                <li>Extensive Options</li>
+                                <li><a href="#" class="link">Get started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'MyDataLabAdminBundle::base.html.twig' %}
+{% block title %}Glossary{% endblock %}
+{% block content %}
+    <div clas="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title fl-l">{% filter capitalize %}{% trans %}EDIT_OR_ADD_DEFINITIONS{% endtrans %}{% endfilter %}</h3>
+                <a href="{{ path('my_data_lab_glossary_definitions_create', {'id': glossary_id}) }}" id="add-article" type="button" class='btn btn-default fl-r' data-add-article="true">{% filter capitalize %}{% trans %}ADD_DEFINITION{% endtrans %}{% endfilter %}</a>
+            </div>
+            <div class="box-body">
+                <table id="glossary-definitions" class="table table-bordered table-striped" width="100%">
+                    <thead>
+                    <tr>
+                        <th>{% filter capitalize %}{% trans %}TITLE{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter capitalize %}{% trans %}UPLOADED{% endtrans %}{% endfilter %}</th>
+                        <th>{% filter capitalize %}{% trans %}ACTION{% endtrans %}{% endfilter %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for definition in definitions %}
+                        <tr>
+                            <td>{{ definition.title }}</td>
+                            <td>{{ definition.createdAt|date }}</td>
+                            <td>
+                                <a href="{{ path('my_data_lab_glossary_definitions_update', {'id': definition.id}) }}" class="btn btn-default edit-definition" data-edit="true">{% filter capitalize %}{% trans %}EDIT{% endtrans %}{% endfilter %}</a>&nbsp;
+                                <a target="_blank" href="{{ path('my_data_lab_single_definition', {'slug': definition.slug, 'glossary': definition.glossary.name}) }}" class="btn btn-default preview-definition" data-preview="true">{% filter capitalize %}{% trans %}PREVIEW{% endtrans %}{% endfilter %}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% endblock %}

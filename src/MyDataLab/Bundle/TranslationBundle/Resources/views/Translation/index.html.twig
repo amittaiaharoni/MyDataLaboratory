@@ -1,0 +1,43 @@
+{% extends 'MyDataLabTranslationBundle:Translation:base.html.twig' %}
+{% block title %}Translations{% endblock %}
+{% block content %}
+<div clas="col-xs-12">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title fl-l">{% filter capitalize %}{% trans %}EDIT_TRANSLATIONS{% endtrans %}{% endfilter %}</h3>
+            <a href="{{ path('my_data_lab_translation_new', {'locale': locale}) }}" id="add-article" type="button" class='btn btn-default fl-r' data-add-article="true">{% filter capitalize %}{% trans %}ADD_CONSTANT{% endtrans %}{% endfilter %}</a>
+        </div>
+        <div class="box-header">
+            {% block languageSelector %}{{ parent() }}{% endblock %}
+        </div>
+        <div class="box-body">
+            <table id="glossary-definitions" class="table table-bordered table-striped text-center" width="100%">
+                <thead>
+                <tr>
+                    <th>{% filter capitalize %}{% trans %}SOURCE{% endtrans %}{% endfilter %}</th>
+                    <th>{% filter capitalize %}{% trans %}TARGET{% endtrans %}{% endfilter %}</th>
+                    <th>{% filter capitalize %}{% trans %}STATUS{% endtrans %}{% endfilter %}</th>
+                    <th>{% filter capitalize %}{% trans %}ACTION{% endtrans %}{% endfilter %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for translation in translations %}
+                    <tr class="{% if translation.status == 'undefined' %}danger{% endif %}">
+                        <td>{{ translation.source }}</td>
+                        <td>{{ translation.target }}</td>
+                        <td>{{ translation.status | capitalize }}</td>
+                        <td>
+                            <a href="{{ path('my_data_lab_translation_update', {'id': translation.id, 'locale': locale}) }}" class="btn btn-default edit-definition" data-edit="true">{% filter capitalize %}{% trans %}EDIT{% endtrans %}{% endfilter %}</a>&nbsp;
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block scripts %}
+    {{ parent() }}
+
+{% endblock %}
